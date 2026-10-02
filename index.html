@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شارکوت | Charcot - مرجع تخصصی دانشجویان پزشکی و علوم اعصاب</title>
-    <!-- کتابخانه Supabase برای ارتباط با دیتابیس -->
+    <!-- کتابخانه Supabase برای ارتباط با دیتابیس و سیستم احراز هویت -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         :root {
@@ -111,33 +111,54 @@
             margin-bottom: 35px;
         }
 
-        /* استایل فرم ثبت‌نام دیتابیس‌دار */
-        .register-section {
-            max-width: 500px;
+        /* استایل بخش احراز هویت (ورود / ثبت‌نام) */
+        .auth-section {
+            max-width: 480px;
             margin: 20px auto 60px;
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 18px;
-            padding: 35px;
+            padding: 30px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
 
-        .register-section h3 {
-            text-align: center;
+        /* تب‌های جابه‌جایی بین ورود و ثبت‌‌نام */
+        .auth-tabs {
+            display: flex;
+            background-color: var(--bg-main);
+            border-radius: 12px;
+            padding: 4px;
             margin-bottom: 25px;
-            color: var(--text-main);
-            font-size: 1.4rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 10px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background-color: var(--accent-teal);
+            color: #07161B;
         }
 
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
         }
 
         .form-group input {
@@ -145,9 +166,9 @@
             background-color: var(--bg-main);
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            padding: 12px 16px;
+            padding: 12px 14px;
             color: var(--text-main);
-            font-size: 1rem;
+            font-size: 0.95rem;
             outline: none;
             transition: border-color 0.3s;
         }
@@ -161,7 +182,7 @@
             background-color: var(--accent-teal);
             color: #07161B;
             border: none;
-            padding: 14px;
+            padding: 13px;
             font-weight: 700;
             border-radius: 10px;
             cursor: pointer;
@@ -173,6 +194,43 @@
         .submit-btn:hover {
             background-color: #26bfae;
             transform: translateY(-2px);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* پیام ورود کاربر */
+        .user-logged-box {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .user-logged-box h3 {
+            color: var(--accent-teal);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .user-logged-box p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .logout-btn {
+            background-color: #ef4444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .logout-btn:hover {
+            opacity: 0.9;
         }
 
         /* ویژگی‌ها */
@@ -262,13 +320,48 @@
         <p>آموزش بالینی، تحلیل کیس‌های نورولوژی، و دسترسی به بانک سوالات جامع بر اساس استانداردهای روز پزشکی.</p>
     </section>
 
-    <!-- بخش ثبت‌نام متصل به دیتابیس -->
-    <section class="register-section">
-        <h3>عضویت در پلتفرم شارکوت</h3>
-        <form id="registerForm">
+    <!-- بخش ورود و ثبت‌نام متصل به Supabase -->
+    <section class="auth-section">
+        
+        <!-- نمایش اطلاعات کاربر در صورت ورود -->
+        <div id="userProfile" class="user-logged-box hidden">
+            <h3>خوش آمدید، <span id="welcomeName">کاربر گرامی</span>!</h3>
+            <p id="welcomeDetails">شما با موفقیت وارد حساب کاربری خود شده‌اید.</p>
+            <button class="logout-btn" onclick="handleLogout()">خروج از حساب کاربری</button>
+        </div>
+
+        <!-- تب‌های انتخاب فرم -->
+        <div id="authTabs" class="auth-tabs">
+            <button class="tab-btn active" onclick="switchTab('login')">ورود به حساب</button>
+            <button class="tab-btn" onclick="switchTab('register')">ثبت‌نام جدید</button>
+        </div>
+
+        <!-- فرم ورود -->
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="loginEmail">ایمیل</label>
+                <input type="email" id="loginEmail" placeholder="example@mail.com" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">رمز عبور</label>
+                <input type="password" id="loginPassword" placeholder="******" required>
+            </div>
+            <button type="submit" class="submit-btn" id="loginBtn">ورود به شارکوت</button>
+        </form>
+
+        <!-- فرم ثبت‌نام -->
+        <form id="registerForm" class="hidden">
             <div class="form-group">
                 <label for="fullname">نام و نام خانوادگی</label>
                 <input type="text" id="fullname" placeholder="مثلاً دکتر علی رضایی" required>
+            </div>
+            <div class="form-group">
+                <label for="username">نام کاربری (لاتین)</label>
+                <input type="text" id="username" placeholder="user123" required>
+            </div>
+            <div class="form-group">
+                <label for="regEmail">ایمیل</label>
+                <input type="email" id="regEmail" placeholder="example@mail.com" required>
             </div>
             <div class="form-group">
                 <label for="phone">شماره تلفن همراه</label>
@@ -278,7 +371,11 @@
                 <label for="university">دانشگاه محل تحصیل</label>
                 <input type="text" id="university" placeholder="مثلاً علوم پزشکی تهران">
             </div>
-            <button type="submit" class="submit-btn" id="submitBtn">تکمیل ثبت‌نام</button>
+            <div class="form-group">
+                <label for="regPassword">رمز عبور</label>
+                <input type="password" id="regPassword" placeholder="حداقل ۶ کاراکتر" minlength="6" required>
+            </div>
+            <button type="submit" class="submit-btn" id="regBtn">تکمیل ثبت‌نام</button>
         </form>
     </section>
 
@@ -289,7 +386,7 @@
         </div>
         <div class="card">
             <h3>📚 بانک سوالات آزمون دستیاری</h3>
-            <p>مجموعه تفکیک‌شده سوالات پره انترنی و دستیاری پزشکی با پاسخ‌نامه کاملاً تشریحی و رفرنس‌دار.</p>
+            <p>مجموعه تفکیک‌شده سوالات پره انترنی و دستیاری پزشکی با پاسخ‌‌نامه کاملاً تشریحی و رفرنس‌دار.</p>
         </div>
         <div class="card">
             <h3>⚡ فلش‌کارت‌های هوشمند</h3>
@@ -302,40 +399,151 @@
     </footer>
 
     <script>
-        // تنظیمات اتصال به Supabase (با کلیدهای شما تنظیم شد)
+        // ۱. اتصال به Supabase با آدرس و کلید پروژه شما
         const SUPABASE_URL = 'https://jpodptieqiqlcohauyjs.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impwb2RwdGllcWlxbGNvaGF1eWpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzMzExMDQsImV4cCI6MjEwNTkwNzEwNH0.9sfzf1OIYiBQGd5NDjVVIGZ3tSGG4dwc5IqQpRfoBo0';
         
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+        // جابه‌جایی بین تب‌های ورود و ثبت‌نام
+        function switchTab(type) {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const tabs = document.querySelectorAll('.tab-btn');
+
+            if (type === 'login') {
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+                tabs[0].classList.add('active');
+                tabs[1].classList.remove('active');
+            } else {
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+                tabs[0].classList.remove('active');
+                tabs[1].classList.add('active');
+            }
+        }
+
+        // ۲. عملیات ثبت‌نام
         document.getElementById('registerForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            const btn = document.getElementById('submitBtn');
+            const btn = document.getElementById('regBtn');
             btn.textContent = 'در حال ثبت‌نام...';
             btn.disabled = true;
 
             const fullname = document.getElementById('fullname').value;
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('regEmail').value;
             const phone = document.getElementById('phone').value;
             const university = document.getElementById('university').value;
+            const password = document.getElementById('regPassword').value;
 
-            // ارسال اطلاعات به جدول users در Supabase
-            const { data, error } = await supabaseClient
-                .from('users')
-                .insert([{ fullname: fullname, phone: phone, university: university }]);
+            // ایجاد حساب کاربر در بخش Auth
+            const { data, error } = await supabaseClient.auth.signUp({
+                email: email,
+                password: password,
+                options: {
+                    data: {
+                        fullname: fullname,
+                        username: username,
+                        phone: phone,
+                        university: university
+                    }
+                }
+            });
 
             if (error) {
-                alert('خطا در ثبت‌نام: لطفاً مطمئن شوید جدول users با ستون‌های مشخص شده را ساخته‌اید.');
-                console.error(error);
-                btn.textContent = 'تکمیل ثبت‌نام';
+                alert('خطا در ثبت‌نام: ' + error.message);
+                btn.textContent = 'تکمیل ثبت‌‌نام';
                 btn.disabled = false;
-            } else {
-                alert('ثبت‌نام شما با موفقیت انجام شد و در دیتابیس ذخیره گردید! خوش آمدید.');
-                document.getElementById('registerForm').reset();
-                btn.textContent = 'تکمیل ثبت‌نام';
-                btn.disabled = false;
+                return;
             }
+
+            // ذخیره اطلاعات تکمیلی در جدول users
+            if (data.user) {
+                await supabaseClient.from('users').insert([{
+                    id: data.user.id,
+                    fullname: fullname,
+                    username: username,
+                    phone: phone,
+                    university: university
+                }]);
+            }
+
+            alert('ثبت‌نام با موفقیت انجام شد!');
+            btn.textContent = 'تکمیل ثبت‌نام';
+            btn.disabled = false;
+            checkSession(); // بررسی و بروزرسانی نمایش
         });
+
+        // ۳. عملیات ورود
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('loginBtn');
+            btn.textContent = 'در حال ورود...';
+            btn.disabled = true;
+
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const { data, error } = await supabaseClient.auth.signInWithPassword({
+                email: email,
+                password: password
+            });
+
+            if (error) {
+                alert('خطا در ورود: ایمیل یا رمز عبور نادرست است.');
+                btn.textContent = 'ورود به شارکوت';
+                btn.disabled = false;
+                return;
+            }
+
+            alert('ورود با موفقیت انجام شد!');
+            btn.textContent = 'ورود به شارکوت';
+            btn.disabled = false;
+            checkSession();
+        });
+
+        // ۴. بررسی نشست (Session) کاربر هنگام باز کردن صفحه
+        async function checkSession() {
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            const userProfile = document.getElementById('userProfile');
+            const authTabs = document.getElementById('authTabs');
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+
+            if (session) {
+                // کاربر وارد شده است
+                const user = session.user;
+                const name = user.user_metadata?.fullname || user.email;
+                const uni = user.user_metadata?.university ? ` (دانشگاه: ${user.user_metadata.university})` : '';
+
+                document.getElementById('welcomeName').textContent = name;
+                document.getElementById('welcomeDetails').textContent = `ایمیل: ${user.email}${uni}`;
+
+                userProfile.classList.remove('hidden');
+                authTabs.classList.add('hidden');
+                loginForm.classList.add('hidden');
+                registerForm.classList.add('hidden');
+            } else {
+                // کاربر وارد نشده است
+                userProfile.classList.add('hidden');
+                authTabs.classList.remove('hidden');
+                switchTab('login');
+            }
+        }
+
+        // ۵. عملیات خروج از حساب کاربری
+        async function handleLogout() {
+            await supabaseClient.auth.signOut();
+            alert('شما از حساب کاربری خارج شدید.');
+            checkSession();
+        }
+
+        // اجرای بررسی ورود به محض بارگذاری صفحه
+        checkSession();
     </script>
 
 </body>
