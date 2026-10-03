@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شارکوت | Charcot - مرجع تخصصی دانشجویان پزشکی  </title>
+    <title>شارکوت | Charcot - مرجع تخصصی دانشجویان پزشکی و علوم اعصاب</title>
     <!-- کتابخانه Supabase برای ارتباط با دیتابیس و سیستم احراز هویت -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
@@ -37,9 +37,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 8%;
+            padding: 18px 5%;
             border-bottom: 1px solid var(--border-color);
-            background-color: rgba(7, 22, 27, 0.9);
+            background-color: rgba(7, 22, 27, 0.95);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -73,11 +73,18 @@
             display: block;
         }
 
+        nav {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
         nav a {
             color: var(--text-muted);
             text-decoration: none;
-            margin-left: 24px;
-            font-size: 0.95rem;
+            font-size: 0.88rem;
+            white-space: nowrap;
             transition: color 0.3s;
         }
 
@@ -87,13 +94,13 @@
 
         .hero {
             text-align: center;
-            padding: 70px 20px 40px;
+            padding: 60px 20px 30px;
             max-width: 900px;
             margin: 0 auto;
         }
 
         .hero h2 {
-            font-size: 2.6rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 18px;
             line-height: 1.3;
@@ -107,14 +114,14 @@
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 35px;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
         }
 
         /* استایل بخش احراز هویت (ورود / ثبت‌نام) */
         .auth-section {
             max-width: 480px;
-            margin: 20px auto 60px;
+            margin: 10px auto 50px;
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 18px;
@@ -122,7 +129,6 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
 
-        /* تب‌های جابه‌جایی بین ورود و ثبت‌‌نام */
         .auth-tabs {
             display: flex;
             background-color: var(--bg-main);
@@ -200,7 +206,6 @@
             display: none !important;
         }
 
-        /* پیام ورود کاربر */
         .user-logged-box {
             text-align: center;
             padding: 10px;
@@ -233,13 +238,20 @@
             opacity: 0.9;
         }
 
-        /* ویژگی‌ها */
+        /* بخش کارت‌ها و کورس‌های بالینی */
+        .features-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+            color: var(--accent-teal);
+        }
+
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 22px;
-            padding: 0 8% 60px;
-            max-width: 1250px;
+            padding: 0 5% 60px;
+            max-width: 1300px;
             margin: 0 auto;
             width: 100%;
         }
@@ -248,7 +260,7 @@
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 30px;
+            padding: 25px;
             transition: transform 0.3s, border-color 0.3s, background-color 0.3s;
         }
 
@@ -260,7 +272,7 @@
 
         .card h3 {
             font-size: 1.25rem;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             color: var(--text-main);
             display: flex;
             align-items: center;
@@ -271,6 +283,45 @@
             color: var(--text-muted);
             font-size: 0.92rem;
             line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        /* استایل لیست کورس‌های استاجری */
+        .course-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .course-list li {
+            background-color: var(--bg-main);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .course-badge {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .badge-major {
+            background-color: rgba(14, 165, 233, 0.2);
+            color: var(--accent-primary);
+        }
+
+        .badge-minor {
+            background-color: rgba(45, 212, 191, 0.2);
+            color: var(--accent-teal);
         }
 
         footer {
@@ -284,20 +335,23 @@
         }
 
         @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2rem;
-            }
             header {
-                padding: 15px 5%;
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
             }
-            nav {
-                display: none;
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            .course-list {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- ۳. منوی بالای سایت با عناوین جدید -->
     <header>
         <a href="#" class="logo-area">
             <img src="10990.jpg" alt="Charcot Logo" class="logo-img">
@@ -307,17 +361,20 @@
             </div>
         </a>
         <nav>
-            <a href="#">صفحه اصلی</a>
+            <a href="#">علوم پایه</a>
+            <a href="#">آزمون‌های علوم پایه</a>
+            <a href="#">درسنامه</a>
+            <a href="#">کورس‌های بالینی</a>
+            <a href="#">فیزیوپاتولوژی</a>
             <a href="#">کیس‌های بالینی</a>
-            <a href="#">بانک سوالات دستیاری</a>
-            <a href="#">فلش‌کارت نورولوژی</a>
+            <a href="#">فلش‌کارت</a>
             <a href="#">درباره ما</a>
         </nav>
     </header>
 
     <section class="hero">
         <h2>پلتفرم هوشمند یادگیری و پژوهش <span>ویژه دانشجویان پزشکی</span></h2>
-        <p>آموزش علوم پایه، فیزیوپاتولوژی، کیس های بالینی</p>
+        <p>آموزش بالینی، کورس‌های دوران استاجری، کیس‌های نورولوژی و بانک سوالات جامع بر اساس رفرنس‌های روز پزشکی.</p>
     </section>
 
     <!-- بخش ورود و ثبت‌نام متصل به Supabase -->
@@ -349,7 +406,7 @@
             <button type="submit" class="submit-btn" id="loginBtn">ورود به شارکوت</button>
         </form>
 
-        <!-- فرم ثبت‌نام -->
+        <!-- ۱. فرم ثبت‌نام (همراه با تکرار رمز عبور) -->
         <form id="registerForm" class="hidden">
             <div class="form-group">
                 <label for="fullname">نام و نام خانوادگی</label>
@@ -375,23 +432,55 @@
                 <label for="regPassword">رمز عبور</label>
                 <input type="password" id="regPassword" placeholder="حداقل ۶ کاراکتر" minlength="6" required>
             </div>
+            <!-- اطمینان از رمز عبور -->
+            <div class="form-group">
+                <label for="regConfirmPassword">تکرار رمز عبور</label>
+                <input type="password" id="regConfirmPassword" placeholder="تکرار رمز عبور خود را وارد کنید" minlength="6" required>
+            </div>
             <button type="submit" class="submit-btn" id="regBtn">تکمیل ثبت‌نام</button>
         </form>
     </section>
 
+    <!-- ۴. بخش کارت‌ها و کورس‌های بالینی دوران استاجری -->
+    <h3 class="features-title">امکانات پلتفرم آموزشی شارکوت</h3>
     <section class="features">
+
+        <div class="card" style="grid-column: span 1 / -1;">
+            <h3>🏥 کورس‌های بالینی (دوران استاجری / اکسترنی)</h3>
+            <p>راهنمای جامع، گایدلاین‌های درمانی و نحوه شرح‌حال‌گیری در بخش‌های مختلف بیمارستانی دوران استاجری:</p>
+            <ul class="course-list">
+                <li><span class="course-badge badge-major">ماژور</span> 🩺 داخلی (Internal Medicine)</li>
+                <li><span class="course-badge badge-major">ماژور</span> 🔪 جراحی عمومی (General Surgery)</li>
+                <li><span class="course-badge badge-major">ماژور</span> 👶 کودکان (Pediatrics)</li>
+                <li><span class="course-badge badge-major">ماژور</span> 🤰 زنان و زایمان (Obstetrics & Gyn)</li>
+                <li><span class="course-badge badge-minor">مینور</span> 🧠 مغز و اعصاب (Neurology)</li>
+                <li><span class="course-badge badge-minor">مینور</span> 🫀 قلب و عروق (Cardiology)</li>
+                <li><span class="course-badge badge-minor">مینور</span> 🦠 بیماری‌های عفونی (Infectious Diseases)</li>
+                <li><span class="course-badge badge-minor">مینور</span> 🧠 روان‌پزشکی (Psychiatry)</li>
+                <li><span class="course-badge badge-minor">مینور</span> 🦴 ارتوپدی (Orthopedics)</li>
+                <li><span class="course-badge badge-minor">مینور</span> 👁️ چشم‌پزشکی (Ophthalmology)</li>
+                <li><span class="course-badge badge-minor">مینور</span> 👂 گوش و حلق و بینی (ENT)</li>
+                <li><span class="course-badge badge-minor">مینور</span> 🔬 پوست (Dermatology)</li>
+                <li><span class="course-badge badge-minor">مینور</span> 🩺 اورولوژی (Urology)</li>
+                <li><span class="course-badge badge-minor">مینور</span> 🚑 بیهوشی و طب اورژانس</li>
+            </ul>
+        </div>
+
         <div class="card">
             <h3>🧠 کیس‌های بالینی نورولوژی</h3>
             <p>بررسی سناریوهای واقعی بالینی مغز و اعصاب همراه با افتراق‌های تشخیصی، تصویربرداری و طرح درمان.</p>
         </div>
+
         <div class="card">
-            <h3>📚 بانک سوالات آزمون دستیاری</h3>
-            <p>مجموعه تفکیک‌شده سوالات پره انترنی و دستیاری پزشکی با پاسخ‌‌نامه کاملاً تشریحی و رفرنس‌دار.</p>
+            <h3>📚 بانک سوالات آزمون‌ها</h3>
+            <p>مجموعه سوالات پره انترنی، دستیاری و علوم پایه پزشکی با پاسخ‌نامه تشریحی و رفرنس‌دار.</p>
         </div>
+
         <div class="card">
-            <h3>⚡ فلش‌کارت‌های هوشمند</h3>
-            <p>مرور سریع نکات فرار آناتومی اعصاب، نوروفیزیولوژی و فارماکولوژی بالینی بر اساس سیستم لایتنر.</p>
+            <h3>⚡ فلش‌‌کارت‌های هوشمند</h3>
+            <p>مرور سریع نکات فرار آناتومی، فیزیوپاتولوژی و فارماکولوژی بر اساس سیستم لایتنر.</p>
         </div>
+
     </section>
 
     <footer>
@@ -399,7 +488,6 @@
     </footer>
 
     <script>
-        // ۱. اتصال به Supabase با آدرس و کلید پروژه شما
         const SUPABASE_URL = 'https://jpodptieqiqlcohauyjs.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impwb2RwdGllcWlxbGNvaGF1eWpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzMzExMDQsImV4cCI6MjEwNTkwNzEwNH0.9sfzf1OIYiBQGd5NDjVVIGZ3tSGG4dwc5IqQpRfoBo0';
         
@@ -424,7 +512,7 @@
             }
         }
 
-        // ۲. عملیات ثبت‌نام
+        // ۲. عملیات ثبت‌نام با بررسی تکرار رمز عبور و ذخیره‌سازی کامل اطلاعات
         document.getElementById('registerForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -432,14 +520,23 @@
             btn.textContent = 'در حال ثبت‌نام...';
             btn.disabled = true;
 
-            const fullname = document.getElementById('fullname').value;
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('regEmail').value;
-            const phone = document.getElementById('phone').value;
-            const university = document.getElementById('university').value;
+            const fullname = document.getElementById('fullname').value.trim();
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const university = document.getElementById('university').value.trim();
             const password = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('regConfirmPassword').value;
 
-            // ایجاد حساب کاربر در بخش Auth
+            // ۱. بررسی یکسان بودن رمز عبور و تکرار آن
+            if (password !== confirmPassword) {
+                alert('خطا: رمز عبور و تکرار آن یکسان نیستند. لطفاً دوباره بررسی کنید.');
+                btn.textContent = 'تکمیل ثبت‌نام';
+                btn.disabled = false;
+                return;
+            }
+
+            // ۲. ثبت حساب در سیستم Auth
             const { data, error } = await supabaseClient.auth.signUp({
                 email: email,
                 password: password,
@@ -455,30 +552,34 @@
 
             if (error) {
                 alert('خطا در ثبت‌نام: ' + error.message);
-                btn.textContent = 'تکمیل ثبت‌‌نام';
+                btn.textContent = 'تکمیل ثبت‌نام';
                 btn.disabled = false;
                 return;
             }
 
-            // ذخیره اطلاعات تکمیلی (به همراه ایمیل) در جدول users
+            // ۳. ذخیره کامل تمام مشخصات کاربر در جدول users دیتابیس Supabase
             if (data.user) {
-                await supabaseClient.from('users').insert([{
+                const { error: insertError } = await supabaseClient.from('users').insert([{
                     id: data.user.id,
-                    email: email,       /* ایمیل برای نمایش در Table Editor اضافه شد */
+                    email: email,
                     fullname: fullname,
                     username: username,
                     phone: phone,
                     university: university
                 }]);
+
+                if (insertError) {
+                    console.error('خطا در ذخیره پروفایل:', insertError.message);
+                }
             }
 
-            alert('ثبت‌نام با موفقیت انجام شد!');
-            btn.textContent = 'تکمیل ثبت‌نام';
+            alert('ثبت‌نام شما با موفقیت انجام شد!');
+            btn.textContent = 'تکمیل ثبت‌‌نام';
             btn.disabled = false;
-            checkSession(); // بررسی و بروزرسانی نمایش
+            checkSession();
         });
 
-        // ۳. عملیات ورود
+        // عملیات ورود
         document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
 
@@ -486,7 +587,7 @@
             btn.textContent = 'در حال ورود...';
             btn.disabled = true;
 
-            const email = document.getElementById('loginEmail').value;
+            const email = document.getElementById('loginEmail').value.trim();
             const password = document.getElementById('loginPassword').value;
 
             const { data, error } = await supabaseClient.auth.signInWithPassword({
@@ -507,7 +608,7 @@
             checkSession();
         });
 
-        // ۴. بررسی نشست (Session) کاربر هنگام باز کردن صفحه
+        // بررسی نشست (Session) کاربر هنگام باز کردن صفحه
         async function checkSession() {
             const { data: { session } } = await supabaseClient.auth.getSession();
             const userProfile = document.getElementById('userProfile');
@@ -516,7 +617,6 @@
             const registerForm = document.getElementById('registerForm');
 
             if (session) {
-                // کاربر وارد شده است
                 const user = session.user;
                 const name = user.user_metadata?.fullname || user.email;
                 const uni = user.user_metadata?.university ? ` (دانشگاه: ${user.user_metadata.university})` : '';
@@ -529,21 +629,19 @@
                 loginForm.classList.add('hidden');
                 registerForm.classList.add('hidden');
             } else {
-                // کاربر وارد نشده است
                 userProfile.classList.add('hidden');
                 authTabs.classList.remove('hidden');
                 switchTab('login');
             }
         }
 
-        // ۵. عملیات خروج از حساب کاربری
+        // خروج از حساب
         async function handleLogout() {
             await supabaseClient.auth.signOut();
             alert('شما از حساب کاربری خارج شدید.');
             checkSession();
         }
 
-        // اجرای بررسی ورود به محض بارگذاری صفحه
         checkSession();
     </script>
 
