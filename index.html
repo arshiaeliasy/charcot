@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شارکوت | Charcot - مرجع تخصصی دانشجویان پزشکی و علوم اعصاب</title>
+    <title>شارکوت | Charcot - مرجع تخصصی دانشجویان پزشکی  </title>
     <!-- کتابخانه Supabase برای ارتباط با دیتابیس و سیستم احراز هویت -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
@@ -317,7 +317,7 @@
 
     <section class="hero">
         <h2>پلتفرم هوشمند یادگیری و پژوهش <span>ویژه دانشجویان پزشکی</span></h2>
-        <p>آموزش بالینی، تحلیل کیس‌های نورولوژی، و دسترسی به بانک سوالات جامع بر اساس استانداردهای روز پزشکی.</p>
+        <p>آموزش علوم پایه، فیزیوپاتولوژی، کیس های بالینی</p>
     </section>
 
     <!-- بخش ورود و ثبت‌نام متصل به Supabase -->
@@ -460,10 +460,11 @@
                 return;
             }
 
-            // ذخیره اطلاعات تکمیلی در جدول users
+            // ذخیره اطلاعات تکمیلی (به همراه ایمیل) در جدول users
             if (data.user) {
                 await supabaseClient.from('users').insert([{
                     id: data.user.id,
+                    email: email,       /* ایمیل برای نمایش در Table Editor اضافه شد */
                     fullname: fullname,
                     username: username,
                     phone: phone,
