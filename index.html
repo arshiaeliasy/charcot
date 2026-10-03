@@ -351,7 +351,7 @@
 </head>
 <body>
 
-    <!-- ۳. منوی بالای سایت با عناوین جدید -->
+    <!-- منوی بالای سایت -->
     <header>
         <a href="#" class="logo-area">
             <img src="10990.jpg" alt="Charcot Logo" class="logo-img">
@@ -406,7 +406,7 @@
             <button type="submit" class="submit-btn" id="loginBtn">ورود به شارکوت</button>
         </form>
 
-        <!-- ۱. فرم ثبت‌نام (همراه با تکرار رمز عبور) -->
+        <!-- فرم ثبت‌نام -->
         <form id="registerForm" class="hidden">
             <div class="form-group">
                 <label for="fullname">نام و نام خانوادگی</label>
@@ -432,7 +432,6 @@
                 <label for="regPassword">رمز عبور</label>
                 <input type="password" id="regPassword" placeholder="حداقل ۶ کاراکتر" minlength="6" required>
             </div>
-            <!-- اطمینان از رمز عبور -->
             <div class="form-group">
                 <label for="regConfirmPassword">تکرار رمز عبور</label>
                 <input type="password" id="regConfirmPassword" placeholder="تکرار رمز عبور خود را وارد کنید" minlength="6" required>
@@ -441,7 +440,7 @@
         </form>
     </section>
 
-    <!-- ۴. بخش کارت‌ها و کورس‌های بالینی دوران استاجری -->
+    <!-- بخش کارت‌ها و کورس‌های بالینی دوران استاجری -->
     <h3 class="features-title">امکانات پلتفرم آموزشی شارکوت</h3>
     <section class="features">
 
@@ -512,12 +511,12 @@
             }
         }
 
-        // ۲. عملیات ثبت‌نام با بررسی تکرار رمز عبور و ذخیره‌سازی کامل اطلاعات
+        // عملیات ثبت‌نام همراه با کنترل خطای تکراری بودن کاربر
         document.getElementById('registerForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const btn = document.getElementById('regBtn');
-            btn.textContent = 'در حال ثبت‌نام...';
+            btn.textContent = 'در حال بررسی اطلاعات...';
             btn.disabled = true;
 
             const fullname = document.getElementById('fullname').value.trim();
@@ -528,55 +527,85 @@
             const password = document.getElementById('regPassword').value;
             const confirmPassword = document.getElementById('regConfirmPassword').value;
 
-            // ۱. بررسی یکسان بودن رمز عبور و تکرار آن
+            // ۱. بررسی تطابق رمز عبور
             if (password !== confirmPassword) {
-                alert('خطا: رمز عبور و تکرار آن یکسان نیستند. لطفاً دوباره بررسی کنید.');
+                alert('⚠️ خطای رمز عبور: رمز عبور و تکرار آن یکسان نیستند.');
                 btn.textContent = 'تکمیل ثبت‌نام';
                 btn.disabled = false;
                 return;
             }
 
-            // ۲. ثبت حساب در سیستم Auth
-            const { data, error } = await supabaseClient.auth.signUp({
-                email: email,
-                password: password,
-                options: {
-                    data: {
+            try {
+                // ۲. ثبت حساب کاربر در Auth
+                const { data, error } = await supabaseClient.auth.signUp({
+                    email: email,
+                    password: password,
+                    options: {
+                        data: {
+                            fullname: fullname,
+                            username: username,
+                            phone: phone,
+                            university: university
+                        }
+                    }
+                });
+
+                // ۳. چک کردن خطای تکراری بودن ایمیل در Auth
+                if (error) {
+                    if (error.message.toLowerCase().includes("user already registered") || error.status === 400) {
+                        alert("⚠️ قبلاً با این ایمیل ثبت‌نام کرده‌اید! لطفاً از فرم ورود استفاده کنید.");
+                    } else {
+                        alert('خطا در ثبت‌نام: ' + error.message);
+                    }
+                    btn.textContent = 'تکمیل ثبت‌نام';
+                    btn.disabled = false;
+                    return;
+                }
+
+                // در برخی تنظیمات Supabase، اگر کاربر تکراری باشد error داده نمی‌شود اما identities خالی است
+                if (data.user && data.user.identities && data.user.identities.length === 0) {
+                    alert("⚠️ شما قبلاً با این مشخصات ثبت‌نام کرده‌اید! لطفاً وارد حساب خود شوید.");
+                    btn.textContent = 'تکمیل ثبت‌نام';
+                    btn.disabled = false;
+                    return;
+                }
+
+                // ۴. ذخیره مشخصات در جدول public.users و چک کردن تکراری بودن نام کاربری/تلفن
+                if (data.user) {
+                    const { error: insertError } = await supabaseClient.from('users').insert([{
+                        id: data.user.id,
+                        email: email,
                         fullname: fullname,
                         username: username,
                         phone: phone,
                         university: university
+                    }]);
+
+                    if (insertError) {
+                        // کد 23505 مربوط به خطای تکراری بودن داده‌ها (Unique violation) در دیتابیس است
+                        if (insertError.code === '23505') {
+                            alert("⚠️ این نام کاربری یا شماره تلفن قبلاً توسط کاربر دیگری ثبت شده است.");
+                        } else {
+                            console.error('خطا در ذخیره پروفایل:', insertError.message);
+                            alert("خطا در ذخیره داده‌ها: " + insertError.message);
+                        }
+                        btn.textContent = 'تکمیل ثبت‌نام';
+                        btn.disabled = false;
+                        return;
                     }
                 }
-            });
 
-            if (error) {
-                alert('خطا در ثبت‌نام: ' + error.message);
+                alert('✅ ثبت‌نام شما با موفقیت انجام شد!');
+                document.getElementById('registerForm').reset();
+                checkSession();
+
+            } catch (err) {
+                console.error("خطا:", err);
+                alert("خطایی رخ داد، لطفاً دوباره تلاش کنید.");
+            } finally {
                 btn.textContent = 'تکمیل ثبت‌نام';
                 btn.disabled = false;
-                return;
             }
-
-            // ۳. ذخیره کامل تمام مشخصات کاربر در جدول users دیتابیس Supabase
-            if (data.user) {
-                const { error: insertError } = await supabaseClient.from('users').insert([{
-                    id: data.user.id,
-                    email: email,
-                    fullname: fullname,
-                    username: username,
-                    phone: phone,
-                    university: university
-                }]);
-
-                if (insertError) {
-                    console.error('خطا در ذخیره پروفایل:', insertError.message);
-                }
-            }
-
-            alert('ثبت‌نام شما با موفقیت انجام شد!');
-            btn.textContent = 'تکمیل ثبت‌‌نام';
-            btn.disabled = false;
-            checkSession();
         });
 
         // عملیات ورود
@@ -596,13 +625,13 @@
             });
 
             if (error) {
-                alert('خطا در ورود: ایمیل یا رمز عبور نادرست است.');
+                alert('⚠️ خطا در ورود: ایمیل یا رمز عبور نادرست است.');
                 btn.textContent = 'ورود به شارکوت';
                 btn.disabled = false;
                 return;
             }
 
-            alert('ورود با موفقیت انجام شد!');
+            alert('✅ ورود با موفقیت انجام شد!');
             btn.textContent = 'ورود به شارکوت';
             btn.disabled = false;
             checkSession();
