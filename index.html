@@ -286,7 +286,15 @@
             margin-bottom: 12px;
         }
 
-        /* استایل لیست کورس‌های استاجری */
+        .update-notice {
+            color: var(--accent-teal);
+            font-weight: bold;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.05rem;
+        }
+
+        /* استایل لیست دروس و کورس‌ها */
         .course-list {
             list-style: none;
             display: grid;
@@ -327,11 +335,30 @@
         footer {
             margin-top: auto;
             text-align: center;
-            padding: 25px;
+            padding: 30px 25px;
             border-top: 1px solid var(--border-color);
             color: var(--text-muted);
             font-size: 0.85rem;
             background-color: rgba(7, 22, 27, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .qr-container {
+            background: white;
+            padding: 8px;
+            border-radius: 12px;
+            display: inline-block;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .qr-container img {
+            display: block;
+            width: 110px;
+            height: 110px;
         }
 
         @media (max-width: 768px) {
@@ -357,18 +384,17 @@
             <img src="10990.jpg" alt="Charcot Logo" class="logo-img">
             <div class="logo-text">
                 <h1>شارکوت | Charcot</h1>
-                <span>Neurology & Research</span>
+                <span>علوم پایه تا کارورزی</span>
             </div>
         </a>
         <nav>
-            <a href="#">علوم پایه</a>
-            <a href="#">آزمون‌های علوم پایه</a>
-            <a href="#">درسنامه</a>
-            <a href="#">کورس‌های بالینی</a>
-            <a href="#">فیزیوپاتولوژی</a>
-            <a href="#">کیس‌های بالینی</a>
-            <a href="#">فلش‌کارت</a>
-            <a href="#">درباره ما</a>
+            <a href="#basic-sciences">علوم پایه</a>
+            <a href="#pathophysiology">فیزیوپاتولوژی</a>
+            <a href="#externship">استاجری</a>
+            <a href="#pre-internship">پره انترنی</a>
+            <a href="#internship">اینترنی</a>
+            <a href="#clinical-cases">کیس‌های بالینی</a>
+            <a href="#about-us">درباره ما</a>
         </nav>
     </header>
 
@@ -440,12 +466,46 @@
         </form>
     </section>
 
-    <!-- بخش کارت‌ها و کورس‌های بالینی دوران استاجری -->
-    <h3 class="features-title">امکانات پلتفرم آموزشی شارکوت</h3>
+    <!-- بخش امکانات و بخش‌های مختلف آموزشی -->
+    <h3 class="features-title">بخش‌های آموزشی پلتفرم شارکوت</h3>
     <section class="features">
 
-        <div class="card" style="grid-column: span 1 / -1;">
-            <h3>🏥 کورس‌های بالینی (دوران استاجری / اکسترنی)</h3>
+        <!-- علوم پایه -->
+        <div class="card" id="basic-sciences" style="grid-column: span 1 / -1;">
+            <h3>🧬 علوم پایه پزشکی</h3>
+            <p>مجموعه دروس و منابع آموزشی مقطع علوم پایه پزشکی:</p>
+            <ul class="course-list">
+                <li>🧪 فیزیولوژی</li>
+                <li>⚗️ بیوشیمی</li>
+                <li>🧫 باکتری‌شناسی</li>
+                <li>🐛 انگل‌شناسی</li>
+                <li>🍄 قارچ‌شناسی</li>
+                <li>🪲 حشره‌شناسی</li>
+                <li>🦠 ویروس‌شناسی</li>
+                <li>💀 آناتومی</li>
+                <li>🔬 بافت‌شناسی</li>
+                <li>👶 جنین‌شناسی</li>
+                <li>🏥 اصول خدمات سلامت</li>
+                <li>📊 اپیدمیولوژی</li>
+                <li>🛡️ ایمونولوژی</li>
+                <li>📖 زبان انگلیسی</li>
+                <li>🧬 ژنتیک پزشکی</li>
+                <li>🔬 پاتولوژی</li>
+                <li>🥗 اصول تغذیه</li>
+                <li>📚 انقلاب و اندیشه‌ی اسلامی</li>
+                <li>⚛️ فیزیک پزشکی</li>
+            </ul>
+        </div>
+
+        <!-- فیزیوپاتولوژی -->
+        <div class="card" id="pathophysiology">
+            <h3>🔬 فیزیوپاتولوژی</h3>
+            <p class="update-notice">این بخش به زودی آپدیت می‌شود.</p>
+        </div>
+
+        <!-- استاجری -->
+        <div class="card" id="externship" style="grid-column: span 1 / -1;">
+            <h3>🏥 استاجری (کورس‌های بالینی)</h3>
             <p>راهنمای جامع، گایدلاین‌های درمانی و نحوه شرح‌حال‌گیری در بخش‌های مختلف بیمارستانی دوران استاجری:</p>
             <ul class="course-list">
                 <li><span class="course-badge badge-major">ماژور</span> 🩺 داخلی (Internal Medicine)</li>
@@ -465,25 +525,42 @@
             </ul>
         </div>
 
-        <div class="card">
-            <h3>🧠 کیس‌های بالینی نورولوژی</h3>
-            <p>بررسی سناریوهای واقعی بالینی مغز و اعصاب همراه با افتراق‌های تشخیصی، تصویربرداری و طرح درمان.</p>
+        <!-- پره انترنی -->
+        <div class="card" id="pre-internship">
+            <h3>📝 پره انترنی</h3>
+            <p class="update-notice">این بخش به زودی آپدیت می‌شود.</p>
         </div>
 
-        <div class="card">
-            <h3>📚 بانک سوالات آزمون‌ها</h3>
-            <p>مجموعه سوالات پره انترنی، دستیاری و علوم پایه پزشکی با پاسخ‌نامه تشریحی و رفرنس‌دار.</p>
+        <!-- اینترنی -->
+        <div class="card" id="internship">
+            <h3>🩺 اینترنی</h3>
+            <p class="update-notice">این بخش به زودی آپدیت می‌شود.</p>
         </div>
 
-        <div class="card">
-            <h3>⚡ فلش‌‌کارت‌های هوشمند</h3>
-            <p>مرور سریع نکات فرار آناتومی، فیزیوپاتولوژی و فارماکولوژی بر اساس سیستم لایتنر.</p>
+        <!-- کیس‌های بالینی -->
+        <div class="card" id="clinical-cases">
+            <h3>🧠 کیس‌های بالینی</h3>
+            <p>بررسی سناریوهای واقعی بالینی مغز و اعصاب و سایر بخش‌ها همراه با افتراق‌های تشخیصی، تصویربرداری و طرح درمان.</p>
+        </div>
+
+        <!-- درباره ما -->
+        <div class="card" id="about-us" style="grid-column: span 1 / -1;">
+            <h3>ℹ️ درباره ما</h3>
+            <p>شارکوت (Charcot) یک پلتفرم جامع یادگیری و پژوهش است که توسط دانشجویان پزشکی برای تسهیل مسیر آموزشی از علوم پایه تا کارورزی توسعه یافته است.</p>
         </div>
 
     </section>
 
     <footer>
-        Educate • Research • Inspire &copy; 2026 - شارکوت (Charcot)
+        <div>
+            <p style="margin-bottom: 8px; color: var(--text-main); font-weight: bold;">اسکن برای ورود به سایت:</p>
+            <div class="qr-container">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://charcot.ir" alt="Charcot QR Code">
+            </div>
+        </div>
+        <div>
+            Educate • Research • Inspire &copy; 2026 - شارکوت (Charcot)
+        </div>
     </footer>
 
     <script>
@@ -527,7 +604,6 @@
             const password = document.getElementById('regPassword').value;
             const confirmPassword = document.getElementById('regConfirmPassword').value;
 
-            // ۱. بررسی تطابق رمز عبور
             if (password !== confirmPassword) {
                 alert('⚠️ خطای رمز عبور: رمز عبور و تکرار آن یکسان نیستند.');
                 btn.textContent = 'تکمیل ثبت‌نام';
@@ -536,7 +612,6 @@
             }
 
             try {
-                // ۲. ثبت حساب کاربر در Auth
                 const { data, error } = await supabaseClient.auth.signUp({
                     email: email,
                     password: password,
@@ -550,7 +625,6 @@
                     }
                 });
 
-                // ۳. چک کردن خطای تکراری بودن ایمیل در Auth
                 if (error) {
                     if (error.message.toLowerCase().includes("user already registered") || error.status === 400) {
                         alert("⚠️ قبلاً با این ایمیل ثبت‌نام کرده‌اید! لطفاً از فرم ورود استفاده کنید.");
@@ -562,7 +636,6 @@
                     return;
                 }
 
-                // در برخی تنظیمات Supabase، اگر کاربر تکراری باشد error داده نمی‌شود اما identities خالی است
                 if (data.user && data.user.identities && data.user.identities.length === 0) {
                     alert("⚠️ شما قبلاً با این مشخصات ثبت‌نام کرده‌اید! لطفاً وارد حساب خود شوید.");
                     btn.textContent = 'تکمیل ثبت‌نام';
@@ -570,7 +643,6 @@
                     return;
                 }
 
-                // ۴. ذخیره مشخصات در جدول public.users و چک کردن تکراری بودن نام کاربری/تلفن
                 if (data.user) {
                     const { error: insertError } = await supabaseClient.from('users').insert([{
                         id: data.user.id,
@@ -582,7 +654,6 @@
                     }]);
 
                     if (insertError) {
-                        // کد 23505 مربوط به خطای تکراری بودن داده‌ها (Unique violation) در دیتابیس است
                         if (insertError.code === '23505') {
                             alert("⚠️ این نام کاربری یا شماره تلفن قبلاً توسط کاربر دیگری ثبت شده است.");
                         } else {
@@ -637,7 +708,6 @@
             checkSession();
         });
 
-        // بررسی نشست (Session) کاربر هنگام باز کردن صفحه
         async function checkSession() {
             const { data: { session } } = await supabaseClient.auth.getSession();
             const userProfile = document.getElementById('userProfile');
@@ -664,7 +734,6 @@
             }
         }
 
-        // خروج از حساب
         async function handleLogout() {
             await supabaseClient.auth.signOut();
             alert('شما از حساب کاربری خارج شدید.');
