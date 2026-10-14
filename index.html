@@ -242,7 +242,7 @@
             opacity: 0.9;
         }
 
-        /* بخش آکاردئونی اصلاح‌شده و پایدار */
+        /* بخش آکاردئونی پایین سایت */
         .features-container {
             max-width: 1000px;
             margin: 0 auto 50px;
@@ -301,7 +301,7 @@
         }
 
         .accordion-content {
-            display: none; /* اصلاح شده برای پایداری کامل باز و بسته شدن */
+            display: none;
             padding: 18px 22px;
             background-color: rgba(7, 22, 27, 0.4);
             border-top: 1px solid var(--border-color);
@@ -318,7 +318,6 @@
             padding: 6px 0;
         }
 
-        /* استایل لیست دروس و کورس‌ها */
         .course-list {
             list-style: none;
             display: grid;
@@ -427,7 +426,7 @@
         <p>آموزش بالینی، کورس‌های دوران استاجری، کیس‌های بالینی و بانک سوالات جامع بر اساس رفرنس‌های روز پزشکی.</p>
     </section>
 
-    <!-- بخش ورود و ثبت‌نام متصل به Supabase -->
+    <!-- بخش احراز هویت (ورود / ثبت‌نام / بازیابی رمز عبور) -->
     <section class="auth-section">
         
         <!-- نمایش اطلاعات کاربر در صورت ورود -->
@@ -452,6 +451,10 @@
             <div class="form-group">
                 <label for="loginPassword">رمز عبور</label>
                 <input type="password" id="loginPassword" placeholder="******" required>
+            </div>
+            <!-- لینک فراموشی رمز عبور -->
+            <div style="text-align: left; margin-bottom: 14px;">
+                <a href="#" onclick="showForgotPassword(event)" style="color: var(--accent-teal); font-size: 0.83rem; text-decoration: none;">رمز عبور خود را فراموش کرده‌اید؟</a>
             </div>
             <button type="submit" class="submit-btn" id="loginBtn">ورود به شارکوت</button>
         </form>
@@ -488,9 +491,25 @@
             </div>
             <button type="submit" class="submit-btn" id="regBtn">تکمیل ثبت‌نام</button>
         </form>
+
+        <!-- فرم فراموشی رمز عبور همراه با اعتبارسنچی -->
+        <form id="forgotPasswordForm" class="hidden">
+            <div style="text-align: center; margin-bottom: 18px;">
+                <h3 style="color: var(--accent-teal); font-size: 1.2rem; margin-bottom: 6px;">بازیابی رمز عبور</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">ایمیل خود را وارد کنید تا لینک بازیابی رمز عبور برای شما ارسال شود.</p>
+            </div>
+            <div class="form-group">
+                <label for="forgotEmail">ایمیل ثبت‌نام شده</label>
+                <input type="email" id="forgotEmail" placeholder="example@mail.com" required>
+            </div>
+            <button type="submit" class="submit-btn" id="forgotBtn">ارسال لینک بازیابی</button>
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="#" onclick="backToLogin(event)" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: none;">← بازگشت به صفحه ورود</a>
+            </div>
+        </form>
     </section>
 
-    <!-- بخش آکاردئونی و منظم پایین سایت -->
+    <!-- بخش آکاردئونی پایین سایت -->
     <section class="features-container">
         <h3 class="features-title">بخش‌های آموزشی پلتفرم شارکوت</h3>
 
@@ -628,18 +647,14 @@
         
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-        // تابع بهینه‌شده و بی‌نقص برای باز و بسته کردن آکاردئون
+        // مدیریت باز و بسته شدن آکاردئون
         function toggleAccordion(headerElement) {
             const item = headerElement.parentElement;
-            
-            // بستن سایر آیتم‌ها در صورت تمایل (یا حذف این بلوک برای باز ماندن چندتایی)
             document.querySelectorAll('.accordion-item').forEach(el => {
                 if (el !== item) {
                     el.classList.remove('active');
                 }
             });
-
-            // تغییر وضعیت آیتم جاری
             item.classList.toggle('active');
         }
 
@@ -661,6 +676,69 @@
                 tabs[1].classList.add('active');
             }
         }
+
+        // نمایش فرم فراموشی رمز عبور
+        function showForgotPassword(e) {
+            e.preventDefault();
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('authTabs').classList.add('hidden');
+            document.getElementById('registerForm').classList.add('hidden');
+            document.getElementById('forgotPasswordForm').classList.remove('hidden');
+        }
+
+        // بازگشت از فرم فراموشی به فرم ورود
+        function backToLogin(e) {
+            e.preventDefault();
+            document.getElementById('forgotPasswordForm').classList.add('hidden');
+            document.getElementById('authTabs').classList.remove('hidden');
+            switchTab('login');
+        }
+
+        // عملیات و اعتبارسنجی فرم فراموشی رمز عبور
+        document.getElementById('forgotPasswordForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('forgotBtn');
+            const emailInput = document.getElementById('forgotEmail');
+            const email = emailInput.value.trim();
+
+            // اعتبار سنجی فرم (بررسی خالی نبودن و ساختار ایمیل)
+            if (!email) {
+                alert('⚠️ لطفاً فیلد ایمیل را پر کنید.');
+                return;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('⚠️ فرمت ایمیل وارد شده نامعتبر است. لطفاً یک ایمیل صحیح وارد کنید.');
+                emailInput.focus();
+                return;
+            }
+
+            btn.textContent = 'در حال ارسال...';
+            btn.disabled = true;
+
+            try {
+                // ارسال درخواست بازیابی رمز عبور از طریق Supabase
+                const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+                    redirectTo: window.location.origin + '/index.html',
+                });
+
+                if (error) {
+                    alert('خطا در ارسال ایمیل بازیابی: ' + error.message);
+                } else {
+                    alert('✅ لینک بازیابی رمز عبور به ایمیل شما ارسال شد. لطفاً صندوق پیام خود را بررسی کنید.');
+                    document.getElementById('forgotPasswordForm').reset();
+                    backToLogin(e);
+                }
+            } catch (err) {
+                console.error('خطا:', err);
+                alert('خطایی رخ داد، لطفاً دوباره تلاش کنید.');
+            } finally {
+                btn.textContent = 'ارسال لینک بازیابی';
+                btn.disabled = false;
+            }
+        });
 
         // عملیات ثبت‌نام همراه با کنترل خطای تکراری بودن کاربر
         document.getElementById('registerForm').addEventListener('submit', async function(e) {
@@ -788,6 +866,7 @@
             const authTabs = document.getElementById('authTabs');
             const loginForm = document.getElementById('loginForm');
             const registerForm = document.getElementById('registerForm');
+            const forgotPasswordForm = document.getElementById('forgotPasswordForm');
 
             if (session) {
                 const user = session.user;
@@ -801,6 +880,7 @@
                 authTabs.classList.add('hidden');
                 loginForm.classList.add('hidden');
                 registerForm.classList.add('hidden');
+                forgotPasswordForm.classList.add('hidden');
             } else {
                 userProfile.classList.add('hidden');
                 authTabs.classList.remove('hidden');
