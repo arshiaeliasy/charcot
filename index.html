@@ -86,23 +86,26 @@
             font-size: 0.88rem;
             white-space: nowrap;
             transition: color 0.3s;
+            padding: 6px 10px;
+            border-radius: 6px;
         }
 
         nav a:hover {
             color: var(--accent-teal);
+            background-color: rgba(45, 212, 191, 0.1);
         }
 
         .hero {
             text-align: center;
-            padding: 60px 20px 30px;
+            padding: 50px 20px 25px;
             max-width: 900px;
             margin: 0 auto;
         }
 
         .hero h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             line-height: 1.3;
         }
 
@@ -114,19 +117,20 @@
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 30px;
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
 
         /* استایل بخش احراز هویت (ورود / ثبت‌نام) */
         .auth-section {
             max-width: 480px;
-            margin: 10px auto 50px;
+            width: 90%;
+            margin: 0 auto 40px;
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 18px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
         .auth-tabs {
@@ -134,7 +138,7 @@
             background-color: var(--bg-main);
             border-radius: 12px;
             padding: 4px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border: 1px solid var(--border-color);
         }
 
@@ -144,7 +148,7 @@
             background: none;
             border: none;
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 700;
             border-radius: 8px;
             cursor: pointer;
@@ -157,14 +161,14 @@
         }
 
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 6px;
             color: var(--text-muted);
-            font-size: 0.88rem;
+            font-size: 0.85rem;
         }
 
         .form-group input {
@@ -172,9 +176,9 @@
             background-color: var(--bg-main);
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            padding: 12px 14px;
+            padding: 11px 13px;
             color: var(--text-main);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             outline: none;
             transition: border-color 0.3s;
         }
@@ -188,13 +192,13 @@
             background-color: var(--accent-teal);
             color: #07161B;
             border: none;
-            padding: 13px;
+            padding: 12px;
             font-weight: 700;
             border-radius: 10px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.98rem;
             transition: transform 0.2s, background-color 0.2s;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         .submit-btn:hover {
@@ -213,21 +217,21 @@
 
         .user-logged-box h3 {
             color: var(--accent-teal);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
         }
 
         .user-logged-box p {
             color: var(--text-muted);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
+            margin-bottom: 18px;
+            font-size: 0.9rem;
         }
 
         .logout-btn {
             background-color: #ef4444;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 9px 18px;
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
@@ -238,81 +242,104 @@
             opacity: 0.9;
         }
 
-        /* بخش کارت‌ها و کورس‌های بالینی */
-        .features-title {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.6rem;
-            color: var(--accent-teal);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 22px;
-            padding: 0 5% 60px;
-            max-width: 1300px;
-            margin: 0 auto;
+        /* بخش آکاردئونی و کارت‌ها */
+        .features-container {
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
             width: 100%;
         }
 
-        .card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 25px;
-            transition: transform 0.3s, border-color 0.3s, background-color 0.3s;
+        .features-title {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            color: var(--accent-teal);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        .accordion-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        .accordion-item:hover {
             border-color: var(--accent-teal);
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 18px 22px;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: right;
+            transition: background-color 0.2s;
+        }
+
+        .accordion-header:hover {
             background-color: var(--bg-card-hover);
         }
 
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 14px;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .accordion-icon {
+            font-size: 0.9rem;
+            color: var(--accent-teal);
+            transition: transform 0.3s ease;
         }
 
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            line-height: 1.6;
-            margin-bottom: 12px;
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 22px;
+            background-color: rgba(7, 22, 27, 0.4);
+            border-top: 1px solid transparent;
+        }
+
+        .accordion-item.active .accordion-content {
+            padding: 18px 22px;
+            border-top-color: var(--border-color);
         }
 
         .update-notice {
             color: var(--accent-teal);
             font-weight: bold;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
+            padding: 6px 0;
         }
 
         /* استایل لیست دروس و کورس‌ها */
         .course-list {
             list-style: none;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
             margin-top: 10px;
         }
 
         .course-list li {
             background-color: var(--bg-main);
-            padding: 8px 12px;
+            padding: 10px 14px;
             border-radius: 8px;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: var(--text-main);
             border: 1px solid var(--border-color);
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .course-badge {
@@ -339,7 +366,7 @@
             border-top: 1px solid var(--border-color);
             color: var(--text-muted);
             font-size: 0.85rem;
-            background-color: rgba(7, 22, 27, 0.5);
+            background-color: rgba(7, 22, 27, 0.6);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -357,8 +384,8 @@
 
         .qr-container img {
             display: block;
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
         }
 
         @media (max-width: 768px) {
@@ -368,7 +395,7 @@
                 align-items: flex-start;
             }
             .hero h2 {
-                font-size: 1.8rem;
+                font-size: 1.7rem;
             }
             .course-list {
                 grid-template-columns: 1fr;
@@ -378,9 +405,9 @@
 </head>
 <body>
 
-    <!-- منوی بالای سایت -->
+    <!-- منوی بالای سایت (لینک به صفحات جدید) -->
     <header>
-        <a href="#" class="logo-area">
+        <a href="index.html" class="logo-area">
             <img src="10990.jpg" alt="Charcot Logo" class="logo-img">
             <div class="logo-text">
                 <h1>شارکوت | Charcot</h1>
@@ -388,13 +415,13 @@
             </div>
         </a>
         <nav>
-            <a href="#basic-sciences">علوم پایه</a>
-            <a href="#pathophysiology">فیزیوپاتولوژی</a>
-            <a href="#externship">استاجری</a>
-            <a href="#pre-internship">پره انترنی</a>
-            <a href="#internship">اینترنی</a>
-            <a href="#clinical-cases">کیس‌های بالینی</a>
-            <a href="#about-us">درباره ما</a>
+            <a href="basic-sciences.html">علوم پایه</a>
+            <a href="pathophysiology.html">فیزیوپاتولوژی</a>
+            <a href="externship.html">استاجری</a>
+            <a href="pre-internship.html">پره انترنی</a>
+            <a href="internship.html">اینترنی</a>
+            <a href="clinical-cases.html">کیس‌های بالینی</a>
+            <a href="about-us.html">درباره ما</a>
         </nav>
     </header>
 
@@ -466,87 +493,122 @@
         </form>
     </section>
 
-    <!-- بخش امکانات و بخش‌های مختلف آموزشی -->
-    <h3 class="features-title">بخش‌های آموزشی پلتفرم شارکوت</h3>
-    <section class="features">
+    <!-- بخش آکاردئونی و منظم پایین سایت -->
+    <section class="features-container">
+        <h3 class="features-title">بخش‌های آموزشی پلتفرم شارکوت</h3>
 
         <!-- علوم پایه -->
-        <div class="card" id="basic-sciences" style="grid-column: span 1 / -1;">
-            <h3>🧬 علوم پایه پزشکی</h3>
-            <p>مجموعه دروس و منابع آموزشی مقطع علوم پایه پزشکی:</p>
-            <ul class="course-list">
-                <li>🧪 فیزیولوژی</li>
-                <li>⚗️ بیوشیمی</li>
-                <li>🧫 باکتری‌شناسی</li>
-                <li>🐛 انگل‌شناسی</li>
-                <li>🍄 قارچ‌شناسی</li>
-                <li>🪲 حشره‌شناسی</li>
-                <li>🦠 ویروس‌شناسی</li>
-                <li>💀 آناتومی</li>
-                <li>🔬 بافت‌شناسی</li>
-                <li>👶 جنین‌شناسی</li>
-                <li>🏥 اصول خدمات سلامت</li>
-                <li>📊 اپیدمیولوژی</li>
-                <li>🛡️ ایمونولوژی</li>
-                <li>📖 زبان انگلیسی</li>
-                <li>🧬 ژنتیک پزشکی</li>
-                <li>🔬 پاتولوژی</li>
-                <li>🥗 اصول تغذیه</li>
-                <li>📚 انقلاب و اندیشه‌ی اسلامی</li>
-                <li>⚛️ فیزیک پزشکی</li>
-            </ul>
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>🧬 علوم پایه پزشکی</span>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p style="color: var(--text-muted); margin-bottom: 10px;">مجموعه دروس و منابع آموزشی مقطع علوم پایه پزشکی:</p>
+                <ul class="course-list">
+                    <li>🧪 فیزیولوژی</li>
+                    <li>⚗️ بیوشیمی</li>
+                    <li>🧫 باکتری‌شناسی</li>
+                    <li>🐛 انگل‌شناسی</li>
+                    <li>🍄 قارچ‌شناسی</li>
+                    <li>🪲 حشره‌شناسی</li>
+                    <li>🦠 ویروس‌شناسی</li>
+                    <li>💀 آناتومی</li>
+                    <li>🔬 بافت‌شناسی</li>
+                    <li>👶 جنین‌شناسی</li>
+                    <li>🏥 اصول خدمات سلامت</li>
+                    <li>📊 اپیدمیولوژی</li>
+                    <li>🛡️ ایمونولوژی</li>
+                    <li>📖 زبان انگلیسی</li>
+                    <li>🧬 ژنتیک پزشکی</li>
+                    <li>🔬 پاتولوژی</li>
+                    <li>🥗 اصول تغذیه</li>
+                    <li>📚 انقلاب و اندیشه‌ی اسلامی</li>
+                    <li>⚛️ فیزیک پزشکی</li>
+                </ul>
+            </div>
         </div>
 
         <!-- فیزیوپاتولوژی -->
-        <div class="card" id="pathophysiology">
-            <h3>🔬 فیزیوپاتولوژی</h3>
-            <p class="update-notice">این بخش به زودی آپدیت می‌شود.</p>
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>🔬 فیزیوپاتولوژی</span>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p class="update-notice">این بخش به زودی آپدیت می‌شود.</p>
+            </div>
         </div>
 
         <!-- استاجری -->
-        <div class="card" id="externship" style="grid-column: span 1 / -1;">
-            <h3>🏥 استاجری (کورس‌های بالینی)</h3>
-            <p>راهنمای جامع، گایدلاین‌های درمانی و نحوه شرح‌حال‌گیری در بخش‌های مختلف بیمارستانی دوران استاجری:</p>
-            <ul class="course-list">
-                <li><span class="course-badge badge-major">ماژور</span> 🩺 داخلی (Internal Medicine)</li>
-                <li><span class="course-badge badge-major">ماژور</span> 🔪 جراحی عمومی (General Surgery)</li>
-                <li><span class="course-badge badge-major">ماژور</span> 👶 کودکان (Pediatrics)</li>
-                <li><span class="course-badge badge-major">ماژور</span> 🤰 زنان و زایمان (Obstetrics & Gyn)</li>
-                <li><span class="course-badge badge-minor">مینور</span> 🧠 مغز و اعصاب (Neurology)</li>
-                <li><span class="course-badge badge-minor">مینور</span> 🫀 قلب و عروق (Cardiology)</li>
-                <li><span class="course-badge badge-minor">مینور</span> 🦠 بیماری‌های عفونی (Infectious Diseases)</li>
-                <li><span class="course-badge badge-minor">مینور</span> 🧠 روان‌پزشکی (Psychiatry)</li>
-                <li><span class="course-badge badge-minor">مینور</span> 🦴 ارتوپدی (Orthopedics)</li>
-                <li><span class="course-badge badge-minor">مینور</span> 👁️ چشم‌پزشکی (Ophthalmology)</li>
-                <li><span class="course-badge badge-minor">مینور</span> 👂 گوش و حلق و بینی (ENT)</li>
-                <li><span class="course-badge badge-minor">مینور</span> 🔬 پوست (Dermatology)</li>
-                <li><span class="course-badge badge-minor">مینور</span> 🩺 اورولوژی (Urology)</li>
-                <li><span class="course-badge badge-minor">مینور</span> 🚑 بیهوشی و طب اورژانس</li>
-            </ul>
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>🏥 استاجری (کورس‌های بالینی)</span>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p style="color: var(--text-muted); margin-bottom: 10px;">راهنمای جامع، گایدلاین‌های درمانی و نحوه شرح‌حال‌گیری در بخش‌های مختلف بیمارستانی دوران استاجری:</p>
+                <ul class="course-list">
+                    <li><span class="course-badge badge-major">ماژور</span> 🩺 داخلی (Internal Medicine)</li>
+                    <li><span class="course-badge badge-major">ماژور</span> 🔪 جراحی عمومی (General Surgery)</li>
+                    <li><span class="course-badge badge-major">ماژور</span> 👶 کودکان (Pediatrics)</li>
+                    <li><span class="course-badge badge-major">ماژور</span> 🤰 زنان و زایمان (Obstetrics & Gyn)</li>
+                    <li><span class="course-badge badge-minor">مینور</span> 🧠 مغز و اعصاب (Neurology)</li>
+                    <li><span class="course-badge badge-minor">مینور</span> 🫀 قلب و عروق (Cardiology)</li>
+                    <li><span class="course-badge badge-minor">مینور</span> 🦠 بیماری‌های عفونی (Infectious Diseases)</li>
+                    <li><span class="course-badge badge-minor">مینور</span> 🧠 روان‌پزشکی (Psychiatry)</li>
+                    <li><span class="course-badge badge-minor">مینور</span> 🦴 ارتوپدی (Orthopedics)</li>
+                    <li><span class="course-badge badge-minor">مینور</span> 👁️ چشم‌پزشکی (Ophthalmology)</li>
+                    <li><span class="course-badge badge-minor">مینور</span> 👂 گوش و حلق و بینی (ENT)</li>
+                    <li><span class="course-badge badge-minor">مینور</span> 🔬 پوست (Dermatology)</li>
+                    <li><span class="course-badge badge-minor">مینور</span> 🩺 اورولوژی (Urology)</li>
+                    <li><span class="course-badge badge-minor">مینور</span> 🚑 بیهوشی و طب اورژانس</li>
+                </ul>
+            </div>
         </div>
 
         <!-- پره انترنی -->
-        <div class="card" id="pre-internship">
-            <h3>📝 پره انترنی</h3>
-            <p class="update-notice">این بخش به زودی آپدیت می‌شود.</p>
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📝 پره انترنی</span>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p class="update-notice">این بخش به زودی آپدیت می‌شود.</p>
+            </div>
         </div>
 
         <!-- اینترنی -->
-        <div class="card" id="internship">
-            <h3>🩺 اینترنی</h3>
-            <p class="update-notice">این بخش به زودی آپدیت می‌شود.</p>
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>🩺 اینترنی</span>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p class="update-notice">این بخش به زودی آپدیت می‌شود.</p>
+            </div>
         </div>
 
         <!-- کیس‌های بالینی -->
-        <div class="card" id="clinical-cases">
-            <h3>🧠 کیس‌های بالینی</h3>
-            <p>بررسی سناریوهای واقعی بالینی مغز و اعصاب و سایر بخش‌ها همراه با افتراق‌های تشخیصی، تصویربرداری و طرح درمان.</p>
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>🧠 کیس‌های بالینی</span>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p style="color: var(--text-muted);">بررسی سناریوهای واقعی بالینی مغز و اعصاب و سایر بخش‌ها همراه با افتراق‌های تشخیصی، تصویربرداری و طرح درمان.</p>
+            </div>
         </div>
 
         <!-- درباره ما -->
-        <div class="card" id="about-us" style="grid-column: span 1 / -1;">
-            <h3>ℹ️ درباره ما</h3>
-            <p>شارکوت (Charcot) یک پلتفرم جامع یادگیری و پژوهش است که توسط دانشجویان پزشکی برای تسهیل مسیر آموزشی از علوم پایه تا کارورزی توسعه یافته است.</p>
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>ℹ️ درباره ما</span>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p style="color: var(--text-muted); line-height: 1.6;">شارکوت (Charcot) یک پلتفرم جامع یادگیری و پژوهش است که توسط دانشجویان پزشکی برای تسهیل مسیر آموزشی از علوم پایه تا کارورزی توسعه یافته است.</p>
+            </div>
         </div>
 
     </section>
@@ -568,6 +630,28 @@
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impwb2RwdGllcWlxbGNvaGF1eWpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzMzExMDQsImV4cCI6MjEwNTkwNzEwNH0.9sfzf1OIYiBQGd5NDjVVIGZ3tSGG4dwc5IqQpRfoBo0';
         
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // مدیریت باز و بسته شدن باکس‌های کشویی (آکاردئون)
+        function toggleAccordion(headerElement) {
+            const item = headerElement.parentElement;
+            const content = item.querySelector('.accordion-content');
+            
+            // بستن سایر آکاردئون‌های باز (در صورت تمایل به باز بودن همزمان، این بخش را حذف کنید)
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                if (el !== item) {
+                    el.classList.remove('active');
+                    el.querySelector('.accordion-content').style.maxHeight = null;
+                }
+            });
+
+            // باز یا بسته کردن آیتم کلیک شده
+            item.classList.toggle('active');
+            if (item.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+            }
+        }
 
         // جابه‌جایی بین تب‌های ورود و ثبت‌نام
         function switchTab(type) {
