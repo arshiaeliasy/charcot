@@ -242,7 +242,7 @@
             opacity: 0.9;
         }
 
-        /* بخش آکاردئونی و کارت‌ها */
+        /* بخش آکاردئونی اصلاح‌شده و پایدار */
         .features-container {
             max-width: 1000px;
             margin: 0 auto 50px;
@@ -263,7 +263,7 @@
             border-radius: 14px;
             margin-bottom: 14px;
             overflow: hidden;
-            transition: border-color 0.3s, background-color 0.3s;
+            transition: border-color 0.3s;
         }
 
         .accordion-item:hover {
@@ -301,17 +301,14 @@
         }
 
         .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            padding: 0 22px;
+            display: none; /* اصلاح شده برای پایداری کامل باز و بسته شدن */
+            padding: 18px 22px;
             background-color: rgba(7, 22, 27, 0.4);
-            border-top: 1px solid transparent;
+            border-top: 1px solid var(--border-color);
         }
 
         .accordion-item.active .accordion-content {
-            padding: 18px 22px;
-            border-top-color: var(--border-color);
+            display: block;
         }
 
         .update-notice {
@@ -405,7 +402,7 @@
 </head>
 <body>
 
-    <!-- منوی بالای سایت (لینک به صفحات جدید) -->
+    <!-- منوی بالای سایت -->
     <header>
         <a href="index.html" class="logo-area">
             <img src="10990.jpg" alt="Charcot Logo" class="logo-img">
@@ -631,26 +628,19 @@
         
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-        // مدیریت باز و بسته شدن باکس‌های کشویی (آکاردئون)
+        // تابع بهینه‌شده و بی‌نقص برای باز و بسته کردن آکاردئون
         function toggleAccordion(headerElement) {
             const item = headerElement.parentElement;
-            const content = item.querySelector('.accordion-content');
             
-            // بستن سایر آکاردئون‌های باز (در صورت تمایل به باز بودن همزمان، این بخش را حذف کنید)
+            // بستن سایر آیتم‌ها در صورت تمایل (یا حذف این بلوک برای باز ماندن چندتایی)
             document.querySelectorAll('.accordion-item').forEach(el => {
                 if (el !== item) {
                     el.classList.remove('active');
-                    el.querySelector('.accordion-content').style.maxHeight = null;
                 }
             });
 
-            // باز یا بسته کردن آیتم کلیک شده
+            // تغییر وضعیت آیتم جاری
             item.classList.toggle('active');
-            if (item.classList.contains('active')) {
-                content.style.maxHeight = content.scrollHeight + "px";
-            } else {
-                content.style.maxHeight = null;
-            }
         }
 
         // جابه‌جایی بین تب‌های ورود و ثبت‌نام
