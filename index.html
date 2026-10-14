@@ -492,7 +492,7 @@
             <button type="submit" class="submit-btn" id="regBtn">تکمیل ثبت‌نام</button>
         </form>
 
-        <!-- فرم فراموشی رمز عبور همراه با اعتبارسنچی -->
+        <!-- فرم فراموشی رمز عبور همراه با اعتبارسنجی -->
         <form id="forgotPasswordForm" class="hidden">
             <div style="text-align: center; margin-bottom: 18px;">
                 <h3 style="color: var(--accent-teal); font-size: 1.2rem; margin-bottom: 6px;">بازیابی رمز عبور</h3>
@@ -629,11 +629,12 @@
 
     </section>
 
+    <!-- فوتر همراه با QR Code به‌روزرسانی شده به آدرس سایت شما -->
     <footer>
         <div>
             <p style="margin-bottom: 8px; color: var(--text-main); font-weight: bold;">اسکن برای ورود به سایت:</p>
             <div class="qr-container">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://charcot.ir" alt="Charcot QR Code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="Charcot QR Code">
             </div>
         </div>
         <div>
@@ -694,7 +695,7 @@
             switchTab('login');
         }
 
-        // عملیات و اعتبارسنجی فرم فراموشی رمز عبور
+        // عملیات و اعتبارسنجی فرم فراموشی رمز عبور همراه با ریدایرکت دقیق به سایت شما
         document.getElementById('forgotPasswordForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -702,7 +703,6 @@
             const emailInput = document.getElementById('forgotEmail');
             const email = emailInput.value.trim();
 
-            // اعتبار سنجی فرم (بررسی خالی نبودن و ساختار ایمیل)
             if (!email) {
                 alert('⚠️ لطفاً فیلد ایمیل را پر کنید.');
                 return;
@@ -719,9 +719,8 @@
             btn.disabled = true;
 
             try {
-                // ارسال درخواست بازیابی رمز عبور از طریق Supabase
                 const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
-                    redirectTo: window.location.origin + '/index.html',
+                    redirectTo: 'https://arshiaeliasy.github.io/charcot/index.html',
                 });
 
                 if (error) {
