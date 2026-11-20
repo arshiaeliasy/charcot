@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کیس ۳: شوک سپتیک | شارکوت</title>
+    <meta name="description" content="کیس بالینی شوک سپتیک؛ معاینه، معیارهای تشخیصی، مدیریت اولیه بر اساس گایدلاین Surviving Sepsis و طرح درمان.">
+    <meta name="theme-color" content="#07161B">
+    <link rel="icon" href="10990.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            var savedTheme = localStorage.getItem('charcot-theme');
+            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                savedTheme = 'light';
+            }
+            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+        } catch (e) { /* ignore */ }
+    </script>
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="logo-area">
+            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
+            <div class="logo-text">
+                <h1>شارکوت | Charcot</h1>
+                <span>کیس بالینی</span>
+            </div>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="منوی اصلی">
+            <a href="basic-sciences.html">علوم پایه</a>
+            <a href="pathophysiology.html">فیزیوپاتولوژی</a>
+            <a href="externship.html">استاجری</a>
+            <a href="pre-internship.html">پره انترنی</a>
+            <a href="internship.html">اینترنی</a>
+            <a href="clinical-cases.html">کیس‌های بالینی</a>
+            <a href="about-us.html">درباره ما</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn" id="searchBtn" type="button" aria-label="جستجو" title="جستجو (Ctrl+K)">🔍</button>
+            <button class="icon-btn" id="themeBtn" type="button" aria-label="تغییر تم" title="حالت روشن">☀️</button>
+            <button class="icon-btn hamburger" id="menuBtn" type="button" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mainNav">☰</button>
+        </div>
+    </header>
+
+    <nav class="crumbs" aria-label="مسیر صفحه">
+        <a href="index.html">صفحه اصلی</a>
+        <span class="sep">›</span>
+        <a href="clinical-cases.html">کیس‌های بالینی</a>
+        <span class="sep">›</span>
+        <strong>شوک سپتیک</strong>
+    </nav>
+
+    <main class="content-container">
+        <article class="case-hero">
+            <span class="case-tag">داخلی / مراقبت‌های ویژه (Internal Medicine / ICU)</span>
+            <h2>کیس ۳: زن ۶۷ ساله با تب، لرز و افت فشار خون مقاوم به درمان</h2>
+            <p>سناریوی شوک سپتیک با منبع ادراری؛ ارزیابی سریع با معیارهای qSOFA، اقدامات طلایی یک‌ساعته و آنتی‌بیوتیک درمانی تجربی.</p>
+            <div class="case-meta">
+                <span>⏱️ زمان مطالعه: ۸ دقیقه</span>
+                <span>📋 سطح: پیشرفته</span>
+                <span>📚 منبع: گایدلاین Surviving Sepsis</span>
+                <span>🎯 محور: اورژانس داخلی</span>
+            </div>
+        </article>
+
+        <h3 class="section-title">شرح‌حال (سناریو)</h3>
+        <div class="info-box">
+            <p>زنی ۶۷ ساله با دیابت نوع ۲ و سابقه عود عفونت ادراری، دو روز دچار سوزش ادرار و تب شدید شد. از دیروز علائم تشدید شده و امروز با لرز شدید، گیجی و کاهش ادرار به اورژانس انتقال یافته است. همراه بیمار گزارش می‌دهد که بیمار «خیلی بی‌حال» شده و غذا نمی‌خورد.</p>
+        </div>
+
+        <h3 class="section-title">یافته‌های معاینه در بخش اورژانس</h3>
+        <div class="info-box">
+            <ul>
+                <li>علائم حیاتی: فشار خون ۸۵/۵۰، ضربان ۱۲۸، تنفس ۲۸، دمای ۳۸.۹ درجه سانتی‌گراد، SpO₂ ۹۲٪</li>
+                <li>سطح هوشیاری: GCS ۱۳ (بی‌قراری و گیجی بدون کاهش شدید)</li>
+                <li>پوست: گرم، مرطوب با زمان پر شدن مویرگی کند (CRT ۴ ثانیه)</li>
+                <li>اسکن مثانه: مثانه پر و بدون تخلیه خودکار (اولیگوری/آنوری)</li>
+                <li>سوزش لمس ناحیه فوق‌شبهای در فشار (CVA tenderness) مثبت</li>
+                <li>qSOFA: فشار ≤ ۱۰۰ (۱+)، تنفس ≥ ۲۲ (۱+)، تغییر وضعیت ذهنی (۱+) = امتیاز ۳</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <strong>نکته طلایی:</strong> شوک سپتیک یک اورژانس زمان‌دار است؛ هر ساعت تأخیر در شروع آنتی‌بیوتیک، مرگ‌ومیر را حدود ۷-۸٪ افزایش می‌دهد. سوآپ کشت و عکس سینه را نباید شروع درمان را معطل کنند.
+        </div>
+
+        <h3 class="section-title">اقدامات تشخیصی (به ترتیب اولویت)</h3>
+        <ol class="steps">
+            <li><strong>تعیین شدت و منبع:</strong> نمره qSOFA و SOFA، معاینه کامل به‌دنبال منبع عفونت (ادرار، ریه، شکم، پوست، سیستم عصبی مرکزی).</li>
+            <li><strong>کشت‌ها قبل از آنتی‌بیوتیک (بدون تأخیر):</strong> حداقل دو کشت خون از دو محل متفاوت + کشت ادرار + کشت خلط در صورت شک به پنومونی.</li>
+            <li><strong>آزمایش‌های پایه:</strong> CBC، CRP، پروکلسیتونین، الکترولیت، کراتینین، عملکرد کبد، لاکات، ABG و بیماربیلی‌روبین.</li>
+            <li><strong>تصویربرداری:</strong> عکس سینه، سونوگرافی شکم و مثانه، و در صورت شک به سپسیس مغزی، ارزیابی مننژیال.</li>
+            <li><strong>پایش مداوم:</strong> سوند ادرار برای پایش خروجی ادرار (هدف ≥ ۰.۵ ml/kg/h)، پایش فشار وریدی مرکزی (CVP) در صورت در دسترس بودن.</li>
+        </ol>
+
+        <h3 class="section-title">پاسخ تشریحی</h3>
+        <div class="answer-box">
+            <h3>🎯 تشخیص: شوک سپتیک با منبع ادراری (پیلونفریت حاد)</h3>
+            <p>با توجه به عفونت ادراری اثبات‌شده، وجود حداقل دو معیار qSOFA (فشار خون پایین، تنفس تند و تغییر وضعیت ذهنی) و نیاز به مایع‌درمانی برای حفظ فشار، بیمار واجد شرایط شوک سپتیک است. منبع محتمل‌تر، عفونت ادراری فوقانی است.</p>
+
+            <div class="dx-line"><strong>تعریف‌ها:</strong> سپسیس = پاسخ التهابی سیستمیک به عفونت | شوک سپتیک = سپسیس با شوک و نیاز به مایع‌درمانی برای حفظ MAP ≥ ۶۵ mmHg | سپتیک شوک = شوک سپتیک با نیاز به وازوپرسور حتی با مایع کافی</div>
+
+            <div class="dx-line"><strong>افتراق‌های کلیدی:</strong> شوک هیپوولمیک (خونریزی، اسهال)، شوک کاردیوژنیک (انفارکتوس حاد، آریتمی)، آنافیلاکسی (سابقه مواجهه + کهیر)، آمبولی ریوی حاد و شوک نوروژنیک (سکته نخاعی).</div>
+
+            <h3>💉 طرح درمان — بسته طلایی یک‌ساعته</h3>
+            <ul>
+                <li><strong>مایع‌درمانی وریدی:</strong> ۳۰ ml/kg کریستالواید نرمال در ساعت اول (با احتیاط در نارسایی قلبی و کلیوی).</li>
+                <li><strong>آنتی‌بیوتیک پهن‌طیف وریدی حداکثر ظرف یک ساعت:</strong> مثال: سفتریاکسون + مترونیدازول یا پیپراسیلین-تازوباکتام برحسب منبع محتمل؛ در سپسیس شدید از پنی‌سیلین‌های ضد‌سودومونال استفاده کن.</li>
+                <li><strong>وازوپرسور:</strong> اگر با مایع‌درمانی کافی فشار حفظ نشد، نوراپین‌فرین به‌عنوان داروی خط اول برای حفظ MAP ≥ ۶۵ mmHg.</li>
+                <li><strong>کنترل منبع:</strong> رفع انسداد ادراری (سوند یا نفروستومی)، تخلیه آبسه و دبریدمان بافت مرده در صورت وجود.</li>
+                <li><strong>پایش و تنظیم:</strong> لاکات هر ۲-۴ ساعته، خروجی ادرار، تعادل مایعات و ارزیابی مجدد وضعیت هر ساعت.</li>
+                <li><strong>مراقبت‌های حمایتی:</strong> اکسیژن‌رسانی، کنترل قند خون، پروفیلاکسی ترومبوز وریدی و در صورت نیاز تهویه مکانیکی.</li>
+            </ul>
+
+            <div class="dx-line"><strong>پیش‌آگهی:</strong> تشخیص زودهنگام، آنتی‌بیوتیک در کمتر از یک ساعت و کنترل منبع عفونت، سه عامل تعیین‌کننده بقا در شوک سپتیک هستند.</div>
+        </div>
+
+        <div class="tip-box">
+            <strong>جمع‌بندی یک‌خطی:</strong> شک به عفونت + نمره qSOFA ≥ ۲ → کشت‌ها → مایع ۳۰ ml/kg → آنتی‌بیوتیک تا ۶۰ دقیقه → در صورت عدم پاسخ نوراپین‌فرین → رفع منبع عفونت.
+        </div>
+
+        <p style="margin-top: 26px;">
+            <a href="clinical-cases.html" class="back-btn">← بازگشت به همه کیس‌های بالینی</a>
+            &nbsp;
+            <a href="case-stroke.html" class="back-btn">کیس اول: سکته مغزی ←</a>
+        </p>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <strong>شارکوت | Charcot</strong>
+                </div>
+                <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>بخش‌های آموزشی</h4>
+                <ul class="footer-links">
+                    <li><a href="basic-sciences.html">علوم پایه</a></li>
+                    <li><a href="pathophysiology.html">فیزیوپاتولوژی</a></li>
+                    <li><a href="externship.html">استاجری</a></li>
+                    <li><a href="pre-internship.html">پره انترنی</a></li>
+                    <li><a href="internship.html">اینترنی</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>دسترسی سریع</h4>
+                <ul class="footer-links">
+                    <li><a href="clinical-cases.html">کیس‌های بالینی</a></li>
+                    <li><a href="about-us.html">درباره ما</a></li>
+                    <li><a href="index.html#auth">ورود و ثبت‌نام</a></li>
+                    <li><a href="index.html#sections">بخش‌های سایت</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>ورود با موبایل</h4>
+                <div class="footer-qr">
+                    <div class="qr-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                    </div>
+                    <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="fb-tag">Educate • Research • Inspire</span>
+            <span>&copy; 2026 شارکوت (Charcot) — همه حقوق محفوظ است.</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

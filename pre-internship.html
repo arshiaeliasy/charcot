@@ -4,27 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پره انترنی | شارکوت</title>
-    <style>
-        :root { --bg-main: #07161B; --bg-card: #0E252D; --accent-teal: #2DD4BF; --text-main: #F0FDF4; --text-muted: #94A3B8; --border-color: #1E3A4C; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Tahoma, Arial, sans-serif; }
-        body { background-color: var(--bg-main); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 18px 5%; border-bottom: 1px solid var(--border-color); background-color: rgba(7, 22, 27, 0.95); }
-        .back-btn { color: var(--accent-teal); text-decoration: none; font-weight: bold; font-size: 0.9rem; border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 8px; }
-        .content-container { max-width: 800px; margin: 80px auto; padding: 40px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; text-align: center; width: 90%; }
-        h2 { color: var(--accent-teal); margin-bottom: 15px; font-size: 1.8rem; }
-        p { color: var(--text-muted); font-size: 1.1rem; }
-        footer { text-align: center; padding: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem; }
-    </style>
+    <meta name="description" content="راهنمای کامل دوران پره انترنی؛ چک‌لیست آمادگی، منابع پیشنهادی، استراتژی مرور و نکات امتحان جامع پزشکی.">
+    <meta name="theme-color" content="#07161B">
+    <link rel="icon" href="10990.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            var savedTheme = localStorage.getItem('charcot-theme');
+            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                savedTheme = 'light';
+            }
+            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+        } catch (e) { /* ignore */ }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>شارکوت | پره انترنی</h1>
-        <a href="index.html" class="back-btn">← بازگشت به صفحه اصلی</a>
+
+    <header class="site-header">
+        <a href="index.html" class="logo-area">
+            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
+            <div class="logo-text">
+                <h1>شارکوت | Charcot</h1>
+                <span>پره انترنی</span>
+            </div>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="منوی اصلی">
+            <a href="basic-sciences.html">علوم پایه</a>
+            <a href="pathophysiology.html">فیزیوپاتولوژی</a>
+            <a href="externship.html">استاجری</a>
+            <a href="pre-internship.html">پره انترنی</a>
+            <a href="internship.html">اینترنی</a>
+            <a href="clinical-cases.html">کیس‌های بالینی</a>
+            <a href="about-us.html">درباره ما</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn" id="searchBtn" type="button" aria-label="جستجو" title="جستجو (Ctrl+K)">🔍</button>
+            <button class="icon-btn" id="themeBtn" type="button" aria-label="تغییر تم" title="حالت روشن">☀️</button>
+            <button class="icon-btn hamburger" id="menuBtn" type="button" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mainNav">☰</button>
+        </div>
     </header>
+
+    <nav class="crumbs" aria-label="مسیر صفحه">
+        <a href="index.html">صفحه اصلی</a>
+        <span class="sep">›</span>
+        <strong>پره انترنی</strong>
+    </nav>
+
     <main class="content-container">
-        <h2>📝 پره انترنی</h2>
-        <p>این بخش به زودی آپدیت می‌شود.</p>
+        <h2 class="page-title">📝 پره انترنی (آمادگی برای طبابت)</h2>
+        <p class="page-desc">پره‌انترنی پل میان دانشگاه و بیمارستان است؛ دورانی که باید دانش پراکندهٔ علوم پایه و استاجری را به مهارت بالینی تبدیل کنی و برای امتحان جامع آماده شوی. این بخش یک راهنمای عملی برای سازمان‌دهی این دوران است.</p>
+
+        <div class="tip-box">
+            <strong>اصول کلی:</strong> پره‌انترنی سه ستون دارد — <strong>مرور نظام‌مند</strong>، <strong>تمرین سوال</strong> و <strong>حضور فعال در بخش</strong>. اگر یکی از این سه را حذف کنی، برنامه‌ات ناقص می‌شود.
+        </div>
+
+        <h3 class="section-title">چک‌لیست آمادگی در ۵ قدم</h3>
+        <ol class="steps">
+            <li><strong>نقشه راه بکش:</strong> فهرست دروس را بر اساس وزن امتحان و میزان آشنایی‌ات دسته‌بندی کن: قوی، متوسط، ضعیف. بخش بزرگی از وقت به دسته «ضعیف» می‌رود.</li>
+            <li><strong>یک منبع اصلی انتخاب کن:</strong> بین چند منبع پراکنده پریدن رایج‌ترین اشتباه است. یک منبع مرجع + یک بانک سوال کافی است.</li>
+            <li><strong>برنامه هفتگی با مرور فاصله‌دار بچین:</strong> هر درس را در چهار بازه مرور کن: روز بعد، یک هفته بعد، دو هفته بعد و یک ماه بعد.</li>
+            <li><strong>هر روز سوال حل کن:</strong> از تست‌های آزمون‌های سنوات قبل شروع کن و خطاها را در یک دفترچه جدا ثبت کن.</li>
+            <li><strong>در بخش حاضر باش:</strong> شرح‌حال واقعی بگیر، معاینه کن و یافته‌ها را با کتاب مقایسه کن؛ پره‌انترنی فقط خواندن نیست.</li>
+        </ol>
+
+        <h3 class="section-title">منابع پیشنهادی به تفکیک محور</h3>
+        <div class="grid-2">
+            <div class="info-box">
+                <h4>🩺 طب داخلی</h4>
+                <ul>
+                    <li>دیویدسون (اصول طب داخلی) — منبع اصلی</li>
+                    <li>هریسون برای موارد خاص و گایدلاین‌ها</li>
+                    <li>جمع‌بندی‌های بالینی داخلی برای مرور آخر</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🔪 جراحی</h4>
+                <ul>
+                    <li>ساباین یا شوارتز (اصول جراحی)</li>
+                    <li>مرور موارد اورژانسی: شکم حاد، تروما، خونریزی</li>
+                    <li>نکات بعد از عمل و عوارض شایع</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>👶 زنان و زایمان</h4>
+                <ul>
+                    <li>ویلیامز (متن اصلی) + خلاصه‌های بالینی</li>
+                    <li>پیشگیری از بارداری، خونریزی‌های بارداری، پره‌اکلامپسی</li>
+                    <li>زایمان طبیعی و عوارض آن</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🧠 کودکان</h4>
+                <ul>
+                    <li>نلسون یا منبع بالینی کودکان</li>
+                    <li>واکسیناسیون، رشد و تکامل، تب کودک</li>
+                    <li>اورژانس‌های شایع اطفال</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🧠 روان‌پزشکی</h4>
+                <ul>
+                    <li>کاپلان یا منبع بالینی روان‌پزشکی</li>
+                    <li>اختلالات خلقی، اضطراب، روان‌پزشکی اورژانس</li>
+                    <li>اصول مصاحبه بالینی و ارزیابی خطر</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🚑 اورژانس و ICU</h4>
+                <ul>
+                    <li>ABC و مخاطبین حیاتی</li>
+                    <li>ECG خواندن، تنفس مکانیکی، سرم‌درمانی</li>
+                    <li>شوک، سپسیس، تروما و مسمومیت‌ها</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="section-title">نکات کلیدی امتحان جامع</h3>
+        <div class="info-box">
+            <ul>
+                <li><strong>زمان را مدیریت کن:</strong> در آزمون‌های آزمایشی حتماً تایمر بگذار؛ سرعت پاسخ‌گویی با تمرین ساخته می‌شود.</li>
+                <li><strong>سوال‌های پرتکرار را بشناس:</strong> نارسایی قلبی، دیابت، عفونت‌های ادراری، پنومونی، آنمی و اورژانس‌های جراحی بیشترین سهم را دارند.</li>
+                <li><strong>از خطاها درس بگیر:</strong> هر تست غلط را با دلیل درست و دلیل رد گزینه‌های دیگر یادداشت کن.</li>
+                <li><strong>شب امتحان مرور سبک کن:</strong> جدول‌ها و نکات طلایی را مرور کن، نه مطالب نو.</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <strong>ارتباط با سایر بخش‌ها:</strong> برای مرور علوم پایه به <a href="basic-sciences.html" style="color: var(--accent-teal);">علوم پایه</a>، برای تمرین کیس به <a href="clinical-cases.html" style="color: var(--accent-teal);">کیس‌های بالینی</a> و برای آشنایی با شیفت‌های بیمارستان به <a href="internship.html" style="color: var(--accent-teal);">اینترنی</a> سر بزن.
+        </div>
     </main>
-    <footer>Educate • Research • Inspire &copy; 2026 - شارکوت</footer>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <strong>شارکوت | Charcot</strong>
+                </div>
+                <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>بخش‌های آموزشی</h4>
+                <ul class="footer-links">
+                    <li><a href="basic-sciences.html">علوم پایه</a></li>
+                    <li><a href="pathophysiology.html">فیزیوپاتولوژی</a></li>
+                    <li><a href="externship.html">استاجری</a></li>
+                    <li><a href="pre-internship.html">پره انترنی</a></li>
+                    <li><a href="internship.html">اینترنی</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>دسترسی سریع</h4>
+                <ul class="footer-links">
+                    <li><a href="clinical-cases.html">کیس‌های بالینی</a></li>
+                    <li><a href="about-us.html">درباره ما</a></li>
+                    <li><a href="index.html#auth">ورود و ثبت‌نام</a></li>
+                    <li><a href="index.html#sections">بخش‌های سایت</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>ورود با موبایل</h4>
+                <div class="footer-qr">
+                    <div class="qr-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                    </div>
+                    <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="fb-tag">Educate • Research • Inspire</span>
+            <span>&copy; 2026 شارکوت (Charcot) — همه حقوق محفوظ است.</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کیس ۲: سندرم حاد کرونری (ACS) | شارکوت</title>
+    <meta name="description" content="کیس بالینی درد قفسه سینه و سندرم حاد کرونری؛ تفسیر ECG، تفکیک STEMI و NSTEMI و طرح درمان استاندارد.">
+    <meta name="theme-color" content="#07161B">
+    <link rel="icon" href="10990.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            var savedTheme = localStorage.getItem('charcot-theme');
+            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                savedTheme = 'light';
+            }
+            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+        } catch (e) { /* ignore */ }
+    </script>
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="logo-area">
+            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
+            <div class="logo-text">
+                <h1>شارکوت | Charcot</h1>
+                <span>کیس بالینی</span>
+            </div>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="منوی اصلی">
+            <a href="basic-sciences.html">علوم پایه</a>
+            <a href="pathophysiology.html">فیزیوپاتولوژی</a>
+            <a href="externship.html">استاجری</a>
+            <a href="pre-internship.html">پره انترنی</a>
+            <a href="internship.html">اینترنی</a>
+            <a href="clinical-cases.html">کیس‌های بالینی</a>
+            <a href="about-us.html">درباره ما</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn" id="searchBtn" type="button" aria-label="جستجو" title="جستجو (Ctrl+K)">🔍</button>
+            <button class="icon-btn" id="themeBtn" type="button" aria-label="تغییر تم" title="حالت روشن">☀️</button>
+            <button class="icon-btn hamburger" id="menuBtn" type="button" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mainNav">☰</button>
+        </div>
+    </header>
+
+    <nav class="crumbs" aria-label="مسیر صفحه">
+        <a href="index.html">صفحه اصلی</a>
+        <span class="sep">›</span>
+        <a href="clinical-cases.html">کیس‌های بالینی</a>
+        <span class="sep">›</span>
+        <strong>سندرم حاد کرونری</strong>
+    </nav>
+
+    <main class="content-container">
+        <article class="case-hero">
+            <span class="case-tag">قلب و عروق (Cardiology)</span>
+            <h2>کیس ۲: مرد ۵۸ ساله با فشردن درد قفسه سینه ۴۵ دقیقه‌ای</h2>
+            <p>سناریوی کلاسیک سندرم حاد کرونری؛ ارزیابی ECG در دقایق اول، تفکیک STEMI از NSTEMI و مسیر درمانی مبتنی بر زمان.</p>
+            <div class="case-meta">
+                <span>⏱️ زمان مطالعه: ۸ دقیقه</span>
+                <span>📋 سطح: پیشرفته</span>
+                <span>📚 منبع: گایدلاین ESC/ACC</span>
+                <span>🎯 محور: اورژانس قلبی</span>
+            </div>
+        </article>
+
+        <h3 class="section-title">شرح‌حال (سناریو)</h3>
+        <div class="info-box">
+            <p>مردی ۵۸ ساله، سیگاری با سابقه کلسترول بالا، نیمه‌شب هنگام استراحت دچار درد فشرنده‌ای در وسط قفسه سینه شد که به بازوی چپ و فک پایین انتشار یافت. درد همراه با تعریق سرد و حالت تهوع بود و با استراحت بهتر نشد. ۴۵ دقیقه بعد از شروع درد، با اورژانس تماس گرفته شد. در گذشته چند بار در هنگام ورزش درد مشابه اما خفیف‌تر و کوتاه‌تر داشته که با چند دقیقه استراحت برطرف می‌شده (آنژین پایدار).</p>
+        </div>
+
+        <h3 class="section-title">یافته‌ها در بخش اورژانس</h3>
+        <div class="info-box">
+            <ul>
+                <li>علائم حیاتی: فشار خون ۱۴۵/۹۰، ضربان ۹۲ نامنظم، SpO₂ ۹۵٪، دما نرمال</li>
+                <li>بیمار مضطرب با تعریق فراوان؛ درد با نیتروگلیسرین زیرزبانی کاهش جزئی یافته</li>
+                <li>معاینه قلب: صدای اول و دوم طبیعی، بدون صدای اضافی، بدون نشانگان نارسایی احتقانی</li>
+                <li>ریه‌ها: بدون رال، بدون ویز؛ برادیکاردی یا تاکیکاردی قابل توجه نیست</li>
+                <li>نوار قلب ۱۲ لیده در دقایق اول: افزایش قطعه ST در لیدهای II، III و aVF به‌همراه افت قطعه ST در I و aVL</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <strong>نکته طلایی:</strong> در درد قفسه سینه، اولین ECG باید حداکثر ۱۰ دقیقه پس از ورود گرفته شود. اگر ECG اول نرمال بود ولی شک بالینی ادامه دارد، هر ۱۵-۳۰ دقیقه ECG تکرار کن؛ بسیاری از STEMIها در ECG اول دیده نمی‌شوند.
+        </div>
+
+        <h3 class="section-title">اقدامات تشخیصی (به ترتیب اولویت)</h3>
+        <ol class="steps">
+            <li><strong>ECG سریع و تکراری:</strong> در هر درد قفسه سینه بلافاصله ۱۲ لید بگیر و پاسخ را با پزشک مقیم چک کن.</li>
+            <li><strong>تروپونین با حساسیت بالا:</strong> در لحظه ورود و ۱ تا ۳ ساعت بعد؛ افزایش پیوسته تروپونین = آسیب میوکارد.</li>
+            <li><strong>اقدامات اولیه (MONA به‌روزشده):</strong> آسپیرین ۱۶۲-۳۲۵ mg جویدنی، اکسیژن فقط در اگر SpO₂ زیر ۹۰٪، نیتروگلیسرین زیرزمانی (منع در راست‌بطنی و مصرف‌کننده مهارکننده‌های PDE5) و مورفین در درد مقاوم.</li>
+            <li><strong>آزمایش‌های تکمیلی:</strong> CBC، الکترولیت، کراتینین، قند، لیپید و داروهای ضدانعقاد.</li>
+            <li><strong>اکوکاردیوگرام ترانستوراکیک:</strong> ارزیابی انقباض دیواره، دریچه‌ها و عوارض (پارگی دیواره، نارسایی دریچه میترال).</li>
+            <li><strong>آنژیوگرافی:</strong> در STEMI حداکثر تا ۹۰ دقیقه از ورود (درمان بازکننده عروق) و در NSTEMI برحسب امتیاز GRACE و وجود علائم پایدار.</li>
+        </ol>
+
+        <h3 class="section-title">پاسخ تشریحی</h3>
+        <div class="answer-box">
+            <h3>🎯 تشخیص: سندرم حاد کرونری از نوع STEMI قلبی (Inferior STEMI)</h3>
+            <p>افزایش قطعه ST در لیدهای II، III و aVF با افت متقابل در I و aVL، ایسکمی حاد بطن راست را نشان می‌دهد؛ بنابراین آنژیوگرافی فوری و بازکننده عروق (PCI) حداکثر تا ۹۰ دقیقه از ورود انجام می‌شود.</p>
+
+            <div class="dx-line"><strong>تفکیک ارتباط مهم:</strong> STEMI = انسداد کامل عروق کرونر (فوریت درمان با بازکردن عروق) | NSTEMI / آنژین ناپایدار = انسداد جزئی (درمان دارویی و آنژیوگرافی برنامه‌ریزی‌شده)</div>
+
+            <div class="dx-line"><strong>افتراق‌های کلیدی درد قفسه سینه:</strong> پارگی آئورت (درد پاره‌کننده به پشت + اختلاف فشار بین دو بازو)، آمبولی ریوی (تنگی نفس ناگهانی + هموپتیز)، پنوموتوراکس (درد ناگهانی یک‌طرفه + بی‌صدا بودن صدای تنفس)، پریکاردیت (درد تیز بدتر با نفس کشیدن + مالش پریکاردی) و دیسکسیون مری.</div>
+
+            <h3>💉 طرح درمان</h3>
+            <ul>
+                <li><strong>آنژیوگرافی فوری (Primary PCI):</strong> طلایی‌ترین درمان STEMI — حداکثر ۹۰ دقیقه از اولین تماس پزشکی (Door-to-Balloon).</li>
+                <li><strong>داروهای ضدپلاکت دوگانه:</strong> آسپرین + مهارکننده P2Y12 (کلوپیدوگرل یا تیکاگرور) پس از آنژیوگرافی.</li>
+                <li><strong>ضدانعقاد:</strong> هپارین با وزن مولکولی پایین یا انوکساپارین در مسیر درمان.</li>
+                <li><strong>بتابلاکر:</strong> در نبود نارسایی قلبی، شوک یا برادیکاردی (با احتیاط در STEMI راست‌بطنی).</li>
+                <li><strong>استاتین با دوز بالا:</strong> آتورواستاتین ۸۰ mg از همان روز اول برای پایدارسازی پلاک.</li>
+                <li><strong>کنترل عوامل خطر:</strong> ترک سیگار، کنترل فشار و قند، تغذیه و برنامه توانبخشی قلبی.</li>
+            </ul>
+
+            <div class="dx-line"><strong>یک قانون طلایی:</strong> هر درد قفسه سینه بیش از ۲۰ دقیقه در استراحت را تا اثبات خلاف، سندرم حاد کرونری فرض کن و فوراً ECG بگیر.</div>
+        </div>
+
+        <div class="tip-box">
+            <strong>جمع‌بندی یک‌خطی:</strong> درد فشرنده + انتشار + استراحت ناپذیری → ECG در ۱۰ دقیقه → تروپونین → STEMI: بازکردن عروق تا ۹۰ دقیقه | NSTEMI: درمان دارویی و امتیازبندی ریسک.
+        </div>
+
+        <p style="margin-top: 26px;">
+            <a href="clinical-cases.html" class="back-btn">← بازگشت به همه کیس‌های بالینی</a>
+            &nbsp;
+            <a href="case-sepsis.html" class="back-btn">کیس بعدی: شوک سپتیک ←</a>
+        </p>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <strong>شارکوت | Charcot</strong>
+                </div>
+                <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>بخش‌های آموزشی</h4>
+                <ul class="footer-links">
+                    <li><a href="basic-sciences.html">علوم پایه</a></li>
+                    <li><a href="pathophysiology.html">فیزیوپاتولوژی</a></li>
+                    <li><a href="externship.html">استاجری</a></li>
+                    <li><a href="pre-internship.html">پره انترنی</a></li>
+                    <li><a href="internship.html">اینترنی</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>دسترسی سریع</h4>
+                <ul class="footer-links">
+                    <li><a href="clinical-cases.html">کیس‌های بالینی</a></li>
+                    <li><a href="about-us.html">درباره ما</a></li>
+                    <li><a href="index.html#auth">ورود و ثبت‌نام</a></li>
+                    <li><a href="index.html#sections">بخش‌های سایت</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>ورود با موبایل</h4>
+                <div class="footer-qr">
+                    <div class="qr-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                    </div>
+                    <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="fb-tag">Educate • Research • Inspire</span>
+            <span>&copy; 2026 شارکوت (Charcot) — همه حقوق محفوظ است.</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

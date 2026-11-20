@@ -4,27 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اینترنی | شارکوت</title>
-    <style>
-        :root { --bg-main: #07161B; --bg-card: #0E252D; --accent-teal: #2DD4BF; --text-main: #F0FDF4; --text-muted: #94A3B8; --border-color: #1E3A4C; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Tahoma, Arial, sans-serif; }
-        body { background-color: var(--bg-main); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 18px 5%; border-bottom: 1px solid var(--border-color); background-color: rgba(7, 22, 27, 0.95); }
-        .back-btn { color: var(--accent-teal); text-decoration: none; font-weight: bold; font-size: 0.9rem; border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 8px; }
-        .content-container { max-width: 800px; margin: 80px auto; padding: 40px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; text-align: center; width: 90%; }
-        h2 { color: var(--accent-teal); margin-bottom: 15px; font-size: 1.8rem; }
-        p { color: var(--text-muted); font-size: 1.1rem; }
-        footer { text-align: center; padding: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem; }
-    </style>
+    <meta name="description" content="راهنمای کامل سال اینترنی؛ انتخاب‌های بالینی، برنامه روزانه شیفت‌ها، وظایف اینترن و نکات عملی طبابت در بیمارستان.">
+    <meta name="theme-color" content="#07161B">
+    <link rel="icon" href="10990.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            var savedTheme = localStorage.getItem('charcot-theme');
+            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                savedTheme = 'light';
+            }
+            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+        } catch (e) { /* ignore */ }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>شارکوت | اینترنی</h1>
-        <a href="index.html" class="back-btn">← بازگشت به صفحه اصلی</a>
+
+    <header class="site-header">
+        <a href="index.html" class="logo-area">
+            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
+            <div class="logo-text">
+                <h1>شارکوت | Charcot</h1>
+                <span>اینترنی</span>
+            </div>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="منوی اصلی">
+            <a href="basic-sciences.html">علوم پایه</a>
+            <a href="pathophysiology.html">فیزیوپاتولوژی</a>
+            <a href="externship.html">استاجری</a>
+            <a href="pre-internship.html">پره انترنی</a>
+            <a href="internship.html">اینترنی</a>
+            <a href="clinical-cases.html">کیس‌های بالینی</a>
+            <a href="about-us.html">درباره ما</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn" id="searchBtn" type="button" aria-label="جستجو" title="جستجو (Ctrl+K)">🔍</button>
+            <button class="icon-btn" id="themeBtn" type="button" aria-label="تغییر تم" title="حالت روشن">☀️</button>
+            <button class="icon-btn hamburger" id="menuBtn" type="button" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mainNav">☰</button>
+        </div>
     </header>
+
+    <nav class="crumbs" aria-label="مسیر صفحه">
+        <a href="index.html">صفحه اصلی</a>
+        <span class="sep">›</span>
+        <strong>اینترنی</strong>
+    </nav>
+
     <main class="content-container">
-        <h2>🩺 اینترنی</h2>
-        <p>این بخش به زودی آپدیت می‌شود.</p>
+        <h2 class="page-title">🩺 اینترنی (نخستین سال طبابت)</h2>
+        <p class="page-desc">اینترنی سخت‌ترین و پربارترین سال پزشکی است؛ جایی که برای اولین بار مسئولیت واقعی بیمار را به عهده می‌گیری. در این بخش با انتخاب‌های بالینی، برنامهٔ روزانه شیفت‌ها و نکات عملی کار در بیمارستان آشنا می‌شوی.</p>
+
+        <div class="tip-box">
+            <strong>نکته طلایی:</strong> اینترنی با «خواندن» ساخته نمی‌شود؛ با <strong>دیدن، پرسیدن و ثبت کردن</strong> ساخته می‌شود. برای هر بیمار یک خط یادداشت روزانه بنویس: تشخیص، طرح درمان و پاسخ بیمار به درمان.
+        </div>
+
+        <h3 class="section-title">انتخاب‌های بالینی (کشکول‌ها)</h3>
+        <p class="lead">در طول سال اینترنی در بخش‌های مختلفی خدمت می‌کنی؛ هر بخش یک «کشکول» است با وظایف و نکات مخصوص به خودش:</p>
+        <div class="grid-2">
+            <div class="info-box">
+                <h4>🩺 داخلی</h4>
+                <p>پرتکرارترین بخش اینترنی. بیماران متعدد با بیماری‌های مزمن همزمان (Comorbidity) را مدیریت می‌کنی؛ بزرگ‌ترین فرصت برای یادگیری تشخیص و پیگیری.</p>
+            </div>
+            <div class="info-box">
+                <h4>🔪 جراحی</h4>
+                <p>حضور در اتاق عمل، پانسمان، برداشتن بخیه و مدیریت بعد از عمل. یادگیری اصول خونریزی، عفونت زخم و تغذیه بیمار جراحی.</p>
+            </div>
+            <div class="info-box">
+                <h4>👶 کودکان</h4>
+                <p>معاینه کودکان، واکسیناسیون، تب و تشنج کودک و ارتباط با خانواده. یادگیری زبان ساده برای توضیح به والدین بخش مهمی از کار است.</p>
+            </div>
+            <div class="info-box">
+                <h4>🤰 زنان و زایمان</h4>
+                <p>پیگیری بارداری، مراقبت از مادر و نوزاد، زایمان طبیعی و اورژانس‌های زنان. شیفت زایمان معمولاً پرکارترین و هیجان‌انگیزترین شیفت است.</p>
+            </div>
+            <div class="info-box">
+                <h4>🚑 اورژانس</h4>
+                <p>اولین تماس با بیمار ناشناس: ABC، بررسی سریع، تصمیم‌گیری در زمان کم. بهترین تمرین برای مدیریت اورژانس‌های زندگی‌گیر.</p>
+            </div>
+            <div class="info-box">
+                <h4>🧠 روان‌پزشکی</h4>
+                <p>مصاحبه بالینی، ارزیابی خطر و مدیریت بیماران روان‌پریشی و افسردگی. مهارت‌های ارتباطی در این بخش بیشتر از هر جای دیگری تمرین می‌شود.</p>
+            </div>
+        </div>
+
+        <h3 class="section-title">یک روز تیپیک اینترن</h3>
+        <ol class="steps">
+            <li><strong>گرفتن شیفت (صبح زود):</strong> گزارش شب را بخوان، فهرست بیماران را مرور کن و برای هر کدام یک هدف مشخص کن.</li>
+            <li><strong>ویزیت و معاینه:</strong> با پزشک معالج سر بالین برو، شرح‌حال بده، معاینه کن و یافته‌ها را گزارش کن.</li>
+            <li><strong>سفارشات و اقدامات:</strong> آزمایش و تصویربرداری سفارش بده، سرم‌ها را تنظیم کن، بخیه و پانسمان انجام بده.</li>
+            <li><strong>مستندسازی:</strong> شرح حال، وضعیت و پاسخ بیمار را در پرونده ثبت کن؛ ثبت خوب = دفاع خوب از بیمار.</li>
+            <li><strong>تماس با استاد و تحویل شیفت:</strong> موارد مهم را گزارش کن و شیفت را با خیال راحت به نفر بعد تحویل بده.</li>
+        </ol>
+
+        <h3 class="section-title">مهارت‌هایی که باید در اینترنی یاد بگیری</h3>
+        <div class="info-box">
+            <ul>
+                <li>✅ <strong>گرفتن شرح‌حال حرفه‌ای:</strong> شروع با مشکل اصلی، سیر بیماری، سوابق، داروها و آلرژی‌ها.</li>
+                <li>✅ <strong>معاینه سیستماتیک:</strong> از علائم حیاتی تا معاینه کامل؛ هر روز تمرین کن تا ملکه ذهنت شود.</li>
+                <li>✅ <strong>تفسیر آزمایش و ECG:</strong> CBC، الکترولیت‌ها، عملکرد کبد و کلیه و نوار قلب را روزانه بخوان.</li>
+                <li>✅ <strong>مدیریت زمان و اولویت‌بندی:</strong> بیمار بدتر را اول ببین؛ همیشه موارد اورژانسی را زودتر شناسایی کن.</li>
+                <li>✅ <strong>ارتباط با بیمار و خانواده:</strong> با زبان ساده توضیح بده و رضایت آگاهانه را جدی بگیر.</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <strong>منابع همراه:</strong> در طول اینترنی، <a href="externship.html" style="color: var(--accent-teal);">راهنمای کورس‌های استاجری</a> برای مرور سریع گایدلاین‌ها و <a href="clinical-cases.html" style="color: var(--accent-teal);">کیس‌های بالینی</a> برای تمرین تفکر تشخیصی به‌کارت می‌آید.
+        </div>
     </main>
-    <footer>Educate • Research • Inspire &copy; 2026 - شارکوت</footer>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <strong>شارکوت | Charcot</strong>
+                </div>
+                <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>بخش‌های آموزشی</h4>
+                <ul class="footer-links">
+                    <li><a href="basic-sciences.html">علوم پایه</a></li>
+                    <li><a href="pathophysiology.html">فیزیوپاتولوژی</a></li>
+                    <li><a href="externship.html">استاجری</a></li>
+                    <li><a href="pre-internship.html">پره انترنی</a></li>
+                    <li><a href="internship.html">اینترنی</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>دسترسی سریع</h4>
+                <ul class="footer-links">
+                    <li><a href="clinical-cases.html">کیس‌های بالینی</a></li>
+                    <li><a href="about-us.html">درباره ما</a></li>
+                    <li><a href="index.html#auth">ورود و ثبت‌نام</a></li>
+                    <li><a href="index.html#sections">بخش‌های سایت</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>ورود با موبایل</h4>
+                <div class="footer-qr">
+                    <div class="qr-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                    </div>
+                    <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="fb-tag">Educate • Research • Inspire</span>
+            <span>&copy; 2026 شارکوت (Charcot) — همه حقوق محفوظ است.</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

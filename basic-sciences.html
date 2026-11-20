@@ -4,56 +4,687 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>علوم پایه پزشکی | شارکوت</title>
-    <style>
-        :root {
-            --bg-main: #07161B;
-            --bg-card: #0E252D;
-            --accent-teal: #2DD4BF;
-            --text-main: #F0FDF4;
-            --text-muted: #94A3B8;
-            --border-color: #1E3A4C;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Tahoma, Arial, sans-serif; }
-        body { background-color: var(--bg-main); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 18px 5%; border-bottom: 1px solid var(--border-color); background-color: rgba(7, 22, 27, 0.95); }
-        .back-btn { color: var(--accent-teal); text-decoration: none; font-weight: bold; font-size: 0.9rem; border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 8px; transition: background 0.3s; }
-        .back-btn:hover { background-color: rgba(45, 212, 191, 0.1); }
-        .content-container { max-width: 1000px; margin: 40px auto; padding: 0 20px; width: 100%; flex: 1; }
-        h2 { color: var(--accent-teal); margin-bottom: 20px; font-size: 1.8rem; }
-        .course-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
-        .course-list li { background-color: var(--bg-card); padding: 14px 18px; border-radius: 10px; font-size: 0.95rem; border: 1px solid var(--border-color); display: flex; align-items: center; gap: 10px; }
-        footer { text-align: center; padding: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem; }
-    </style>
+    <meta name="description" content="مرجع کامل ۱۹ درس علوم پایه پزشکی؛ فیزیولوژی، بیوشیمی، میکروب‌شناسی، آناتومی، ایمونولوژی، ژنتیک و سایر دروس با سرفصل و نکته مطالعه.">
+    <meta name="theme-color" content="#07161B">
+    <link rel="icon" href="10990.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            var savedTheme = localStorage.getItem('charcot-theme');
+            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                savedTheme = 'light';
+            }
+            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+        } catch (e) { /* ignore */ }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>شارکوت | علوم پایه</h1>
-        <a href="index.html" class="back-btn">← بازگشت به صفحه اصلی</a>
+
+    <header class="site-header">
+        <a href="index.html" class="logo-area">
+            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
+            <div class="logo-text">
+                <h1>شارکوت | Charcot</h1>
+                <span>علوم پایه</span>
+            </div>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="منوی اصلی">
+            <a href="basic-sciences.html">علوم پایه</a>
+            <a href="pathophysiology.html">فیزیوپاتولوژی</a>
+            <a href="externship.html">استاجری</a>
+            <a href="pre-internship.html">پره انترنی</a>
+            <a href="internship.html">اینترنی</a>
+            <a href="clinical-cases.html">کیس‌های بالینی</a>
+            <a href="about-us.html">درباره ما</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn" id="searchBtn" type="button" aria-label="جستجو" title="جستجو (Ctrl+K)">🔍</button>
+            <button class="icon-btn" id="themeBtn" type="button" aria-label="تغییر تم" title="حالت روشن">☀️</button>
+            <button class="icon-btn hamburger" id="menuBtn" type="button" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mainNav">☰</button>
+        </div>
     </header>
+
+    <nav class="crumbs" aria-label="مسیر صفحه">
+        <a href="index.html">صفحه اصلی</a>
+        <span class="sep">›</span>
+        <strong>علوم پایه</strong>
+    </nav>
+
     <main class="content-container">
-        <h2>🧬 دروس و منابع علوم پایه پزشکی</h2>
-        <ul class="course-list">
-            <li>🧪 فیزیولوژی</li>
-            <li>⚗️ بیوشیمی</li>
-            <li>🧫 باکتری‌شناسی</li>
-            <li>🐛 انگل‌شناسی</li>
-            <li>🍄 قارچ‌شناسی</li>
-            <li>🪲 حشره‌شناسی</li>
-            <li>🦠 ویروس‌شناسی</li>
-            <li>💀 آناتومی</li>
-            <li>🔬 بافت‌شناسی</li>
-            <li>👶 جنین‌شناسی</li>
-            <li>🏥 اصول خدمات سلامت</li>
-            <li>📊 اپیدمیولوژی</li>
-            <li>🛡️ ایمونولوژی</li>
-            <li>📖 زبان انگلیسی</li>
-            <li>🧬 ژنتیک پزشکی</li>
-            <li>🔬 پاتولوژی</li>
-            <li>🥗 اصول تغذیه</li>
-            <li>📚 انقلاب و اندیشه‌ی اسلامی</li>
-            <li>⚛️ فیزیک پزشکی</li>
-        </ul>
+        <h2 class="page-title">🧬 دروس و منابع علوم پایه پزشکی</h2>
+        <p class="page-desc">هر ۱۹ درس مقطع علوم پایه با توضیح، سرفصل‌های کلیدی و نکتهٔ مطالعه. روی درس مورد نظر بزن تا باز شود؛ یا با <strong>Ctrl + K</strong> نام درس را جستجو کن تا مستقیم به همین‌جا برسی.</p>
+
+        <div class="tip-box">
+            <strong>نحوه استفاده:</strong> هر درس را یک‌بار از بالا تا پایین بخوان، بعد سرفصل‌ها را به‌صورت چک‌لیست درآور و خودت را محک بزن. ترتیب پیشنهادی از پایه به سمت بالینی: <strong>فیزیولوژی → بیوشیمی → آناتومی/بافت‌شناسی → میکروب‌شناسی/ایمونولوژی → پاتولوژی</strong>.
+        </div>
+
+        <!-- ===== ۱. فیزیولوژی ===== -->
+        <div class="accordion-item" id="physiology">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>🧪 فیزیولوژی (Physiology)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>علم <strong>عملکرد طبیعی بدن</strong>؛ پایه‌ترین درس برای فهم اینکه بدن چطور کار می‌کند و در بیماری چه چیزی خراب می‌شود. بدون فیزیولوژی، فیزیوپاتولوژی و داروشناسی بی‌معنا می‌شوند.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>قلب و عروق:</strong> برون‌ده قلبی، فشار خون، تنظیم عروقی، بار قلبی</li>
+                        <li><strong>تنفس:</strong> تبادل گاز، منحنی توانایی اکسیژن هموگلوبین، قوانین بویل</li>
+                        <li><strong>کلیه:</strong> تصفیه و بازجذب، GFR، تنظیم حجم و فشار</li>
+                        <li><strong>سیستم عصبی:</strong> پتانسیل عمل، انتقال سیناپسی، رفلکس‌ها</li>
+                        <li><strong>غدد درون‌ریز:</strong> هورمون‌ها، بازخورد منفی، تنظیم قند خون</li>
+                        <li><strong>گوارش و جذب:</strong> ترشحات، حرکات، جذب مواد مغذی</li>
+                        <li><strong>عضله و خون:</strong> مکانیک انقباض، انعقاد خون و سیستم م补</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">CO = HR × SV</span>
+                    <span class="chip">GFR</span>
+                    <span class="chip">منحنی O₂</span>
+                    <span class="chip">بازخورد منفی</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> فیزیولوژی را حفظ نکن؛ هر مکانیسم را با یک «اگر... آنگاه...» جلو ببر. نمودارها را خودت روی کاغذ بکش، نه اینکه فقط نگاه کنی.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۲. بیوشیمی ===== -->
+        <div class="accordion-item" id="biochemistry">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>⚗️ بیوشیمی (Biochemistry)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>شیمی زنده؛ چطور مواد غذایی به انرژی تبدیل می‌شوند، پروتئین‌ها چه می‌کنند و ژن‌ها چطور بیان می‌شوند. درسی پر از چرخه‌های متابولیک که با تمرین، بسیار ساده می‌شود.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>ماکرومولکول‌ها:</strong> ساختار پروتئین، کربوهیدرات، لیپید و نوکلئیک‌اسید</li>
+                        <li><strong>آنزی‌ها:</strong> کاتالیز، مهار، KM و Vmax</li>
+                        <li><strong>متابولیسم کربوهیدرات:</strong> گلیکولیز، چرخه کربس، گلایکوژنولیز و تنظیم قند</li>
+                        <li><strong>متابولیسم لیپیدها:</strong> اکسیداسیون اسید چرب، سنتز کلسترول، لیپوپروتئین‌ها</li>
+                        <li><strong>متابولیسم پروتئین و اوره:</strong> چرخه اوره، دیس‌متابولیسم اسیدهای آمینه</li>
+                        <li><strong>بیان ژن:</strong> DNA replication، رونویسی، ترجمه و تنظیم</li>
+                        <li><strong>ویتامین‌ها و کوفاکتورها:</strong> وابستگی به NAD، FAD، B12، C</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">چرخه کربس</span>
+                    <span class="chip">ATP</span>
+                    <span class="chip">کتوز</span>
+                    <span class="chip">کمبود آنزیمی</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> هر چرخه را یک‌بار خط‌به‌خط روی کاغذ بکش و ورودی/خروجی‌هایش را مشخص کن. سوال‌های بالینی بیوشیمی معمولاً از کمبود آنزیم و علائم ناشی از آن می‌آید.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۳. باکتری‌شناسی ===== -->
+        <div class="accordion-item" id="bacteriology">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>🧫 باکتری‌شناسی (Bacteriology)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>شناخت باکتری‌ها؛ از ساختار و رنگ‌آمیزی تا بیماری‌زایی و درمان. مهم‌ترین کاربرد بالینی: <strong>انتخاب آنتی‌بیوتیک درست</strong>.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>اصول:</strong> شکل، رنگ‌آمیزی گرم مثبت/منفی، دیواره سلولی، کشت و محیط‌ها</li>
+                        <li><strong>گرم مثبت‌ها:</strong> استافیلوکوک (MRSA)، استرپتوکوک، باسیلوس، کلستریدیوم</li>
+                        <li><strong>گرم منفی‌ها:</strong> اشریشیا، سالمونلا، شیگلا، نیسریا، پسودوموناس</li>
+                        <li><strong>مایکوباکتری و اکتینومایست‌ها:</strong> سل، سل پوستی، شبه‌سل</li>
+                        <li><strong>مقاومت:</strong> پلاسمید، ژن‌های مقاومت، مکانیسم اثر آنتی‌بیوتیک‌ها</li>
+                        <li><strong>کنترل عفونت:</strong> استریل، ضدعفونی، روش‌های انتقال</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">گرم+/گرم−</span>
+                    <span class="chip">MRSA</span>
+                    <span class="chip">انتقال افقی ژن</span>
+                    <span class="chip">گایدلاین آنتی‌بیوتیک</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> یک جدول بزرگ بکش: ردیف‌ها = میکروب، ستون‌ها = رنگ، شکل، بیماری شایع، آنتی‌بیوتیک خط اول. همین یک جدول نصف امتحان را پوشش می‌دهد.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۴. انگل‌شناسی ===== -->
+        <div class="accordion-item" id="parasitology">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>🐛 انگل‌شناسی (Parasitology)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>شناخت انگل‌های تک‌یاخته‌ای و کرم‌ها؛ چرخه زندگی، نحوه انتقال، علائم و تشخیص آزمایشگاهی. درسی بسیار «تصویری» و با نکات بالینی فراوان.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>پروتوزوآهای گوارشی:</strong> ژیاردیا، انتاموبا هیستولیتیکا، کریپتوسپوریدیوم</li>
+                        <li><strong>پروتوزوآهای خونی/بافتی:</strong> مالاریا (پلاسمودیوم)، لیشمانیا، توکسوپلاسما، تریپانوزوما</li>
+                        <li><strong>کرم‌های دستگاه گوارش:</strong> آسکاریس، کرم قلابی، تریشور، تنیا</li>
+                        <li><strong>کرم‌های بافتی:</strong> فیلاریا (الفیلاریازیس)، شیستوزوما</li>
+                        <li><strong>تشخیص:</strong> نمونه مدفوع/خون، سرولوژی، میکروسکوپ</li>
+                        <li><strong>پیشگیری:</strong> بهداشت آب، مدیریت فاضلاب، مبارزه با ناقل</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">چرخه زندگی</span>
+                    <span class="chip">مالاریا</span>
+                    <span class="chip">کرم قلابی</span>
+                    <span class="chip">آزمایش مدفوع</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> چرخه زندگی هر انگل را مثل یک داستان یاد بگیر: «از کجا وارد شد → در بدن کجا رفت → چه علائمی داد → از کجا تشخیص داده شد → چطور درمان شد».</div>
+            </div>
+        </div>
+
+        <!-- ===== ۵. قارچ‌شناسی ===== -->
+        <div class="accordion-item" id="mycology">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>🍄 قارچ‌شناسی (Mycology)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>قارچ‌های بیماری‌زا (اوکوریوت‌ها)؛ از عفونت‌های سادهٔ پوستی تا عفونت‌های سیستمیک خطرناک در بیماران نقص ایمنی.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>اصول:</strong> مخمرها در برابر کپک‌ها، هیف‌ها و اسپورها</li>
+                        <li><strong>عفونت‌های سطحی و پوستی:</strong> درماتوفیت‌ها، پیتریازیس، کچلی</li>
+                        <li><strong>کاندیدیازیس:</strong> دهانی، واژینال، سیستمیک (بیماران ICU)</li>
+                        <li><strong>کپک‌ها:</strong> آسپرگیلوس (آسپرژیلوم)، مکور</li>
+                        <li><strong>عفونت‌های سیستمیک:</strong> کریپتوکوکوس (مننژیت در HIV)، هیستوپلاسموزیس</li>
+                        <li><strong>درمان:</strong> آزول‌ها، آمفوتریسین B، کاسپوفونگین</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">Candida</span>
+                    <span class="chip">Aspergillus</span>
+                    <span class="chip">کریپتوکوکوزیس</span>
+                    <span class="chip">آزول‌ها</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> قارچ‌شناسی را با توجه به وضعیت ایمنی بیمار دسته‌بندی کن: بیمار سالم (پوستی) ← بیمار بستری (کاندیدا) ← بیمار HIV (کریپتوکوکوس، ماکروتاسپوریوم).</div>
+            </div>
+        </div>
+
+        <!-- ===== ۶. حشره‌شناسی ===== -->
+        <div class="accordion-item" id="entomology">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>🪲 حشره‌شناسی پزشکی (Medical Entomology)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>حشراتی که مستقیماً یا به‌عنوان <strong>ناقل</strong> باعث بیماری می‌شوند؛ مانند مالاریا، دنگی، لیشمانیا و سالک.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>پشه‌ها:</strong> آنوفلس (مالاریا)، اِدِس (دنگی، زیکا، تب زرد)</li>
+                        <li><strong>پشه‌کوره:</strong> لیشمانیا (سالک)</li>
+                        <li><strong>سایر حشرات:</strong> ساس (تریپانوزوما)، کک (طاعون)، مگس‌ها، پشه‌کوره</li>
+                        <li><strong>گزش و حساسیت:</strong> زنبور، مورچه آتش‌نشین، حشرات موذی</li>
+                        <li><strong>پیشگیری:</strong> توری، حشره‌کش، کنه‌کشی، مدیریت آب‌های راکد</li>
+                        <li><strong>مقاومت حشره‌کش‌ها:</strong> DDT و جایگزین‌ها</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">ناقل</span>
+                    <span class="chip">مالاریا</span>
+                    <span class="chip">سالک</span>
+                    <span class="chip">کنترل ناقل</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> جدول «بیماری ← ناقل ← محل جغرافیایی ← روش پیشگیری» بساز؛ سوال‌های این درس معمولاً از همین تطبیق‌ها می‌آید.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۷. ویروس‌شناسی ===== -->
+        <div class="accordion-item" id="virology">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>🦠 ویروس‌شناسی (Virology)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>ویروس‌ها؛ از ساختار و چرخه تکثیر تا بیماری‌های شایع تنفسی، گوارشی و هپاتیت‌ها. پرکاربردترین بخش در اورژانس و پیشگیری (واکسن).</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>اصول:</strong> انواع ژنوم (DNA/RNA، تک‌رشته‌ای/دو رشته‌ای)، کپسید، پوشش لیپیدی</li>
+                        <li><strong>چرخه تکثیر:</strong> ورود، رونویسی، ترجمه، بلوغ و رهش</li>
+                        <li><strong>ویروس‌های تنفسی:</strong> آنفلوآنزا، کرونا (SARS-CoV-2)، RSV، سرماخوردگی</li>
+                        <li><strong>هپاتیت‌ها:</strong> A، B، C — انتقال، علائم، واکسن و درمان</li>
+                        <li><strong>HIV:</strong> CD4، مکانیسم پاتوژنز، آزمایش‌های تشخیصی، ART</li>
+                        <li><strong>تشخیص:</strong> PCR، سرولوژی (IgM/IgG)، کشت ویروسی</li>
+                        <li><strong>ایمنی و واکسن:</strong> واکسن‌های ضعیف‌شده/غیرفعال، عوارض</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">PCR</span>
+                    <span class="chip">IgM vs IgG</span>
+                    <span class="chip">آنفلوآنزا</span>
+                    <span class="chip">هپاتیت B</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> جدول «ویروس ← نوع ژنوم ← انتقال ← بیماری ← آزمایش تشخیصی ← واکسن/درمان» همه چیز را یک‌جا جمع می‌کند.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۸. آناتومی ===== -->
+        <div class="accordion-item" id="anatomy">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>💀 آناتومی (Anatomy)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>ساختار بدن؛ استخوان‌ها، عضلات، اعصاب و احشاء. درسی <strong>فضایی</strong> که فقط با دیدن و تصور سه‌بعدی یاد گرفته می‌شود.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>استخوان‌ها و مفاصل:</strong> اسکلت، مفاصل، انواع حرکت</li>
+                        <li><strong>سیستم عصبی محیطی:</strong> پlexus‌ها، عصب‌های بزرگ، درگیری‌ها</li>
+                        <li><strong>عضلات:</strong> گروه‌های عضلانی، عملکرد، عصب‌دهی</li>
+                        <li><strong>قفسه سینه و قلب:</strong> فضاهای مدیاستین، عروق بزرگ</li>
+                        <li><strong>شکم:</strong> حفرات، پریتون، موقعیت احشاء، مراکز درد</li>
+                        <li><strong>سر و گردن:</strong> حفرات جمجمه، سینوس‌ها، گلو</li>
+                        <li><strong>کاربرد بالینی:</strong> تصویربرداری، تشریح بیماری، بی‌حسی</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">plexus brachialis</span>
+                    <span class="chip">مثلث فمورال</span>
+                    <span class="chip">مدیاستین</span>
+                    <span class="chip">عصب‌دهی</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> از مدل سه‌بعدی یا تصاویر رنگی استفاده کن و هر ساختار را «کجا، چه شکلی، چه عصبی دارد، در بیماری چه اتفاقی می‌افتد» یاد بگیر.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۹. بافت‌شناسی ===== -->
+        <div class="accordion-item" id="histology">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>🔬 بافت‌شناسی (Histology)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>میکروسکوپی بافت‌ها؛ شناسایی سلول‌ها و بافت‌ها زیر میکروسکوپ و ارتباط ساختار با عملکرد. پل میان آناتومی و پاتولوژی.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>چهار بافت پایه:</strong> اپیتلیال، همبند، عضلانی، عصبی</li>
+                        <li><strong>اپیتلیال:</strong> انواع، غدد، اپیتلیال‌های تخصصی</li>
+                        <li><strong>بافت همبند:</strong> تراکمی، الیاف کلاژن/الاستیک، استخوان و غضروف</li>
+                        <li><strong>بافت عضلانی:</strong> ایسکلت، قلب، صاف — تفاوت‌های میکروسکوپی</li>
+                        <li><strong>بافت عصبی:</strong> نورون، گلیا، بافت عصبی محیطی</li>
+                        <li><strong>ارگان‌ها:</strong> مخاطی، کلیه، کبد، طحال و غده‌ها</li>
+                        <li><strong>روش‌ها:</strong> رنگ‌آمیزی H&E، هیستوشیمی، میکروسکوپ الکترونی</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">H&E</span>
+                    <span class="chip">اپیتلیال</span>
+                    <span class="chip">لایه بازل</span>
+                    <span class="chip">سینوس مویرگی</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> اسلایدها را خودت زیر میکروسکوپ ببین و ساختار را با نام و عملکردش زوج کن؛ حفظ کردن عکس‌های کتاب به‌تنهایی جواب نمی‌دهد.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۱۰. جنین‌شناسی ===== -->
+        <div class="accordion-item" id="embryology">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>👶 جنین‌شناسی (Embryology)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>شکل‌گیری جنین از لقاح تا تولد؛ زمان‌بندی رویدادها و علت بیماری‌های مادرزادی. درسی که با «جدول زمانی» بسیار ساده می‌شود.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>پیش از لقاح:</strong> گامت‌زایی، لقاح، تقسیم‌های اولیه</li>
+                        <li><strong>لانه‌گزینی و جفت:</strong> هورمون‌های بارداری، تغذیه جنین</li>
+                        <li><strong>هفته ۳ تا ۸:</strong> لایه‌های زایا، تشکیل اندام‌ها (سوماتیک)</li>
+                        <li><strong>جنین‌شناسی سر و گردن:</strong> کمان‌های آبششی، صورت و لب</li>
+                        <li><strong>دستگاه عصبی:</strong> لوله عصبی، مغز و نخاع</li>
+                        <li><strong>بیماری‌های مادرزادی:</strong> عوامل تراتوژن، عفونت‌های TORCH، ناهنجاری‌های شایع</li>
+                        <li><strong>جنسیت:</strong> کاریوتیپ، تعیین جنسیت، اختلالات</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">لایه‌های زایا</span>
+                    <span class="chip"> TORCH</span>
+                    <span class="chip">لوله عصبی</span>
+                    <span class="chip">تراتوژن</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> یک خط زمانی از هفته ۱ تا تولد بکش و روی هر هفته مهم‌ترین رویداد و شایع‌ترین ناهنجاری را بنویس؛ نیمی از سوال‌ها از همین جدول درمی‌آید.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۱۱. اصول خدمات سلامت ===== -->
+        <div class="accordion-item" id="health-services">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>🏥 اصول خدمات سلامت (Health Services)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>آشنایی با <strong>سیستم سلامت</strong>، بهداشت عمومی و سازمان‌دهی خدمات درمانی؛ از بهداشت محیط تا اخلاق حرفه‌ای.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>سلامت عمومی:</strong> تعریف سلامت، شاخص‌های سلامت جمعیت</li>
+                        <li><strong>پیشگیری:</strong> سطوح اول، دوم و سوم</li>
+                        <li><strong>بهداشت محیط:</strong> آب، فاضلاب، مواد غذایی، هوای پاک</li>
+                        <li><strong>سیستم سلامت ایران:</strong> شبکه بهداشت، بیمارستان‌ها، بیمه</li>
+                        <li><strong>برنامه‌های سلامت:</strong> واکسیناسیون، غربالگری، تغذیه جمعیتی</li>
+                        <li><strong>اخلاق پزشکی:</strong> رازداری، رضایت آگاهانه، مسئولیت حرفه‌ای</li>
+                        <li><strong>ارزیابی فناوری سلامت:</strong> کارآمدی و هزینه-فایده</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">پیشگیری سه‌گانه</span>
+                    <span class="chip">شبکه بهداشت</span>
+                    <span class="chip">رضایت آگاهانه</span>
+                    <span class="chip">شاخص سلامت</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> مفاهیم این درس را با مثال‌های واقعی ایران (واکسیناسیون سراسری، بیمه سلامت، خانه‌های بهداشت) گره بزن؛ یادگیری ماندگار می‌شود.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۱۲. اپیدمیولوژی ===== -->
+        <div class="accordion-item" id="epidemiology">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>📊 اپیدمیولوژی (Epidemiology)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>توزیع و عوامل بیماری در جمعیت؛ ستون فقرات پژوهش پزشکی و درک درست از آمار مطالعات. درسی کلیدی برای خواندن مقالات.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>شاخص‌ها:</strong> بروز، شیوع، مرگ‌ومیر، نسبت شانس</li>
+                        <li><strong>انواع مطالعه:</strong> کوهورت، مورد-شاهد، برشی، سری‌های زمانی</li>
+                        <li><strong>ارزیابی ارتباط:</strong> RR، OR، NNT، پارامترهای تشخیصی (حساسیت، ویژگی)</li>
+                        <li><strong>تعصب (Bias) و اختلال:</strong> انواع خطا و کنترل آنها</li>
+                        <li><strong>بیماری‌های همه‌گیر:</strong> تعریف، زنجیره انتقال، پاندمی</li>
+                        <li><strong>کنترل عفونت:</strong> قرنطینه، گزارش بیماری‌های واگیردار</li>
+                        <li><strong>آمار پایه:</strong> میانگین، انحراف معیار، بازه اطمینان، p-value</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">OR / RR</span>
+                    <span class="chip">حساسیت و ویژگی</span>
+                    <span class="chip">کوهورت</span>
+                    <span class="chip">NNT</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> تفاوت «کوهورت» و «مورد-شاهد» را با یک مثال واقعی یاد بگیر؛ اکثر سوال‌های آماری این درس از همین مقایسه‌هاست.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۱۳. ایمونولوژی ===== -->
+        <div class="accordion-item" id="immunology">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>🛡️ ایمونولوژی (Immunology)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>سیستم دفاعی بدن؛ ایمنی ذاتی و اکتسابی، آنتی‌بادی‌ها، واکسن و اختلالات ایمنی. پایهٔ عفونت‌شناسی، آلرژی و انکولوژی.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>ایمنی ذاتی:</strong> موانع، فاگوسیتوز، مکمل، التهاب</li>
+                        <li><strong>ایمنی اکتسابی:</strong> لنفوسیت‌های T و B، ارائه آنتی‌ژن، حافظه ایمنی</li>
+                        <li><strong>آنتی‌بادی‌ها:</strong> IgG، IgM، IgA، IgE، IgD و عملکرد هر کدام</li>
+                        <li><strong>سیستم مکمل:</strong> مسیرهای کلاسیک، آلترناتیو و لکتینی</li>
+                        <li><strong>سازگاری بافتی (HLA):</strong> پیوند عضو و بیماری‌های وابسته</li>
+                        <li><strong>ایمنی‌زایی:</strong> واکسن‌های فعال/غیرفعال، آدjuvant</li>
+                        <li><strong>اختلالات:</strong> حساسیت‌های (I-IV)، بیماری‌های خودایمنی، نقص ایمنی</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">IgE و حساسیت</span>
+                    <span class="chip">CD4/CD8</span>
+                    <span class="chip">مکمل</span>
+                    <span class="chip">HLA</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> سیستم ایمنی را مثل یک «ارتش» یاد بگیر: دیواره‌ها (ذاتی) ← گشت‌ها (ماکروفاژ) ← نیروهای تخصصی (T/B) ← حافظه (تکرار حمله). سوال‌های بالینی معمولاً از Igها و نوع حساسیت می‌آید.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۱۴. زبان انگلیسی ===== -->
+        <div class="accordion-item" id="english">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>📖 زبان انگلیسی پزشکی (Medical English)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>واژگان و مهارت خواندن متون پزشکی؛ چون رفرنس‌ها، مقالات و امتحانات بین‌المللی همه انگلیسی‌اند.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>ریشه‌شناسی واژه:</strong> پیشوندها و پسوندههای لاتین/یونانی (cardio-, hepat-, -itis, -osis)</li>
+                        <li><strong>واژگان بالینی:</strong> شرح‌حال، علائم، معاینه، تشخیص، درمان</li>
+                        <li><strong>خواندن متن:</strong> درک مقاله، چکیده، نتیجه‌گیری</li>
+                        <li><strong>ترجمه:</strong> ترجمه جملات و بخش‌های رفرنس</li>
+                        <li><strong>اصطلاحات بخش:</strong> دستور پزشک، گزارش بیمارستان، مشاوره</li>
+                        <li><strong>نوشتن:</strong> گزارش کیس، ایمیل حرفه‌ای، CV پزشکی</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">prefix</span>
+                    <span class="chip">-itis</span>
+                    <span class="chip">chief complaint</span>
+                    <span class="chip">abstract</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> به‌جای حفظ لیست واژه، ریشه‌ها را یاد بگیر؛ با دانستن ۵۰ پیشوند و پسوند رایج، صدها کلمه پزشکی را حدس می‌زنی.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۱۵. ژنتیک پزشکی ===== -->
+        <div class="accordion-item" id="genetics">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>🧬 ژنتیک پزشکی (Medical Genetics)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>نقش ژن‌ها در سلامت و بیماری؛ از وراثت کلاسیک تا ژنومیک و پزشکی دقیق. درسی با محاسبات ساده اما پرتکرار.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>اصول مندلی:</strong> وراثت اتوزومی غالب/مغلوب، وابسته به X</li>
+                        <li><strong>شجره‌نامه:</strong> خواندن و تحلیل موارد خانوادگی</li>
+                        <li><strong>نوع‌های موتاسیون:</strong> نقطه‌ای، حذف، اضافه، جابه‌جایی</li>
+                        <li><strong>کروموزوم‌ها:</strong> کاریوتیپ، تریزومی ۲۱، ناهنجاری‌های ساختاری</li>
+                        <li><strong>بیماری‌های شایع ژنتیکی:</strong> تالاسمی، فیبروز کیستیک، سلول داسی‌شکل، PKU</li>
+                        <li><strong>ژنومیک:</strong> SNP، توالی‌یابی، فارماکوژنومیک</li>
+                        <li><strong>تومورها:</strong> انکوژن‌ها، ژن‌های مهارکننده تومور، سرطان ارثی</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">شجره‌نامه</span>
+                    <span class="chip">X-linked</span>
+                    <span class="chip">تالاسمی</span>
+                    <span class="chip">کاریوتیپ</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> محاسبات وراثت را با «احتمال × احتمال» پیش ببر و شجره‌نامه را با نشانه‌گذاری موتاسیوم تمرین کن؛ این دو بخش بیشترین سهم را در امتحان دارند.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۱۶. پاتولوژی ===== -->
+        <div class="accordion-item" id="pathology">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>🔬 پاتولوژی (Pathology)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>علم <strong>بیماری</strong>؛ آسیب‌شناسی عمومی (التهاب، تومور، مرگ سلولی) و تخصصی سیستم‌ها. پل میان علوم پایه و بالینی.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>آسیب‌شناسی عمومی:</strong> مرگ سلولی (نکروز/آپوپتوز)، التهاب، ترمیم، اختلال خونرسانی</li>
+                        <li><strong>نئوپلاسم‌ها:</strong> خوش‌خیم/بدخیم، گرید، متاستاز، عوامل خطر</li>
+                        <li><strong>سیستم قلب و عروق:</strong> آترواسکلروز، التهاب دریچه، نارسایی</li>
+                        <li><strong>ریه:</strong> پنومونی، COPD، تومور، آمبولی</li>
+                        <li><strong>کلیه:</strong> نفروز و نفروتیک، گلومرولونفریت، نارسایی</li>
+                        <li><strong>کبد و گوارش:</strong> هپاتیت، سیروز، تومورها</li>
+                        <li><strong>خون و لنف:</strong> کم‌خونی، سرطان‌های خون، لنفوم</li>
+                        <li><strong>سیستم عصبی و غدد:</strong> سکته، تومور، دیابت</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">نکروز vs آپوپتوز</span>
+                    <span class="chip">التهاب مزمن</span>
+                    <span class="chip">متاستاز</span>
+                    <span class="chip">گرید تومور</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> پاتولوژی را با فیزیوپاتولوژی جلو ببر: «مشکل چیست → چرا ایجاد شد → چه شکل بافتی دارد → چه علامتی می‌دهد». عکس‌های ماکروسکوپی و میکروسکوپی را حتماً ببین.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۱۷. اصول تغذیه ===== -->
+        <div class="accordion-item" id="nutrition">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>🥗 اصول تغذیه (Nutrition)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>نیازهای تغذیه‌ای بدن، کمبودها و تغذیه در بیماری؛ درسی کاربردی برای مشاوره به بیماران و پیشگیری از بیماری‌های مزمن.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>ماکرونوترینت‌ها:</strong> کربوهیدرات، پروتئین، چربی — نقش و نیاز روزانه</li>
+                        <li><strong>میکرونوترینت‌ها:</strong> ویتامین‌ها و مواد معدنی، علائم کمبود</li>
+                        <li><strong>انرژی:</strong> متابولیسم پایه، نیاز کالری، BMI</li>
+                        <li><strong>تغذیه جمعیتی:</strong> هرم غذایی، برچسب تغذیه‌ای، غنی‌سازی</li>
+                        <li><strong>سوءتغذیه:</strong> کواشیورکور، ماراسموس، چاقی</li>
+                        <li><strong>تغذیه بالینی:</strong> تغذیه بیمارستانی، رژیم‌های ویژه، TPN</li>
+                        <li><strong>نیازهای ویژه:</strong> بارداری، شیردهی، کودکان، سالمندان</li>
+                        <li><strong>بیماری‌های مرتبط:</strong> دیابت، فشار خون، کلسترول</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">BMI</span>
+                    <span class="chip">کمبود آهن</span>
+                    <span class="chip">هرم غذایی</span>
+                    <span class="chip">TPN</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> جدول «ویتامین ← نقش ← کمبود ← علائم بالینی» را حتماً مرور کن؛ سوال‌های کمبود ویتامین در امتحانات پرتکرار است.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۱۸. انقلاب و اندیشه اسلامی ===== -->
+        <div class="accordion-item" id="islamic-thought">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>📚 انقلاب و اندیشه اسلامی</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>آشنایی با مبانی فکری و سیاسی انقلاب اسلامی، جایگاه دین در حکمرانی و مسائل روز کشور با تکیه بر منابع معتبر.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>پیشینه انقلاب:</strong> جنبش مشروطه، نهضت ملی، نقش روحانیت</li>
+                        <li><strong>مبانی فکری:</strong> ولایت فقیه، مردم‌سالاری دینی، استقلال</li>
+                        <li><strong>دفاع مقدس:</strong> دستاوردها و درس‌های دفاعی</li>
+                        <li><strong>انقلاب‌های منطقه:</strong> بیداری اسلامی و مقایسه رویکردها</li>
+                        <li><strong>مسائل روز:</strong> بیانیه گام دوم، اقتصاد مقاومتی، فضای مجازی</li>
+                        <li><strong>اخلاق حرفه‌ای پزشکی در اسلام:</strong> حرمت جان، صدقه، مسئولیت اجتماعی</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">ولایت فقیه</span>
+                    <span class="chip">گام دوم</span>
+                    <span class="chip">استقلال</span>
+                    <span class="chip">اخلاق پزشکی</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> مطالب را با استدلال و نقل‌قول مرتب کن، نه حفظ محض؛ در امتحان، توانایی تحلیل و بیان ساختاریافته اهمیت بیشتری دارد.</div>
+            </div>
+        </div>
+
+        <!-- ===== ۱۹. فیزیک پزشکی ===== -->
+        <div class="accordion-item" id="medical-physics">
+            <button class="accordion-header" type="button" aria-expanded="false">
+                <span>⚛️ فیزیک پزشکی (Medical Physics)</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p>کاربرد فیزیک در پزشکی؛ از جریان خون و امواج تا تصویربرداری (سونو، CT، MRI) و پرتوها. پایهٔ درک دستگاه‌های بیمارستانی.</p>
+                <div class="info-box">
+                    <h4>سرفصل‌های کلیدی</h4>
+                    <ul>
+                        <li><strong>مکانیک سیالات:</strong> فشار، جریان، ویسکوزیته، قانون پواسیول</li>
+                        <li><strong>ترمودینامیک:</strong> گرما، انتقال انرژی، دستگاه‌های تنفسی</li>
+                        <li><strong>امواج و صوت:</strong> بازتاب، سونوگرافی و Doppler</li>
+                        <li><strong>نور و لیزر:</strong> انکسار، فیبرنوری، کاربرد جراحی</li>
+                        <li><strong>پرتوها:</strong> اشعه X، CT، رادیواکتیویته، دوزیمتری</li>
+                        <li><strong>رزونانس مغناطیسی:</strong> اصول MRI و ایمنی</li>
+                        <li><strong>بیوالکتریک:</strong> ECG، EEG، امپدانس بدن</li>
+                    </ul>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">قانون بواسیل</span>
+                    <span class="chip">سونوگرافی</span>
+                    <span class="chip">دوز اشعه</span>
+                    <span class="chip">ECG</span>
+                </div>
+                <div class="tip-box"><strong>نکته مطالعه:</strong> هر مفهوم فیزیک را با یک «کاربرد بالینی» گره بزن؛ وقتی بدانی سونوگرافی از کجا می‌آید و MRI چه خطری دارد، یادگیری عمیق می‌شود.</div>
+            </div>
+        </div>
+
+        <!-- منابع کلی -->
+        <div class="info-box" style="margin-top: 26px;">
+            <h4>📚 منابع پیشنهادی کلی علوم پایه</h4>
+            <p>فیزیولوژی: گایتون • بیوشیمی: لنینجر • آناتومی: نتters/گرانت • بافت‌شناسی: جونز • میکروب‌شناسی: جاوید • ایمونولوژی: جانوی • ژنتیک: پیرس • پاتولوژی: رابینز • تغذیه: شرایبر</p>
+        </div>
+
+        <div class="tip-box">
+            <strong>قدم بعدی:</strong> بعد از علوم پایه، سراغ <a href="pathophysiology.html" style="color: var(--accent-teal);">فیزیوپاتولوژی</a> برو تا مکانیسم بیماری‌ها را روی همین پایه‌ها بسازی.
+        </div>
     </main>
-    <footer>Educate • Research • Inspire &copy; 2026 - شارکوت</footer>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <strong>شارکوت | Charcot</strong>
+                </div>
+                <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>بخش‌های آموزشی</h4>
+                <ul class="footer-links">
+                    <li><a href="basic-sciences.html">علوم پایه</a></li>
+                    <li><a href="pathophysiology.html">فیزیوپاتولوژی</a></li>
+                    <li><a href="externship.html">استاجری</a></li>
+                    <li><a href="pre-internship.html">پره انترنی</a></li>
+                    <li><a href="internship.html">اینترنی</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>دسترسی سریع</h4>
+                <ul class="footer-links">
+                    <li><a href="clinical-cases.html">کیس‌های بالینی</a></li>
+                    <li><a href="about-us.html">درباره ما</a></li>
+                    <li><a href="index.html#auth">ورود و ثبت‌نام</a></li>
+                    <li><a href="index.html#sections">بخش‌های سایت</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>ورود با موبایل</h4>
+                <div class="footer-qr">
+                    <div class="qr-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                    </div>
+                    <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="fb-tag">Educate • Research • Inspire</span>
+            <span>&copy; 2026 شارکوت (Charcot) — همه حقوق محفوظ است.</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -4,27 +4,249 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>فیزیوپاتولوژی | شارکوت</title>
-    <style>
-        :root { --bg-main: #07161B; --bg-card: #0E252D; --accent-teal: #2DD4BF; --text-main: #F0FDF4; --text-muted: #94A3B8; --border-color: #1E3A4C; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Tahoma, Arial, sans-serif; }
-        body { background-color: var(--bg-main); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 18px 5%; border-bottom: 1px solid var(--border-color); background-color: rgba(7, 22, 27, 0.95); }
-        .back-btn { color: var(--accent-teal); text-decoration: none; font-weight: bold; font-size: 0.9rem; border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 8px; }
-        .content-container { max-width: 800px; margin: 80px auto; padding: 40px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; text-align: center; width: 90%; }
-        h2 { color: var(--accent-teal); margin-bottom: 15px; font-size: 1.8rem; }
-        p { color: var(--text-muted); font-size: 1.1rem; }
-        footer { text-align: center; padding: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem; }
-    </style>
+    <meta name="description" content="مکانیسم بیماری‌ها به تفکیک اندام؛ فیزیوپاتولوژی قلب، ریه، کلیه، خون، ایمنی و اختلالات اسید و باز در پلتفرم شارکوت.">
+    <meta name="theme-color" content="#07161B">
+    <link rel="icon" href="10990.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            var savedTheme = localStorage.getItem('charcot-theme');
+            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                savedTheme = 'light';
+            }
+            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+        } catch (e) { /* ignore */ }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>شارکوت | فیزیوپاتولوژی</h1>
-        <a href="index.html" class="back-btn">← بازگشت به صفحه اصلی</a>
+
+    <header class="site-header">
+        <a href="index.html" class="logo-area">
+            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
+            <div class="logo-text">
+                <h1>شارکوت | Charcot</h1>
+                <span>فیزیوپاتولوژی</span>
+            </div>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="منوی اصلی">
+            <a href="basic-sciences.html">علوم پایه</a>
+            <a href="pathophysiology.html">فیزیوپاتولوژی</a>
+            <a href="externship.html">استاجری</a>
+            <a href="pre-internship.html">پره انترنی</a>
+            <a href="internship.html">اینترنی</a>
+            <a href="clinical-cases.html">کیس‌های بالینی</a>
+            <a href="about-us.html">درباره ما</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn" id="searchBtn" type="button" aria-label="جستجو" title="جستجو (Ctrl+K)">🔍</button>
+            <button class="icon-btn" id="themeBtn" type="button" aria-label="تغییر تم" title="حالت روشن">☀️</button>
+            <button class="icon-btn hamburger" id="menuBtn" type="button" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mainNav">☰</button>
+        </div>
     </header>
+
+    <nav class="crumbs" aria-label="مسیر صفحه">
+        <a href="index.html">صفحه اصلی</a>
+        <span class="sep">›</span>
+        <strong>فیزیوپاتولوژی</strong>
+    </nav>
+
     <main class="content-container">
-        <h2>🔬 فیزیوپاتولوژی</h2>
-        <p>این بخش به زودی آپدیت می‌شود.</p>
+        <h2 class="page-title">🔬 فیزیوپاتولوژی</h2>
+        <p class="page-desc">فیزیوپاتولوژی پل میان علوم پایه و طب بالینی است؛ جایی که می‌فهمیم <strong>چرا</strong> یک بیماری ایجاد می‌شود، چه علائمی دارد و چرا بعضی درمان‌ها مؤثرند. در این بخش مکانیسم بیماری‌ها را به تفکیک اندام مرور می‌کنیم.</p>
+
+        <div class="tip-box">
+            <strong>نکته طلایی:</strong> فیزیوپاتولوژی را حفظ نکن! برای هر بیماری فقط سه پرسش را جواب بده: (۱) عامل ایجادکننده چیست؟ (۲) مکانیسم جبرانی بدن چیست و کجا شکست می‌خورد؟ (۳) هر علامت از کجا می‌آید؟
+        </div>
+
+        <h3 class="section-title">مبانی و اصول کلی</h3>
+        <div class="grid-2">
+            <div class="info-box">
+                <h4>🧬 آسیب‌شناسی سلولی</h4>
+                <ul>
+                    <li>آپوپتوز در برابر نکروز</li>
+                    <li>استرس اکسیداتیو و آسیب DNA</li>
+                    <li>تغییرات دگرانوله‌شدن و تجمع پروتئین</li>
+                    <li>هیپوکسی و آسیب ایسکمیک-رپرفیوژن</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🔥 پاسخ التهابی</h4>
+                <ul>
+                    <li>التهاب حاد در برابر مزمن</li>
+                    <li>سیتوکین‌ها، COX و مسیرهای پروستاگلاندین</li>
+                    <li>گرانولوسیت‌ها، ماکروفاژها و التهاب مزمن</li>
+                    <li>التهاب سیستمیک و سندرم پاسخ التهابی سیستمیک (SIRS)</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🩸 شوک (Shock)</h4>
+                <ul>
+                    <li>شوک هیپوولمیک، کاردیوژنیک، سپتیک و نوروژنیک</li>
+                    <li>مراحل جبران فشار و شکست جبران</li>
+                    <li>اسید لاکتیک و اسیدوز متابولیک</li>
+                    <li>تشخیص زودهنگام و اقدامات نجات‌بخش</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>⚖️ اختلالات اسید و باز</h4>
+                <ul>
+                    <li>اسیدوز متابولیک و تنفسی، آلکالوز</li>
+                    <li>آنیون گپ و GAP متابولیک</li>
+                    <li>جبران تنفسی و کلیوی</li>
+                    <li>تفسیر ABG در ۴ قدم ساده</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="section-title">مکانیسم بیماری‌ها به تفکیک اندام</h3>
+        <div class="grid-2">
+            <div class="info-box">
+                <h4>🫀 قلب و عروق</h4>
+                <ul>
+                    <li>نارسایی قلبی سیستولیک و دیاستولیک</li>
+                    <li>بیماری‌های دریچه‌ای و مکانیسم جبرانی</li>
+                    <li>آریتمی‌ها و اختلالات هدایتی</li>
+                    <li>سندرم حاد کرونری و آترواسکلروز</li>
+                    <li>پرفیوژن فشاری و پیامدهای ایسکمی</li>
+                </ul>
+                <div class="chip-row">
+                    <span class="chip">preload</span>
+                    <span class="chip">afterload</span>
+                    <span class="chip">EF</span>
+                    <span class="chip">remodeling</span>
+                </div>
+            </div>
+            <div class="info-box">
+                <h4>🫁 ریه</h4>
+                <ul>
+                    <li>مکانیسم تنفسی و قوانین بویل</li>
+                    <li>COPD، آسم و بیماری انسدادی مزمن</li>
+                    <li>ARDS و آسیب حاد ریوی</li>
+                    <li>تجمع مایع (درد قلبی و غیرقلبی)</li>
+                    <li>آمبولی ریوی و فشار شریانی ریوی</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🫘 کلیه</h4>
+                <ul>
+                    <li>GFR و سازگاری کلیوی</li>
+                    <li>نارسایی حاد و مزمن کلیه</li>
+                    <li>سندرم نفروتیک و نفروتیک</li>
+                    <li>الکترولیت‌ها: سدیم، پتاسیم، کلسیم</li>
+                    <li>اسیدوز توبولار کلیوی</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🩸 خون و ایمنی</h4>
+                <ul>
+                    <li>کم‌خونی‌ها و طبقه‌بندی آنها</li>
+                    <li>اختلالات انعقادی و ترومبوسیتوپنی</li>
+                    <li>لنفوم، میلوم و سرطان‌های خون</li>
+                    <li>کلاس‌های Ig و نقص ایمنی</li>
+                    <li>آلرژی، آنافیلاکسی و خودایمنی</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🧠 سیستم عصبی</h4>
+                <ul>
+                    <li>سکته مغزی ایسکمیک و هموراژیک</li>
+                    <li>صرع و مکانیسم تشنج</li>
+                    <li>بیماری پارکینسون و آلزایمر</li>
+                    <li>درد: مسیرهای صعودی و نزولی</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🍯 غدد و متابولیسم</h4>
+                <ul>
+                    <li>دیابت نوع ۱ و ۲ و انسولین</li>
+                    <li>پرکاری و کم‌کاری تیروئید</li>
+                    <li>کورتیزول و آدرنال</li>
+                    <li>چاقی و سندرم متابولیک</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🍖 گوارش و کبد</h4>
+                <ul>
+                    <li>سیروز کبدی و پرفیوژن پورتال</li>
+                    <li>زخم معده و هلیکوباکتر پیلوری</li>
+                    <li>پانکراتیت حاد و مزمن</li>
+                    <li>التهاب روده: کرون و کولیت اولسراتیو</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>🦴 استخوان و مفاصل</h4>
+                <ul>
+                    <li>استئوپوروز و بازسازی استخوان</li>
+                    <li>آرتریت روماتوئید در برابر استئوآرتریت</li>
+                    <li>نقرس و متابولیسم اوریک اسید</li>
+                    <li>شکستگی و ترمیم بافتی</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="section-title">روش مطالعه پیشنهادی</h3>
+        <ol class="steps">
+            <li><strong>شروع از فیزیولوژی:</strong> قبل از هر بیماری، یک بار عملکرد طبیعی آن اندام را مرور کن تا «اختلال» معنا پیدا کند.</li>
+            <li><strong>یک خط‌گذاری روی جدول:</strong> برای هر بیماری یک جدول سه‌ستونی بکش: عامل ایجاد → مکانیسم → علامت بالینی.</li>
+            <li><strong>اتصال به کیس بالینی:</strong> مکانیسم‌ها را با <a href="clinical-cases.html" style="color: var(--accent-teal);">کیس‌های بالینی</a> شارکوت تطبیق بده؛ یادگیری عمیق‌تر می‌شود.</li>
+            <li><strong>مرور فاصله‌دار:</strong> چند روز بعد دوباره مرور کن؛ فیزیوپاتولوژی بدون مرور تکراری خیلی زود فراموش می‌شود.</li>
+        </ol>
+
+        <div class="tip-box">
+            <strong>منابع پیشنهادی:</strong> گایتون (مکانیسم‌های بیماری)، پاتوفیزیولوژی راجرز، هریسون (بخش مکانیسم بیماری‌ها) و اطلس‌های تصویری آسیب‌شناسی.
+        </div>
     </main>
-    <footer>Educate • Research • Inspire &copy; 2026 - شارکوت</footer>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <strong>شارکوت | Charcot</strong>
+                </div>
+                <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>بخش‌های آموزشی</h4>
+                <ul class="footer-links">
+                    <li><a href="basic-sciences.html">علوم پایه</a></li>
+                    <li><a href="pathophysiology.html">فیزیوپاتولوژی</a></li>
+                    <li><a href="externship.html">استاجری</a></li>
+                    <li><a href="pre-internship.html">پره انترنی</a></li>
+                    <li><a href="internship.html">اینترنی</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>دسترسی سریع</h4>
+                <ul class="footer-links">
+                    <li><a href="clinical-cases.html">کیس‌های بالینی</a></li>
+                    <li><a href="about-us.html">درباره ما</a></li>
+                    <li><a href="index.html#auth">ورود و ثبت‌نام</a></li>
+                    <li><a href="index.html#sections">بخش‌های سایت</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>ورود با موبایل</h4>
+                <div class="footer-qr">
+                    <div class="qr-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                    </div>
+                    <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="fb-tag">Educate • Research • Inspire</span>
+            <span>&copy; 2026 شارکوت (Charcot) — همه حقوق محفوظ است.</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -4,224 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>کیس‌های بالینی | شارکوت - Charcot</title>
-    <style>
-        :root {
-            --bg-main: #07161B;
-            --bg-card: #0E252D;
-            --bg-card-hover: #14333E;
-            --accent-primary: #0EA5E9;
-            --accent-teal: #2DD4BF;
-            --text-main: #F0FDF4;
-            --text-muted: #94A3B8;
-            --border-color: #1E3A4C;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Tahoma, Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 5%;
-            border-bottom: 1px solid var(--border-color);
-            background-color: rgba(7, 22, 27, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--text-main);
-        }
-
-        .logo-text h1 {
-            font-size: 1.2rem;
-            font-weight: 800;
-        }
-
-        .logo-text span {
-            font-size: 0.75rem;
-            color: var(--accent-teal);
-            display: block;
-        }
-
-        .back-btn {
-            color: var(--accent-teal);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.88rem;
-            border: 1px solid var(--border-color);
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-
-        .back-btn:hover {
-            background-color: rgba(45, 212, 191, 0.1);
-            border-color: var(--accent-teal);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-            width: 100%;
-            flex: 1;
-        }
-
-        .page-title {
-            color: var(--accent-teal);
-            margin-bottom: 10px;
-            font-size: 1.8rem;
-            font-weight: 800;
-        }
-
-        .page-desc {
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            font-size: 0.98rem;
-            line-height: 1.6;
-        }
-
-        .cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .case-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 22px;
-            transition: transform 0.3s, border-color 0.3s, background-color 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .case-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-teal);
-            background-color: var(--bg-card-hover);
-        }
-
-        .case-tag {
-            font-size: 0.75rem;
-            padding: 3px 8px;
-            border-radius: 6px;
-            background-color: rgba(45, 212, 191, 0.15);
-            color: var(--accent-teal);
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 12px;
-        }
-
-        .case-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 10px;
-            color: var(--text-main);
-        }
-
-        .case-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .case-link {
-            color: var(--accent-primary);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.88rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: color 0.2s;
-        }
-
-        .case-link:hover {
-            color: var(--accent-teal);
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            background-color: rgba(7, 22, 27, 0.6);
-            margin-top: auto;
-        }
-    </style>
+    <meta name="description" content="بانک کیس‌های بالینی با سناریوهای واقعی بیمارستانی، افتراق تشخیصی، تصویربرداری و طرح درمان استاندارد.">
+    <meta name="theme-color" content="#07161B">
+    <link rel="icon" href="10990.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            var savedTheme = localStorage.getItem('charcot-theme');
+            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                savedTheme = 'light';
+            }
+            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+        } catch (e) { /* ignore */ }
+    </script>
 </head>
 <body>
 
-    <header>
+    <header class="site-header">
         <a href="index.html" class="logo-area">
+            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
             <div class="logo-text">
                 <h1>شارکوت | Charcot</h1>
                 <span>کیس‌های بالینی</span>
             </div>
         </a>
-        <a href="index.html" class="back-btn">← بازگشت به صفحه اصلی</a>
+
+        <nav class="main-nav" id="mainNav" aria-label="منوی اصلی">
+            <a href="basic-sciences.html">علوم پایه</a>
+            <a href="pathophysiology.html">فیزیوپاتولوژی</a>
+            <a href="externship.html">استاجری</a>
+            <a href="pre-internship.html">پره انترنی</a>
+            <a href="internship.html">اینترنی</a>
+            <a href="clinical-cases.html">کیس‌های بالینی</a>
+            <a href="about-us.html">درباره ما</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn" id="searchBtn" type="button" aria-label="جستجو" title="جستجو (Ctrl+K)">🔍</button>
+            <button class="icon-btn" id="themeBtn" type="button" aria-label="تغییر تم" title="حالت روشن">☀️</button>
+            <button class="icon-btn hamburger" id="menuBtn" type="button" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mainNav">☰</button>
+        </div>
     </header>
 
-    <main class="container">
+    <nav class="crumbs" aria-label="مسیر صفحه">
+        <a href="index.html">صفحه اصلی</a>
+        <span class="sep">›</span>
+        <strong>کیس‌های بالینی</strong>
+    </nav>
+
+    <main class="content-container">
         <h2 class="page-title">🧠 بانک کیس‌های بالینی</h2>
-        <p class="page-desc">بررسی سناریوهای واقعی بیمارستانی، شرح‌حال‌گیری، افتراق‌های تشخیصی (Differential Diagnosis)، تصویربرداری‌های کلیدی و طرح درمان استاندارد بر اساس گایدلاین‌ها.</p>
+        <p class="page-desc">بررسی سناریوهای واقعی بیمارستانی، شرح‌حال‌گیری، افتراق‌های تشخیصی (Differential Diagnosis)، تصویربرداری‌های کلیدی و طرح درمان استاندارد بر اساس گایدلاین‌ها. روی هر کیس بزن و اول خودت حدس بزن، بعد پاسخ تشریحی را بخوان.</p>
 
         <div class="cases-grid">
-            <div class="case-card">
+            <article class="case-card">
                 <div>
                     <span class="case-tag">مغز و اعصاب (Neurology)</span>
-                    <h3>کیس ۱: بیمار با فلز حاد اندام‌ها و افت هوشیاری</h3>
+                    <h3>کیس ۱: بیمار با فلج حاد اندام‌ها و افت هوشیاری</h3>
                     <p>بررسی سناریوی بالینی سکته مغزی حاد (Stroke)، ارزیابی زمان طلایی ترومبولیز و تحلیل تصاویر CT اسکن مغز.</p>
                 </div>
-                <a href="#" class="case-link">مشاهده سناریو و پاسخ تشریحی →</a>
-            </div>
+                <a href="case-stroke.html" class="case-link">مشاهده سناریو و پاسخ تشریحی ←</a>
+            </article>
 
-            <div class="case-card">
+            <article class="case-card">
                 <div>
                     <span class="case-tag">قلب و عروق (Cardiology)</span>
                     <h3>کیس ۲: درد قفسه سینه در بیمار ارجاعی به اورژانس</h3>
                     <p>افتراق سندرم حاد کرونری (ACS) از سایر دردهای قفسه سینه، تفسیر نوار قلب (ECG) و اقدامات اولیه در بخش CCU.</p>
                 </div>
-                <a href="#" class="case-link">مشاهده سناریو و پاسخ تشریحی →</a>
-            </div>
+                <a href="case-acs.html" class="case-link">مشاهده سناریو و پاسخ تشریحی ←</a>
+            </article>
 
-            <div class="case-card">
+            <article class="case-card">
                 <div>
                     <span class="case-tag">داخلی (Internal Medicine)</span>
                     <h3>کیس ۳: تب، لرز و افت فشار خون مقاوم به درمان</h3>
                     <p>مدیریت شوک سپتیک، رویکرد تشخیصی به منابع عفونت سیستمیک و اصول آنتی‌بیوتیک‌تراپی تجربی.</p>
                 </div>
-                <a href="#" class="case-link">مشاهده سناریو و پاسخ تشریحی →</a>
-            </div>
+                <a href="case-sepsis.html" class="case-link">مشاهده سناریو و پاسخ تشریحی ←</a>
+            </article>
+        </div>
+
+        <div class="tip-box" style="margin-top: 26px;">
+            <strong>چطور از کیس‌ها استفاده کنیم؟</strong> اول فقط شرح‌حال را بخوان و تشخیص خودت را بنویس، بعد معاینه و اقدامات را بررسی کن و در نهایت به پاسخ تشریحی نگاه کن. این روش «فعال»، یادگیری را چند برابر می‌کند.
         </div>
     </main>
 
     <footer>
-        Educate • Research • Inspire &copy; 2026 - شارکوت (Charcot)
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <strong>شارکوت | Charcot</strong>
+                </div>
+                <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>بخش‌های آموزشی</h4>
+                <ul class="footer-links">
+                    <li><a href="basic-sciences.html">علوم پایه</a></li>
+                    <li><a href="pathophysiology.html">فیزیوپاتولوژی</a></li>
+                    <li><a href="externship.html">استاجری</a></li>
+                    <li><a href="pre-internship.html">پره انترنی</a></li>
+                    <li><a href="internship.html">اینترنی</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>دسترسی سریع</h4>
+                <ul class="footer-links">
+                    <li><a href="clinical-cases.html">کیس‌های بالینی</a></li>
+                    <li><a href="about-us.html">درباره ما</a></li>
+                    <li><a href="index.html#auth">ورود و ثبت‌نام</a></li>
+                    <li><a href="index.html#sections">بخش‌های سایت</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>ورود با موبایل</h4>
+                <div class="footer-qr">
+                    <div class="qr-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                    </div>
+                    <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="fb-tag">Educate • Research • Inspire</span>
+            <span>&copy; 2026 شارکوت (Charcot) — همه حقوق محفوظ است.</span>
+        </div>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>

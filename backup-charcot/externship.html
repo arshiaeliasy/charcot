@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استاجری و کورس‌های بالینی | شارکوت</title>
+    <style>
+        :root { --bg-main: #07161B; --bg-card: #0E252D; --accent-primary: #0EA5E9; --accent-teal: #2DD4BF; --text-main: #F0FDF4; --text-muted: #94A3B8; --border-color: #1E3A4C; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Tahoma, Arial, sans-serif; }
+        body { background-color: var(--bg-main); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 18px 5%; border-bottom: 1px solid var(--border-color); background-color: rgba(7, 22, 27, 0.95); }
+        .back-btn { color: var(--accent-teal); text-decoration: none; font-weight: bold; font-size: 0.9rem; border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 8px; }
+        .content-container { max-width: 1000px; margin: 40px auto; padding: 0 20px; width: 100%; flex: 1; }
+        h2 { color: var(--accent-teal); margin-bottom: 10px; font-size: 1.8rem; }
+        p { color: var(--text-muted); margin-bottom: 25px; font-size: 0.98rem; }
+        .course-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+        .course-list li { background-color: var(--bg-card); padding: 14px 16px; border-radius: 10px; font-size: 0.92rem; border: 1px solid var(--border-color); display: flex; align-items: center; gap: 10px; }
+        .course-badge { font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+        .badge-major { background-color: rgba(14, 165, 233, 0.2); color: var(--accent-primary); }
+        .badge-minor { background-color: rgba(45, 212, 191, 0.2); color: var(--accent-teal); }
+        footer { text-align: center; padding: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>شارکوت | استاجری</h1>
+        <a href="index.html" class="back-btn">← بازگشت به صفحه اصلی</a>
+    </header>
+    <main class="content-container">
+        <h2>🏥 استاجری (کورس‌های بالینی)</h2>
+        <p>راهنمای جامع، گایدلاین‌های درمانی و نحوه شرح‌حال‌گیری در بخش‌های مختلف بیمارستانی دوران استاجری:</p>
+        <ul class="course-list">
+            <li><span class="course-badge badge-major">ماژور</span> 🩺 داخلی (Internal Medicine)</li>
+            <li><span class="course-badge badge-major">ماژور</span> 🔪 جراحی عمومی (General Surgery)</li>
+            <li><span class="course-badge badge-major">ماژور</span> 👶 کودکان (Pediatrics)</li>
+            <li><span class="course-badge badge-major">ماژور</span> 🤰 زنان و زایمان (Obstetrics & Gyn)</li>
+            <li><span class="course-badge badge-minor">مینور</span> 🧠 مغز و اعصاب (Neurology)</li>
+            <li><span class="course-badge badge-minor">مینور</span> 🫀 قلب و عروق (Cardiology)</li>
+            <li><span class="course-badge badge-minor">مینور</span> 🦠 بیماری‌های عفونی (Infectious Diseases)</li>
+            <li><span class="course-badge badge-minor">مینور</span> 🧠 روان‌پزشکی (Psychiatry)</li>
+            <li><span class="course-badge badge-minor">مینور</span> 🦴 ارتوپدی (Orthopedics)</li>
+            <li><span class="course-badge badge-minor">مینور</span> 👁️ چشم‌پزشکی (Ophthalmology)</li>
+            <li><span class="course-badge badge-minor">مینور</span> 👂 گوش و حلق و بینی (ENT)</li>
+            <li><span class="course-badge badge-minor">مینور</span> 🔬 پوست (Dermatology)</li>
+            <li><span class="course-badge badge-minor">مینور</span> 🩺 اورولوژی (Urology)</li>
+            <li><span class="course-badge badge-minor">مینور</span> 🚑 بیهوشی و طب اورژانس</li>
+        </ul>
+    </main>
+    <footer>Educate • Research • Inspire &copy; 2026 - شارکوت</footer>
+</body>
+</html>

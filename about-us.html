@@ -4,152 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>درباره ما | شارکوت - Charcot</title>
-    <style>
-        :root {
-            --bg-main: #07161B;
-            --bg-card: #0E252D;
-            --bg-card-hover: #14333E;
-            --accent-primary: #0EA5E9;
-            --accent-teal: #2DD4BF;
-            --text-main: #F0FDF4;
-            --text-muted: #94A3B8;
-            --border-color: #1E3A4C;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Tahoma, Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 5%;
-            border-bottom: 1px solid var(--border-color);
-            background-color: rgba(7, 22, 27, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--text-main);
-        }
-
-        .logo-text h1 {
-            font-size: 1.2rem;
-            font-weight: 800;
-        }
-
-        .logo-text span {
-            font-size: 0.75rem;
-            color: var(--accent-teal);
-            display: block;
-        }
-
-        .back-btn {
-            color: var(--accent-teal);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.88rem;
-            border: 1px solid var(--border-color);
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-
-        .back-btn:hover {
-            background-color: rgba(45, 212, 191, 0.1);
-            border-color: var(--accent-teal);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 0 20px;
-            width: 100%;
-            flex: 1;
-        }
-
-        .about-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 18px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-        }
-
-        .about-card h2 {
-            color: var(--accent-teal);
-            margin-bottom: 20px;
-            font-size: 2rem;
-            font-weight: 800;
-        }
-
-        .about-card p {
-            color: var(--text-muted);
-            font-size: 1.02rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-top: 25px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .features-list li {
-            background-color: var(--bg-main);
-            border: 1px solid var(--border-color);
-            padding: 14px 18px;
-            border-radius: 10px;
-            font-size: 0.92rem;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            background-color: rgba(7, 22, 27, 0.6);
-            margin-top: auto;
-        }
-    </style>
+    <meta name="description" content="درباره پلتفرم آموزشی شارکوت (Charcot)؛ مرجع یادگیری و پژوهش دانشجویان پزشکی از علوم پایه تا کارورزی.">
+    <meta name="theme-color" content="#07161B">
+    <link rel="icon" href="10990.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            var savedTheme = localStorage.getItem('charcot-theme');
+            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                savedTheme = 'light';
+            }
+            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+        } catch (e) { /* ignore */ }
+    </script>
 </head>
 <body>
 
-    <header>
+    <header class="site-header">
         <a href="index.html" class="logo-area">
+            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img">
             <div class="logo-text">
                 <h1>شارکوت | Charcot</h1>
                 <span>درباره ما</span>
             </div>
         </a>
-        <a href="index.html" class="back-btn">← بازگشت به صفحه اصلی</a>
+
+        <nav class="main-nav" id="mainNav" aria-label="منوی اصلی">
+            <a href="basic-sciences.html">علوم پایه</a>
+            <a href="pathophysiology.html">فیزیوپاتولوژی</a>
+            <a href="externship.html">استاجری</a>
+            <a href="pre-internship.html">پره انترنی</a>
+            <a href="internship.html">اینترنی</a>
+            <a href="clinical-cases.html">کیس‌های بالینی</a>
+            <a href="about-us.html">درباره ما</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn" id="searchBtn" type="button" aria-label="جستجو" title="جستجو (Ctrl+K)">🔍</button>
+            <button class="icon-btn" id="themeBtn" type="button" aria-label="تغییر تم" title="حالت روشن">☀️</button>
+            <button class="icon-btn hamburger" id="menuBtn" type="button" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mainNav">☰</button>
+        </div>
     </header>
+
+    <nav class="crumbs" aria-label="مسیر صفحه">
+        <a href="index.html">صفحه اصلی</a>
+        <span class="sep">›</span>
+        <strong>درباره ما</strong>
+    </nav>
 
     <main class="container">
         <div class="about-card">
@@ -161,7 +62,7 @@
                 ما در تلاشیم تا با ارائه درسنامه‌های ساختاریافته، کورس‌های تخصصی استاجری، کیس‌های واقعی بیمارستانی و بانک سوالات مبتنی بر رفرنس‌های روز دنیا، مسیر یادگیری پزشکی را هموارتر و لذت‌بخش‌تر کنیم.
             </p>
 
-            <h3 style="color: var(--text-main); margin-top: 30px; font-size: 1.2rem;">ویژگی‌های کلیدی پلتفرم:</h3>
+            <h3>ویژگی‌های کلیدی پلتفرم:</h3>
             <ul class="features-list">
                 <li>🎯 پوشش کامل از علوم پایه تا اینترنی</li>
                 <li>🏥 راهنمای جامع کورس‌های بالینی و استاجری</li>
@@ -172,8 +73,53 @@
     </main>
 
     <footer>
-        Educate • Research • Inspire &copy; 2026 - شارکوت (Charcot)
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <strong>شارکوت | Charcot</strong>
+                </div>
+                <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>بخش‌های آموزشی</h4>
+                <ul class="footer-links">
+                    <li><a href="basic-sciences.html">علوم پایه</a></li>
+                    <li><a href="pathophysiology.html">فیزیوپاتولوژی</a></li>
+                    <li><a href="externship.html">استاجری</a></li>
+                    <li><a href="pre-internship.html">پره انترنی</a></li>
+                    <li><a href="internship.html">اینترنی</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>دسترسی سریع</h4>
+                <ul class="footer-links">
+                    <li><a href="clinical-cases.html">کیس‌های بالینی</a></li>
+                    <li><a href="about-us.html">درباره ما</a></li>
+                    <li><a href="index.html#auth">ورود و ثبت‌نام</a></li>
+                    <li><a href="index.html#sections">بخش‌های سایت</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>ورود با موبایل</h4>
+                <div class="footer-qr">
+                    <div class="qr-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                    </div>
+                    <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="fb-tag">Educate • Research • Inspire</span>
+            <span>&copy; 2026 شارکوت (Charcot) — همه حقوق محفوظ است.</span>
+        </div>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>

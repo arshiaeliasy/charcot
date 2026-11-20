@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کیس‌های بالینی | شارکوت - Charcot</title>
+    <style>
+        :root {
+            --bg-main: #07161B;
+            --bg-card: #0E252D;
+            --bg-card-hover: #14333E;
+            --accent-primary: #0EA5E9;
+            --accent-teal: #2DD4BF;
+            --text-main: #F0FDF4;
+            --text-muted: #94A3B8;
+            --border-color: #1E3A4C;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 5%;
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(7, 22, 27, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .logo-text h1 {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            display: block;
+        }
+
+        .back-btn {
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.88rem;
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: rgba(45, 212, 191, 0.1);
+            border-color: var(--accent-teal);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+            flex: 1;
+        }
+
+        .page-title {
+            color: var(--accent-teal);
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .page-desc {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .case-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 22px;
+            transition: transform 0.3s, border-color 0.3s, background-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .case-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-teal);
+            background-color: var(--bg-card-hover);
+        }
+
+        .case-tag {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background-color: rgba(45, 212, 191, 0.15);
+            color: var(--accent-teal);
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .case-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .case-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .case-link {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.88rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s;
+        }
+
+        .case-link:hover {
+            color: var(--accent-teal);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background-color: rgba(7, 22, 27, 0.6);
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-area">
+            <div class="logo-text">
+                <h1>شارکوت | Charcot</h1>
+                <span>کیس‌های بالینی</span>
+            </div>
+        </a>
+        <a href="index.html" class="back-btn">← بازگشت به صفحه اصلی</a>
+    </header>
+
+    <main class="container">
+        <h2 class="page-title">🧠 بانک کیس‌های بالینی</h2>
+        <p class="page-desc">بررسی سناریوهای واقعی بیمارستانی، شرح‌حال‌گیری، افتراق‌های تشخیصی (Differential Diagnosis)، تصویربرداری‌های کلیدی و طرح درمان استاندارد بر اساس گایدلاین‌ها.</p>
+
+        <div class="cases-grid">
+            <div class="case-card">
+                <div>
+                    <span class="case-tag">مغز و اعصاب (Neurology)</span>
+                    <h3>کیس ۱: بیمار با فلز حاد اندام‌ها و افت هوشیاری</h3>
+                    <p>بررسی سناریوی بالینی سکته مغزی حاد (Stroke)، ارزیابی زمان طلایی ترومبولیز و تحلیل تصاویر CT اسکن مغز.</p>
+                </div>
+                <a href="#" class="case-link">مشاهده سناریو و پاسخ تشریحی →</a>
+            </div>
+
+            <div class="case-card">
+                <div>
+                    <span class="case-tag">قلب و عروق (Cardiology)</span>
+                    <h3>کیس ۲: درد قفسه سینه در بیمار ارجاعی به اورژانس</h3>
+                    <p>افتراق سندرم حاد کرونری (ACS) از سایر دردهای قفسه سینه، تفسیر نوار قلب (ECG) و اقدامات اولیه در بخش CCU.</p>
+                </div>
+                <a href="#" class="case-link">مشاهده سناریو و پاسخ تشریحی →</a>
+            </div>
+
+            <div class="case-card">
+                <div>
+                    <span class="case-tag">داخلی (Internal Medicine)</span>
+                    <h3>کیس ۳: تب، لرز و افت فشار خون مقاوم به درمان</h3>
+                    <p>مدیریت شوک سپتیک، رویکرد تشخیصی به منابع عفونت سیستمیک و اصول آنتی‌بیوتیک‌تراپی تجربی.</p>
+                </div>
+                <a href="#" class="case-link">مشاهده سناریو و پاسخ تشریحی →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Educate • Research • Inspire &copy; 2026 - شارکوت (Charcot)
+    </footer>
+
+</body>
+</html>
