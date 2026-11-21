@@ -6,27 +6,78 @@
     <title>پره انترنی | شارکوت</title>
     <meta name="description" content="راهنمای کامل دوران پره انترنی؛ چک‌لیست آمادگی، منابع پیشنهادی، استراتژی مرور و نکات امتحان جامع پزشکی.">
     <meta name="theme-color" content="#07161B">
-    <link rel="icon" href="10990.jpg">
+    <link rel="canonical" href="https://arshiaeliasy.github.io/charcot/pre-internship.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="شارکوت | Charcot">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:url" content="https://arshiaeliasy.github.io/charcot/pre-internship.html">
+    <meta property="og:title" content="پره انترنی | شارکوت">
+    <meta property="og:description" content="راهنمای کامل دوران پره انترنی؛ چک‌لیست آمادگی، منابع پیشنهادی، استراتژی مرور و نکات امتحان جامع پزشکی.">
+    <meta property="og:image" content="https://arshiaeliasy.github.io/charcot/img/og/pre-internship.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="📝 پره انترنی (آمادگی برای طبابت)">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="📝 پره انترنی (آمادگی برای طبابت)">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:title" content="پره انترنی | شارکوت">
+    <meta name="twitter:description" content="راهنمای کامل دوران پره انترنی؛ چک‌لیست آمادگی، منابع پیشنهادی، استراتژی مرور و نکات امتحان جامع پزشکی.">
+    <meta name="twitter:image" content="https://arshiaeliasy.github.io/charcot/img/og/pre-internship.jpg">
+    <link rel="icon" href="img/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="img/favicon-180.png">
     <link rel="preload" href="fonts/vazirmatn-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/vazirmatn-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
+        <!-- جلوگیری از پرش تم هنگام بارگذاری + هم‌خوان کردن رنگ نوار مرورگر -->
     <script>
         try {
-            var savedTheme = localStorage.getItem('charcot-theme');
-            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-                savedTheme = 'light';
+            var theme = localStorage.getItem('charcot-theme');
+            if (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                theme = 'light';
             }
-            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+            theme = theme || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            var bar = getComputedStyle(document.documentElement).getPropertyValue('--theme-color');
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) meta.setAttribute('content', (bar && bar.trim()) ? bar.trim() : (theme === 'light' ? '#F1F7F9' : '#07161B'));
         } catch (e) { /* ignore */ }
+    </script>
+    <script type="application/ld+json">
+{
+            "@context": "https://schema.org",
+            "@type": "MedicalWebPage",
+            "name": "📝 پره انترنی (آمادگی برای طبابت)",
+            "headline": "📝 پره انترنی (آمادگی برای طبابت)",
+            "url": "https://arshiaeliasy.github.io/charcot/pre-internship.html",
+            "inLanguage": "fa-IR",
+            "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "شارکوت | Charcot",
+                    "url": "https://arshiaeliasy.github.io/charcot/"
+            },
+            "publisher": {
+                    "@type": "Organization",
+                    "name": "شارکوت | Charcot",
+                    "url": "https://arshiaeliasy.github.io/charcot/"
+            },
+            "audience": {
+                    "@type": "EducationalAudience",
+                    "educationalRole": "student"
+            },
+            "about": "آموزش پزشکی",
+            "image": "https://arshiaeliasy.github.io/charcot/img/og/pre-internship.jpg",
+            "description": "راهنمای کامل دوران پره انترنی؛ چک‌لیست آمادگی، منابع پیشنهادی، استراتژی مرور و نکات امتحان جامع پزشکی."
+    }
     </script>
 </head>
 <body>
 
     <header class="site-header">
         <a href="index.html" class="logo-area">
-            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
+            <img src="img/logo-96.png" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
             <div class="logo-text">
-                <h1>شارکوت | Charcot</h1>
+                <div class="brand-name">شارکوت | Charcot</div>
                 <span>پره انترنی</span>
             </div>
         </a>
@@ -56,7 +107,7 @@
     </nav>
 
     <main class="content-container">
-        <h2 class="page-title">📝 پره انترنی (آمادگی برای طبابت)</h2>
+        <h1 class="page-title">📝 پره انترنی (آمادگی برای طبابت)</h1>
         <p class="page-desc">پره‌انترنی پل میان دانشگاه و بیمارستان است؛ دورانی که باید دانش پراکندهٔ علوم پایه و استاجری را به مهارت بالینی تبدیل کنی و برای امتحان جامع آماده شوی. این بخش یک راهنمای عملی برای سازمان‌دهی این دوران است.</p>
 
         <div class="tip-box">
@@ -71,6 +122,75 @@
             <li><strong>هر روز سوال حل کن:</strong> از تست‌های آزمون‌های سنوات قبل شروع کن و خطاها را در یک دفترچه جدا ثبت کن.</li>
             <li><strong>در بخش حاضر باش:</strong> شرح‌حال واقعی بگیر، معاینه کن و یافته‌ها را با کتاب مقایسه کن؛ پره‌انترنی فقط خواندن نیست.</li>
         </ol>
+
+        <h3 class="section-title" id="study-planner">🗓️ برنامه‌ریز مطالعهٔ پره‌انترنی</h3>
+        <p class="lead">این بخش فقط ساختار برنامه است، نه توصیهٔ بالینی. یک‌بار قالب را پر کن و تا پایان دوره فقط به‌روزش کن.</p>
+
+        <div class="table-wrap">
+            <table class="study-table">
+                <caption>تقویم مرور فاصله‌دار — هر مبحث را در چهار بازه ببین</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">بازه</th>
+                        <th scope="col">چه زمانی</th>
+                        <th scope="col">هدف همان مرور</th>
+                        <th scope="col">زمان تقریبی</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>مرور اول</td><td>روز بعد از مطالعه</td><td>تثبیت مفاهیم اصلی و رفع ابهام</td><td>۲۰–۳۰ دقیقه</td></tr>
+                    <tr><td>مرور دوم</td><td>یک هفته بعد</td><td>بازخوانی خلاصه‌ها + حل سوال همان مبحث</td><td>۳۰ دقیقه</td></tr>
+                    <tr><td>مرور سوم</td><td>دو هفته بعد</td><td>فقط سوال؛ هر مبحثی که خطا داد به دفترچه برمی‌گردد</td><td>۲۰ دقیقه</td></tr>
+                    <tr><td>مرور چهارم</td><td>یک ماه بعد</td><td>آزمون جمع‌بندی و سنجش سرعت</td><td>۴۵ دقیقه</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="grid-2 mt-lg">
+            <div class="info-box">
+                <h4>🗂️ چطور مباحث را دسته‌بندی کنم؟</h4>
+                <ul>
+                    <li><strong>ستون A:</strong> مباحثی که در آزمون وزن بالایی دارند و در آن‌ها ضعیفی — بیشترین وقت اینجا.</li>
+                    <li><strong>ستون B:</strong> مباحث پرتکرار که در آن‌ها متوسطی — مرور منظم و سوال.</li>
+                    <li><strong>ستون C:</strong> مباحثی که مسلطی — فقط آزمون کوتاه برای حفظ آمادگی.</li>
+                    <li><strong>ستون D:</strong> مباحث کم‌بازده — فقط در هفته‌های پایانی و به‌صورت انتخابی.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>📕 دفترچهٔ خطا (مهم‌ترین ابزار)</h4>
+                <ul>
+                    <li>برای هر سوال غلط، سه چیز بنویس: صورت سوال، دلیل غلط، نکتهٔ درست.</li>
+                    <li>منبع خطا را برچسب بزن: «نخوانده»، «فراموش‌شده» یا «بی‌دقتی» — درمان هر کدام متفاوت است.</li>
+                    <li>هفته‌ای یک‌بار فقط دفترچهٔ خطا را مرور کن؛ سریع‌ترین راه رشد است.</li>
+                    <li>خطای «بی‌دقتی» را با شبیه‌سازی آزمون زمان‌دار کم کن، نه با خواندن بیشتر.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>⏱️ قالب هفتهٔ نمونه</h4>
+                <ul>
+                    <li><strong>شنبه تا چهارشنبه:</strong> هر روز یک بلوک ۹۰ دقیقه‌ای مبحث جدید + یک بلوک ۳۰ دقیقه‌ای مرور.</li>
+                    <li><strong>پنجشنبه:</strong> آزمون شبیه‌سازی‌شده با زمان واقعی و بدون وقفه.</li>
+                    <li><strong>جمعه:</strong> تحلیل آزمون، به‌روزرسانی دفترچهٔ خطا و تعیین برنامهٔ هفتهٔ بعد.</li>
+                    <li>هر بلوک را با تایمر بزن؛ مطالعهٔ بی‌تایمر معمولاً دو برابر طول می‌کشد.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>📈 چهار شاخصی که باید پیگیری کنی</h4>
+                <ul>
+                    <li>درصد آزمون‌های هفتگی (روند، نه عدد مطلق).</li>
+                    <li>تعداد مباحث ستون A که به ستون B منتقل شده‌اند.</li>
+                    <li>زمان صرف‌شده روی دفترچهٔ خطا در هفته.</li>
+                    <li>تعداد بلوک‌های مطالعه‌ای که واقعاً تایمر داشته‌اند.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <strong>میان‌بُر واقعی:</strong> اگر وقت کم داری، بین «خواندن مبحث جدید» و «مرور دفترچهٔ خطا»، دومی را انتخاب کن. برنامه‌ای که فقط جلو می‌رود و برنمی‌گردد، در هفتهٔ آخر فرو می‌ریزد.
+        </div>
 
         <h3 class="section-title">منابع پیشنهادی به تفکیک محور</h3>
         <div class="grid-2">
@@ -135,7 +255,7 @@
         </div>
 
         <div class="tip-box">
-            <strong>ارتباط با سایر بخش‌ها:</strong> برای مرور علوم پایه به <a href="basic-sciences.html" style="color: var(--accent-teal);">علوم پایه</a>، برای تمرین کیس به <a href="clinical-cases.html" style="color: var(--accent-teal);">کیس‌های بالینی</a> و برای آشنایی با شیفت‌های بیمارستان به <a href="internship.html" style="color: var(--accent-teal);">اینترنی</a> سر بزن.
+            <strong>ارتباط با سایر بخش‌ها:</strong> برای مرور علوم پایه به <a href="basic-sciences.html" class="link-accent">علوم پایه</a>، برای تمرین کیس به <a href="clinical-cases.html" class="link-accent">کیس‌های بالینی</a> و برای آشنایی با شیفت‌های بیمارستان به <a href="internship.html" class="link-accent">اینترنی</a> سر بزن.
         </div>
     </main>
 
@@ -143,7 +263,7 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <div class="footer-brand">
-                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <img src="img/logo-96.png" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
                     <strong>شارکوت | Charcot</strong>
                 </div>
                 <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
@@ -175,12 +295,18 @@
                 <h4>ورود با موبایل</h4>
                 <div class="footer-qr">
                     <div class="qr-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                        <img src="img/qr.svg" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
                     </div>
                     <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
                 </div>
             </div>
         </div>
+
+            <div class="site-disclaimer" role="note">
+                <span class="sd-icon" aria-hidden="true">ℹ️</span>
+                <p><strong>یادآوری آموزشی:</strong> همهٔ مطالب این سایت با هدف <em>یادگیری و مرور</em> گردآوری شده است و جایگزین قضاوت بالینی، معاینهٔ بیمار یا دستور پزشک نیست. تصمیم درمانی تنها بر عهدهٔ کادر درمان و بر پایهٔ شرایط هر بیمار است.</p>
+            </div>
+
 
         <div class="footer-bottom">
             <span class="fb-tag">Educate • Research • Inspire</span>

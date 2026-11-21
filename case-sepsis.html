@@ -6,27 +6,78 @@
     <title>کیس ۳: شوک سپتیک | شارکوت</title>
     <meta name="description" content="کیس بالینی شوک سپتیک؛ معاینه، معیارهای تشخیصی، مدیریت اولیه بر اساس گایدلاین Surviving Sepsis و طرح درمان.">
     <meta name="theme-color" content="#07161B">
-    <link rel="icon" href="10990.jpg">
+    <link rel="canonical" href="https://arshiaeliasy.github.io/charcot/case-sepsis.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="شارکوت | Charcot">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:url" content="https://arshiaeliasy.github.io/charcot/case-sepsis.html">
+    <meta property="og:title" content="کیس ۳: شوک سپتیک | شارکوت">
+    <meta property="og:description" content="کیس بالینی شوک سپتیک؛ معاینه، معیارهای تشخیصی، مدیریت اولیه بر اساس گایدلاین Surviving Sepsis و طرح درمان.">
+    <meta property="og:image" content="https://arshiaeliasy.github.io/charcot/img/og/case-sepsis.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="کیس ۳: زن ۶۷ ساله با تب، لرز و افت فشار خون مقاوم به درمان">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="کیس ۳: زن ۶۷ ساله با تب، لرز و افت فشار خون مقاوم به درمان">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:title" content="کیس ۳: شوک سپتیک | شارکوت">
+    <meta name="twitter:description" content="کیس بالینی شوک سپتیک؛ معاینه، معیارهای تشخیصی، مدیریت اولیه بر اساس گایدلاین Surviving Sepsis و طرح درمان.">
+    <meta name="twitter:image" content="https://arshiaeliasy.github.io/charcot/img/og/case-sepsis.jpg">
+    <link rel="icon" href="img/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="img/favicon-180.png">
     <link rel="preload" href="fonts/vazirmatn-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/vazirmatn-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
+        <!-- جلوگیری از پرش تم هنگام بارگذاری + هم‌خوان کردن رنگ نوار مرورگر -->
     <script>
         try {
-            var savedTheme = localStorage.getItem('charcot-theme');
-            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-                savedTheme = 'light';
+            var theme = localStorage.getItem('charcot-theme');
+            if (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                theme = 'light';
             }
-            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+            theme = theme || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            var bar = getComputedStyle(document.documentElement).getPropertyValue('--theme-color');
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) meta.setAttribute('content', (bar && bar.trim()) ? bar.trim() : (theme === 'light' ? '#F1F7F9' : '#07161B'));
         } catch (e) { /* ignore */ }
+    </script>
+    <script type="application/ld+json">
+{
+            "@context": "https://schema.org",
+            "@type": "MedicalWebPage",
+            "name": "کیس ۳: زن ۶۷ ساله با تب، لرز و افت فشار خون مقاوم به درمان",
+            "headline": "کیس ۳: زن ۶۷ ساله با تب، لرز و افت فشار خون مقاوم به درمان",
+            "url": "https://arshiaeliasy.github.io/charcot/case-sepsis.html",
+            "inLanguage": "fa-IR",
+            "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "شارکوت | Charcot",
+                    "url": "https://arshiaeliasy.github.io/charcot/"
+            },
+            "publisher": {
+                    "@type": "Organization",
+                    "name": "شارکوت | Charcot",
+                    "url": "https://arshiaeliasy.github.io/charcot/"
+            },
+            "audience": {
+                    "@type": "EducationalAudience",
+                    "educationalRole": "student"
+            },
+            "about": "آموزش پزشکی",
+            "image": "https://arshiaeliasy.github.io/charcot/img/og/case-sepsis.jpg",
+            "description": "کیس بالینی شوک سپتیک؛ معاینه، معیارهای تشخیصی، مدیریت اولیه بر اساس گایدلاین Surviving Sepsis و طرح درمان."
+    }
     </script>
 </head>
 <body>
 
     <header class="site-header">
         <a href="index.html" class="logo-area">
-            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
+            <img src="img/logo-96.png" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
             <div class="logo-text">
-                <h1>شارکوت | Charcot</h1>
+                <div class="brand-name">شارکوت | Charcot</div>
                 <span>کیس بالینی</span>
             </div>
         </a>
@@ -60,7 +111,7 @@
     <main class="content-container">
         <article class="case-hero">
             <span class="case-tag">داخلی / مراقبت‌های ویژه (Internal Medicine / ICU)</span>
-            <h2>کیس ۳: زن ۶۷ ساله با تب، لرز و افت فشار خون مقاوم به درمان</h2>
+            <h1 class="case-title">کیس ۳: زن ۶۷ ساله با تب، لرز و افت فشار خون مقاوم به درمان</h1>
             <p>سناریوی شوک سپتیک با منبع ادراری؛ ارزیابی سریع با معیارهای qSOFA، اقدامات طلایی یک‌ساعته و آنتی‌بیوتیک درمانی تجربی.</p>
             <div class="case-meta">
                 <span>⏱️ زمان مطالعه: ۸ دقیقه</span>
@@ -95,7 +146,7 @@
         <ol class="steps">
             <li><strong>تعیین شدت و منبع:</strong> نمره qSOFA و SOFA، معاینه کامل به‌دنبال منبع عفونت (ادرار، ریه، شکم، پوست، سیستم عصبی مرکزی).</li>
             <li><strong>کشت‌ها قبل از آنتی‌بیوتیک (بدون تأخیر):</strong> حداقل دو کشت خون از دو محل متفاوت + کشت ادرار + کشت خلط در صورت شک به پنومونی.</li>
-            <li><strong>آزمایش‌های پایه:</strong> CBC، CRP، پروکلسیتونین، الکترولیت، کراتینین، عملکرد کبد، لاکات، ABG و بیماربیلی‌روبین.</li>
+            <li><strong>آزمایش‌های پایه:</strong> CBC، CRP، پروکلسیتونین، الکترولیت، کراتینین، عملکرد کبد، لاکتات، ABG و بیلی‌روبین.</li>
             <li><strong>تصویربرداری:</strong> عکس سینه، سونوگرافی شکم و مثانه، و در صورت شک به سپسیس مغزی، ارزیابی مننژیال.</li>
             <li><strong>پایش مداوم:</strong> سوند ادرار برای پایش خروجی ادرار (هدف ≥ ۰.۵ ml/kg/h)، پایش فشار وریدی مرکزی (CVP) در صورت در دسترس بودن.</li>
         </ol>
@@ -115,7 +166,7 @@
                 <li><strong>آنتی‌بیوتیک پهن‌طیف وریدی حداکثر ظرف یک ساعت:</strong> مثال: سفتریاکسون + مترونیدازول یا پیپراسیلین-تازوباکتام برحسب منبع محتمل؛ در سپسیس شدید از پنی‌سیلین‌های ضد‌سودومونال استفاده کن.</li>
                 <li><strong>وازوپرسور:</strong> اگر با مایع‌درمانی کافی فشار حفظ نشد، نوراپین‌فرین به‌عنوان داروی خط اول برای حفظ MAP ≥ ۶۵ mmHg.</li>
                 <li><strong>کنترل منبع:</strong> رفع انسداد ادراری (سوند یا نفروستومی)، تخلیه آبسه و دبریدمان بافت مرده در صورت وجود.</li>
-                <li><strong>پایش و تنظیم:</strong> لاکات هر ۲-۴ ساعته، خروجی ادرار، تعادل مایعات و ارزیابی مجدد وضعیت هر ساعت.</li>
+                <li><strong>پایش و تنظیم:</strong> لاکتات هر ۲-۴ ساعته، خروجی ادرار، تعادل مایعات و ارزیابی مجدد وضعیت هر ساعت.</li>
                 <li><strong>مراقبت‌های حمایتی:</strong> اکسیژن‌رسانی، کنترل قند خون، پروفیلاکسی ترومبوز وریدی و در صورت نیاز تهویه مکانیکی.</li>
             </ul>
 
@@ -126,7 +177,7 @@
             <strong>جمع‌بندی یک‌خطی:</strong> شک به عفونت + نمره qSOFA ≥ ۲ → کشت‌ها → مایع ۳۰ ml/kg → آنتی‌بیوتیک تا ۶۰ دقیقه → در صورت عدم پاسخ نوراپین‌فرین → رفع منبع عفونت.
         </div>
 
-        <p style="margin-top: 26px;">
+        <p class="mt-lg">
             <a href="clinical-cases.html" class="back-btn">← بازگشت به همه کیس‌های بالینی</a>
             &nbsp;
             <a href="case-stroke.html" class="back-btn">کیس اول: سکته مغزی ←</a>
@@ -137,7 +188,7 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <div class="footer-brand">
-                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <img src="img/logo-96.png" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
                     <strong>شارکوت | Charcot</strong>
                 </div>
                 <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
@@ -169,12 +220,18 @@
                 <h4>ورود با موبایل</h4>
                 <div class="footer-qr">
                     <div class="qr-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                        <img src="img/qr.svg" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
                     </div>
                     <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
                 </div>
             </div>
         </div>
+
+            <div class="site-disclaimer" role="note">
+                <span class="sd-icon" aria-hidden="true">ℹ️</span>
+                <p><strong>یادآوری آموزشی:</strong> همهٔ مطالب این سایت با هدف <em>یادگیری و مرور</em> گردآوری شده است و جایگزین قضاوت بالینی، معاینهٔ بیمار یا دستور پزشک نیست. تصمیم درمانی تنها بر عهدهٔ کادر درمان و بر پایهٔ شرایط هر بیمار است.</p>
+            </div>
+
 
         <div class="footer-bottom">
             <span class="fb-tag">Educate • Research • Inspire</span>

@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# ایندکس جستجو باید قابل خواندن باشد (جستجوی درون‌سایتی)
+Allow: /js/search-index.json
+Disallow: /supabase/
+Disallow: /tools/
+
 Sitemap: https://arshiaeliasy.github.io/charcot/sitemap.xml

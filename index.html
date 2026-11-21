@@ -4,38 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شارکوت | Charcot - مرجع تخصصی دانشجویان پزشکی</title>
-    <meta name="description" content="پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ درسنامه‌های علوم پایه، کورس‌های استاجری، کیس‌های بالینی و بانک سوالات بر اساس رفرنس‌های روز.">
+    <meta name="description" content="پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ درس‌نامه‌های علوم پایه، کورس‌های استاجری، کیس‌های بالینی و بانک سوالات بر اساس رفرنس‌های روز.">
     <meta name="theme-color" content="#07161B">
-    <meta property="og:title" content="شارکوت | Charcot">
-    <meta property="og:description" content="از علوم پایه تا کارورزی؛ مرجع تخصصی دانشجویان پزشکی">
+    <link rel="canonical" href="https://arshiaeliasy.github.io/charcot/index.html">
     <meta property="og:type" content="website">
-    <link rel="icon" href="10990.jpg">
+    <meta property="og:site_name" content="شارکوت | Charcot">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:url" content="https://arshiaeliasy.github.io/charcot/index.html">
+    <meta property="og:title" content="شارکوت | Charcot - مرجع تخصصی دانشجویان پزشکی">
+    <meta property="og:description" content="پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ درس‌نامه‌های علوم پایه، کورس‌های استاجری، کیس‌های بالینی و بانک سوالات بر اساس رفرنس‌های روز.">
+    <meta property="og:image" content="https://arshiaeliasy.github.io/charcot/img/og/index.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="از علوم پایه تا کارورزی بالینی، یک مسیر یادگیری کامل">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="از علوم پایه تا کارورزی بالینی، یک مسیر یادگیری کامل">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:title" content="شارکوت | Charcot - مرجع تخصصی دانشجویان پزشکی">
+    <meta name="twitter:description" content="پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ درس‌نامه‌های علوم پایه، کورس‌های استاجری، کیس‌های بالینی و بانک سوالات بر اساس رفرنس‌های روز.">
+    <meta name="twitter:image" content="https://arshiaeliasy.github.io/charcot/img/og/index.jpg">
+    <link rel="icon" href="img/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="img/favicon-180.png">
     <link rel="preload" href="fonts/vazirmatn-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/vazirmatn-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://api.qrserver.com" crossorigin>
-    <!-- جلوگیری از پرش تم هنگام بارگذاری -->
+    <!-- جلوگیری از پرش تم هنگام بارگذاری + هم‌خوان کردن رنگ نوار مرورگر -->
     <script>
         try {
-            var savedTheme = localStorage.getItem('charcot-theme');
-            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-                savedTheme = 'light';
+            var theme = localStorage.getItem('charcot-theme');
+            if (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                theme = 'light';
             }
-            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+            theme = theme || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            var bar = getComputedStyle(document.documentElement).getPropertyValue('--theme-color');
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) meta.setAttribute('content', (bar && bar.trim()) ? bar.trim() : (theme === 'light' ? '#F1F7F9' : '#07161B'));
         } catch (e) { /* ignore */ }
     </script>
-    <!-- کتابخانه Supabase برای ارتباط با دیتابیس و سیستم احراز هویت -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="application/ld+json">
+{
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "از علوم پایه تا کارورزی بالینی، یک مسیر یادگیری کامل",
+            "headline": "از علوم پایه تا کارورزی بالینی، یک مسیر یادگیری کامل",
+            "url": "https://arshiaeliasy.github.io/charcot/index.html",
+            "inLanguage": "fa-IR",
+            "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "شارکوت | Charcot",
+                    "url": "https://arshiaeliasy.github.io/charcot/"
+            },
+            "publisher": {
+                    "@type": "Organization",
+                    "name": "شارکوت | Charcot",
+                    "url": "https://arshiaeliasy.github.io/charcot/"
+            },
+            "audience": {
+                    "@type": "EducationalAudience",
+                    "educationalRole": "student"
+            },
+            "about": "آموزش پزشکی",
+            "image": "https://arshiaeliasy.github.io/charcot/img/og/index.jpg",
+            "description": "پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ درس‌نامه‌های علوم پایه، کورس‌های استاجری، کیس‌های بالینی و بانک سوالات بر اساس رفرنس‌های روز."
+    }
+    </script>
 </head>
 <body>
 
     <!-- منوی بالای سایت -->
     <header class="site-header">
         <a href="index.html" class="logo-area">
-            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
+            <img src="img/logo-96.png" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
             <div class="logo-text">
-                <h1>شارکوت | Charcot</h1>
+                <div class="brand-name">شارکوت | Charcot</div>
                 <span>علوم پایه تا کارورزی</span>
             </div>
         </a>
@@ -63,7 +106,7 @@
         <!-- ===== هیرو ===== -->
         <section class="hero">
             <span class="hero-badge">🎓 مرجع تخصصی دانشجویان پزشکی</span>
-            <h2>از علوم پایه تا <span>کارورزی بالینی</span>، یک مسیر یادگیری کامل</h2>
+            <h1 class="hero-title">از علوم پایه تا <span>کارورزی بالینی</span>، یک مسیر یادگیری کامل</h1>
             <p>شارکوت؛ درسنامه‌های ساختاریافته، کورس‌های استاجری، کیس‌های واقعی بیمارستانی و بانک سوالات — همه در یک جا و بر اساس رفرنس‌های روز پزشکی.</p>
             <div class="hero-actions">
                 <a class="btn btn-primary" href="#auth">🚀 شروع یادگیری رایگان</a>
@@ -211,64 +254,67 @@
             </div>
 
             <div class="auth-section">
+                <!-- پیام وضعیت سرویس ورود (مثلاً وقتی کتابخانهٔ Supabase لود نمی‌شود) -->
+                <div id="authNotice" class="auth-notice hidden" role="status"></div>
+
                 <!-- نمایش اطلاعات کاربر در صورت ورود -->
                 <div id="userProfile" class="user-logged-box hidden">
                     <h3>خوش آمدید، <span id="welcomeName">کاربر گرامی</span>!</h3>
                     <p id="welcomeDetails">شما با موفقیت وارد حساب کاربری خود شده‌اید.</p>
-                    <button class="logout-btn" type="button" onclick="handleLogout()">خروج از حساب کاربری</button>
+                    <button class="logout-btn" type="button" id="logoutBtn">خروج از حساب کاربری</button>
                 </div>
 
                 <!-- تب‌های انتخاب فرم -->
-                <div id="authTabs" class="auth-tabs">
-                    <button class="tab-btn active" type="button" onclick="switchTab('login')">ورود به حساب</button>
-                    <button class="tab-btn" type="button" onclick="switchTab('register')">ثبت‌نام جدید</button>
+                <div id="authTabs" class="auth-tabs" role="tablist" aria-label="ورود یا ثبت‌نام">
+                    <button class="tab-btn active" type="button" id="tabLogin" role="tab" aria-selected="true" aria-controls="loginForm">ورود به حساب</button>
+                    <button class="tab-btn" type="button" id="tabRegister" role="tab" aria-selected="false" aria-controls="registerForm">ثبت‌نام جدید</button>
                 </div>
 
                 <!-- فرم ورود -->
-                <form id="loginForm">
+                <form id="loginForm" role="tabpanel" aria-labelledby="tabLogin">
                     <div class="form-group">
                         <label for="loginEmail">ایمیل</label>
-                        <input type="email" id="loginEmail" placeholder="example@mail.com" autocomplete="email" required>
+                        <input type="email" id="loginEmail" name="email" placeholder="example@mail.com" autocomplete="email" required>
                     </div>
                     <div class="form-group">
                         <label for="loginPassword">رمز عبور</label>
-                        <input type="password" id="loginPassword" placeholder="******" autocomplete="current-password" required>
+                        <input type="password" id="loginPassword" name="password" placeholder="******" autocomplete="current-password" required>
                     </div>
                     <div class="auth-links">
-                        <a href="#" onclick="showForgotPassword(event)">رمز عبور خود را فراموش کرده‌اید؟</a>
+                        <a href="#" id="forgotLink">رمز عبور خود را فراموش کرده‌اید؟</a>
                     </div>
                     <button type="submit" class="submit-btn" id="loginBtn">ورود به شارکوت</button>
                 </form>
 
                 <!-- فرم ثبت‌نام -->
-                <form id="registerForm" class="hidden">
+                <form id="registerForm" class="hidden" role="tabpanel" aria-labelledby="tabRegister">
                     <div class="form-group">
                         <label for="fullname">نام و نام خانوادگی</label>
-                        <input type="text" id="fullname" placeholder="مثلاً دکتر علی رضایی" autocomplete="name" required>
+                        <input type="text" id="fullname" name="fullname" placeholder="مثلاً دکتر علی رضایی" autocomplete="name" required>
                     </div>
                     <div class="form-group">
                         <label for="username">نام کاربری (لاتین)</label>
-                        <input type="text" id="username" placeholder="user123" autocomplete="username" required>
+                        <input type="text" id="username" name="username" placeholder="user123" autocomplete="username" minlength="3" maxlength="30" pattern="[A-Za-z0-9._\-]{3,30}" title="۳ تا ۳۰ کاراکتر لاتین، رقم، نقطه، خط تیره یا زیرخط" required>
                     </div>
                     <div class="form-group">
                         <label for="regEmail">ایمیل</label>
-                        <input type="email" id="regEmail" placeholder="example@mail.com" autocomplete="email" required>
+                        <input type="email" id="regEmail" name="email" placeholder="example@mail.com" autocomplete="email" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">شماره تلفن همراه</label>
-                        <input type="tel" id="phone" placeholder="09123456789" autocomplete="tel" required>
+                        <input type="tel" id="phone" name="phone" placeholder="09123456789" autocomplete="tel" inputmode="tel" maxlength="11" pattern="09[0-9]{9}" title="۱۱ رقم و با 09 شروع شود" required>
                     </div>
                     <div class="form-group">
                         <label for="university">دانشگاه محل تحصیل</label>
-                        <input type="text" id="university" placeholder="مثلاً علوم پزشکی تهران">
+                        <input type="text" id="university" name="university" placeholder="مثلاً علوم پزشکی تهران">
                     </div>
                     <div class="form-group">
                         <label for="regPassword">رمز عبور</label>
-                        <input type="password" id="regPassword" placeholder="حداقل ۶ کاراکتر" minlength="6" autocomplete="new-password" required>
+                        <input type="password" id="regPassword" name="password" placeholder="حداقل ۶ کاراکتر" minlength="6" autocomplete="new-password" required>
                     </div>
                     <div class="form-group">
                         <label for="regConfirmPassword">تکرار رمز عبور</label>
-                        <input type="password" id="regConfirmPassword" placeholder="تکرار رمز عبور خود را وارد کنید" minlength="6" autocomplete="new-password" required>
+                        <input type="password" id="regConfirmPassword" name="password_confirm" placeholder="تکرار رمز عبور خود را وارد کنید" minlength="6" autocomplete="new-password" required>
                     </div>
                     <button type="submit" class="submit-btn" id="regBtn">تکمیل ثبت‌نام</button>
                 </form>
@@ -281,11 +327,31 @@
                     </div>
                     <div class="form-group">
                         <label for="forgotEmail">ایمیل ثبت‌نام شده</label>
-                        <input type="email" id="forgotEmail" placeholder="example@mail.com" autocomplete="email" required>
+                        <input type="email" id="forgotEmail" name="email" placeholder="example@mail.com" autocomplete="email" required>
                     </div>
                     <button type="submit" class="submit-btn" id="forgotBtn">ارسال لینک بازیابی</button>
                     <div class="auth-links center">
-                        <a href="#" onclick="backToLogin(event)">← بازگشت به صفحه ورود</a>
+                        <a href="#" id="backToLoginLink">← بازگشت به صفحه ورود</a>
+                    </div>
+                </form>
+
+                <!-- فرم تعیین رمز عبور جدید (بعد از باز کردن لینک بازیابی در ایمیل) -->
+                <form id="resetPasswordForm" class="hidden">
+                    <div class="forgot-head">
+                        <h3>تعیین رمز عبور جدید</h3>
+                        <p>رمز عبور تازه‌ات را وارد کن تا روی حساب فعلی ثبت شود.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">رمز عبور جدید</label>
+                        <input type="password" id="newPassword" name="password" placeholder="حداقل ۶ کاراکتر" minlength="6" autocomplete="new-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword2">تکرار رمز عبور جدید</label>
+                        <input type="password" id="newPassword2" name="password_confirm" placeholder="تکرار رمز عبور جدید" minlength="6" autocomplete="new-password" required>
+                    </div>
+                    <button type="submit" class="submit-btn" id="resetBtn">ذخیرهٔ رمز عبور جدید</button>
+                    <div class="auth-links center">
+                        <a href="#" id="backToLoginLink2">← بازگشت به صفحه ورود</a>
                     </div>
                 </form>
             </div>
@@ -360,7 +426,7 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <div class="footer-brand">
-                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <img src="img/logo-96.png" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
                     <strong>شارکوت | Charcot</strong>
                 </div>
                 <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
@@ -392,12 +458,18 @@
                 <h4>ورود با موبایل</h4>
                 <div class="footer-qr">
                     <div class="qr-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                        <img src="img/qr.svg" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
                     </div>
                     <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
                 </div>
             </div>
         </div>
+
+            <div class="site-disclaimer" role="note">
+                <span class="sd-icon" aria-hidden="true">ℹ️</span>
+                <p><strong>یادآوری آموزشی:</strong> همهٔ مطالب این سایت با هدف <em>یادگیری و مرور</em> گردآوری شده است و جایگزین قضاوت بالینی، معاینهٔ بیمار یا دستور پزشک نیست. تصمیم درمانی تنها بر عهدهٔ کادر درمان و بر پایهٔ شرایط هر بیمار است.</p>
+            </div>
+
 
         <div class="footer-bottom">
             <span class="fb-tag">Educate • Research • Inspire</span>
@@ -406,247 +478,7 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        /* ---------- پیکربندی Supabase ---------- */
-        const SUPABASE_URL = 'https://jpodptieqiqlcohauyjs.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impwb2RwdGllcWlxbGNvaGF1eWpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzMzExMDQsImV4cCI6MjEwNTkwNzEwNH0.9sfzf1OIYiBQGd5NDjVVIGZ3tSGG4dwc5IqQpRfoBo0';
-
-        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-        const toast = (msg, type) => window.showToast(msg, type || 'info');
-
-        /* ---------- جابه‌جایی بین تب‌های ورود و ثبت‌نام ---------- */
-        function switchTab(type) {
-            const loginForm = document.getElementById('loginForm');
-            const registerForm = document.getElementById('registerForm');
-            const tabs = document.querySelectorAll('.tab-btn');
-
-            if (type === 'login') {
-                loginForm.classList.remove('hidden');
-                registerForm.classList.add('hidden');
-                tabs[0].classList.add('active');
-                tabs[1].classList.remove('active');
-            } else {
-                loginForm.classList.add('hidden');
-                registerForm.classList.remove('hidden');
-                tabs[0].classList.remove('active');
-                tabs[1].classList.add('active');
-            }
-        }
-
-        /* ---------- نمایش فرم فراموشی رمز عبور ---------- */
-        function showForgotPassword(e) {
-            e.preventDefault();
-            document.getElementById('loginForm').classList.add('hidden');
-            document.getElementById('authTabs').classList.add('hidden');
-            document.getElementById('registerForm').classList.add('hidden');
-            document.getElementById('forgotPasswordForm').classList.remove('hidden');
-        }
-
-        /* ---------- بازگشت از فرم فراموشی به فرم ورود ---------- */
-        function backToLogin(e) {
-            if (e) e.preventDefault();
-            document.getElementById('forgotPasswordForm').classList.add('hidden');
-            document.getElementById('authTabs').classList.remove('hidden');
-            switchTab('login');
-        }
-
-        /* ---------- فرم فراموشی رمز عبور ---------- */
-        document.getElementById('forgotPasswordForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            const btn = document.getElementById('forgotBtn');
-            const emailInput = document.getElementById('forgotEmail');
-            const email = emailInput.value.trim();
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (!email) {
-                toast('لطفاً فیلد ایمیل را پر کنید.', 'error');
-                emailInput.focus();
-                return;
-            }
-            if (!emailRegex.test(email)) {
-                toast('فرمت ایمیل وارد شده نامعتبر است.', 'error');
-                emailInput.focus();
-                return;
-            }
-
-            btn.textContent = 'در حال ارسال...';
-            btn.disabled = true;
-
-            try {
-                const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
-                    redirectTo: window.location.origin + window.location.pathname
-                });
-
-                if (error) {
-                    toast('خطا در ارسال ایمیل بازیابی: ' + error.message, 'error');
-                } else {
-                    toast('لینک بازیابی رمز عبور به ایمیل شما ارسال شد.', 'success');
-                    this.reset();
-                    backToLogin();
-                }
-            } catch (err) {
-                console.error('خطا:', err);
-                toast('خطایی رخ داد، لطفاً دوباره تلاش کنید.', 'error');
-            } finally {
-                btn.textContent = 'ارسال لینک بازیابی';
-                btn.disabled = false;
-            }
-        });
-
-        /* ---------- ثبت‌نام ---------- */
-        document.getElementById('registerForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            const btn = document.getElementById('regBtn');
-            btn.textContent = 'در حال بررسی اطلاعات...';
-            btn.disabled = true;
-
-            const fullname = document.getElementById('fullname').value.trim();
-            const username = document.getElementById('username').value.trim();
-            const email = document.getElementById('regEmail').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const university = document.getElementById('university').value.trim();
-            const password = document.getElementById('regPassword').value;
-            const confirmPassword = document.getElementById('regConfirmPassword').value;
-
-            if (password !== confirmPassword) {
-                toast('رمز عبور و تکرار آن یکسان نیستند.', 'error');
-                btn.textContent = 'تکمیل ثبت‌نام';
-                btn.disabled = false;
-                return;
-            }
-
-            try {
-                const { data, error } = await supabaseClient.auth.signUp({
-                    email: email,
-                    password: password,
-                    options: {
-                        data: {
-                            fullname: fullname,
-                            username: username,
-                            phone: phone,
-                            university: university
-                        }
-                    }
-                });
-
-                if (error) {
-                    if (error.message.toLowerCase().includes('user already registered') || error.status === 400) {
-                        toast('قبلاً با این ایمیل ثبت‌نام کرده‌اید! از فرم ورود استفاده کنید.', 'error');
-                    } else {
-                        toast('خطا در ثبت‌نام: ' + error.message, 'error');
-                    }
-                    return;
-                }
-
-                if (data.user && data.user.identities && data.user.identities.length === 0) {
-                    toast('شما قبلاً با این مشخصات ثبت‌نام کرده‌اید! وارد حساب خود شوید.', 'error');
-                    return;
-                }
-
-                if (data.user) {
-                    const { error: insertError } = await supabaseClient.from('users').insert([{
-                        id: data.user.id,
-                        email: email,
-                        fullname: fullname,
-                        username: username,
-                        phone: phone,
-                        university: university
-                    }]);
-
-                    if (insertError) {
-                        if (insertError.code === '23505') {
-                            toast('این نام کاربری یا شماره تلفن قبلاً توسط کاربر دیگری ثبت شده است.', 'error');
-                        } else {
-                            console.error('خطا در ذخیره پروفایل:', insertError.message);
-                            toast('خطا در ذخیره داده‌ها: ' + insertError.message, 'error');
-                        }
-                        return;
-                    }
-                }
-
-                toast('ثبت‌نام شما با موفقیت انجام شد!', 'success');
-                this.reset();
-                checkSession();
-
-            } catch (err) {
-                console.error('خطا:', err);
-                toast('خطایی رخ داد، لطفاً دوباره تلاش کنید.', 'error');
-            } finally {
-                btn.textContent = 'تکمیل ثبت‌نام';
-                btn.disabled = false;
-            }
-        });
-
-        /* ---------- ورود ---------- */
-        document.getElementById('loginForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            const btn = document.getElementById('loginBtn');
-            btn.textContent = 'در حال ورود...';
-            btn.disabled = true;
-
-            const email = document.getElementById('loginEmail').value.trim();
-            const password = document.getElementById('loginPassword').value;
-
-            const { error } = await supabaseClient.auth.signInWithPassword({
-                email: email,
-                password: password
-            });
-
-            if (error) {
-                toast('ایمیل یا رمز عبور نادرست است.', 'error');
-                btn.textContent = 'ورود به شارکوت';
-                btn.disabled = false;
-                return;
-            }
-
-            toast('ورود با موفقیت انجام شد!', 'success');
-            btn.textContent = 'ورود به شارکوت';
-            btn.disabled = false;
-            checkSession();
-        });
-
-        /* ---------- بررسی نشست کاربر ---------- */
-        async function checkSession() {
-            const { data: { session } } = await supabaseClient.auth.getSession();
-            const userProfile = document.getElementById('userProfile');
-            const authTabs = document.getElementById('authTabs');
-            const loginForm = document.getElementById('loginForm');
-            const registerForm = document.getElementById('registerForm');
-            const forgotPasswordForm = document.getElementById('forgotPasswordForm');
-
-            if (session) {
-                const user = session.user;
-                const name = user.user_metadata?.fullname || user.email;
-                const uni = user.user_metadata?.university ? ` (دانشگاه: ${user.user_metadata.university})` : '';
-
-                document.getElementById('welcomeName').textContent = name;
-                document.getElementById('welcomeDetails').textContent = `ایمیل: ${user.email}${uni}`;
-
-                userProfile.classList.remove('hidden');
-                authTabs.classList.add('hidden');
-                loginForm.classList.add('hidden');
-                registerForm.classList.add('hidden');
-                forgotPasswordForm.classList.add('hidden');
-            } else {
-                userProfile.classList.add('hidden');
-                authTabs.classList.remove('hidden');
-                switchTab('login');
-            }
-        }
-
-        /* ---------- خروج ---------- */
-        async function handleLogout() {
-            await supabaseClient.auth.signOut();
-            toast('شما از حساب کاربری خارج شدید.', 'info');
-            checkSession();
-        }
-
-        checkSession();
-    </script>
+    <script src="js/auth.js"></script>
 
 </body>
 </html>

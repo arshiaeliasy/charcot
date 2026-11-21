@@ -6,27 +6,78 @@
     <title>درباره ما | شارکوت - Charcot</title>
     <meta name="description" content="درباره پلتفرم آموزشی شارکوت (Charcot)؛ مرجع یادگیری و پژوهش دانشجویان پزشکی از علوم پایه تا کارورزی.">
     <meta name="theme-color" content="#07161B">
-    <link rel="icon" href="10990.jpg">
+    <link rel="canonical" href="https://arshiaeliasy.github.io/charcot/about-us.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="شارکوت | Charcot">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:url" content="https://arshiaeliasy.github.io/charcot/about-us.html">
+    <meta property="og:title" content="درباره ما | شارکوت - Charcot">
+    <meta property="og:description" content="درباره پلتفرم آموزشی شارکوت (Charcot)؛ مرجع یادگیری و پژوهش دانشجویان پزشکی از علوم پایه تا کارورزی.">
+    <meta property="og:image" content="https://arshiaeliasy.github.io/charcot/img/og/about-us.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ℹ️ درباره پلتفرم شارکوت (Charcot)">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="ℹ️ درباره پلتفرم شارکوت (Charcot)">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:title" content="درباره ما | شارکوت - Charcot">
+    <meta name="twitter:description" content="درباره پلتفرم آموزشی شارکوت (Charcot)؛ مرجع یادگیری و پژوهش دانشجویان پزشکی از علوم پایه تا کارورزی.">
+    <meta name="twitter:image" content="https://arshiaeliasy.github.io/charcot/img/og/about-us.jpg">
+    <link rel="icon" href="img/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="img/favicon-180.png">
     <link rel="preload" href="fonts/vazirmatn-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/vazirmatn-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
+        <!-- جلوگیری از پرش تم هنگام بارگذاری + هم‌خوان کردن رنگ نوار مرورگر -->
     <script>
         try {
-            var savedTheme = localStorage.getItem('charcot-theme');
-            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-                savedTheme = 'light';
+            var theme = localStorage.getItem('charcot-theme');
+            if (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                theme = 'light';
             }
-            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+            theme = theme || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            var bar = getComputedStyle(document.documentElement).getPropertyValue('--theme-color');
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) meta.setAttribute('content', (bar && bar.trim()) ? bar.trim() : (theme === 'light' ? '#F1F7F9' : '#07161B'));
         } catch (e) { /* ignore */ }
+    </script>
+    <script type="application/ld+json">
+{
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "ℹ️ درباره پلتفرم شارکوت (Charcot)",
+            "headline": "ℹ️ درباره پلتفرم شارکوت (Charcot)",
+            "url": "https://arshiaeliasy.github.io/charcot/about-us.html",
+            "inLanguage": "fa-IR",
+            "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "شارکوت | Charcot",
+                    "url": "https://arshiaeliasy.github.io/charcot/"
+            },
+            "publisher": {
+                    "@type": "Organization",
+                    "name": "شارکوت | Charcot",
+                    "url": "https://arshiaeliasy.github.io/charcot/"
+            },
+            "audience": {
+                    "@type": "EducationalAudience",
+                    "educationalRole": "student"
+            },
+            "about": "آموزش پزشکی",
+            "image": "https://arshiaeliasy.github.io/charcot/img/og/about-us.jpg",
+            "description": "درباره پلتفرم آموزشی شارکوت (Charcot)؛ مرجع یادگیری و پژوهش دانشجویان پزشکی از علوم پایه تا کارورزی."
+    }
     </script>
 </head>
 <body>
 
     <header class="site-header">
         <a href="index.html" class="logo-area">
-            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img">
+            <img src="img/logo-96.png" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
             <div class="logo-text">
-                <h1>شارکوت | Charcot</h1>
+                <div class="brand-name">شارکوت | Charcot</div>
                 <span>درباره ما</span>
             </div>
         </a>
@@ -57,7 +108,7 @@
 
     <main class="container">
         <div class="about-card">
-            <h2>ℹ️ درباره پلتفرم شارکوت (Charcot)</h2>
+            <h1 class="page-title">ℹ️ درباره پلتفرم شارکوت (Charcot)</h1>
             <p>
                 <strong>شارکوت</strong> یک پلتفرم هوشمند یادگیری و پژوهش است که توسط دانشجویان پزشکی طراحی و توسعه یافته است. هدف اصلی ما ایجاد یک مرجع جامع، استاندارد و پویا برای همراهی دانشجویان عزیز از مقطع حساس <em>علوم پایه</em> تا دوران سخت و جذاب <em>کارورزی بالینی</em> است.
             </p>
@@ -72,6 +123,47 @@
                 <li>🧠 تحلیل سناریوها و کیس‌های واقعی بالینی</li>
                 <li>⚡ سیستم هوشمند مدیریت حساب و پیشرفت کاربر</li>
             </ul>
+
+            <h3>این پلتفرم برای چه کسی است؟</h3>
+            <div class="grid-2">
+                <div class="info-box">
+                    <h4>🎓 دانشجوی پزشکی در علوم پایه</h4>
+                    <p>برای کسی که دنبال یک مسیر مرتب برای درس‌های پایه و اتصال آن‌ها به فیزیوپاتولوژی است؛ نه جزوه‌های پراکنده.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🏥 دانشجو در استاجری</h4>
+                    <p>برای کسی که می‌خواهد در هر کورس بداند چه مهارت‌هایی از او انتظار می‌رود و قبل از ورود به بخش آماده باشد.</p>
+                </div>
+                <div class="info-box">
+                    <h4>📝 دانشجو در پره‌انترنی</h4>
+                    <p>برای کسی که بین مطالعه و حضور در بخش گیر کرده و به یک برنامهٔ مرور واقع‌بینانه با ابزار پیگیری نیاز دارد.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🩺 اینترن و کارورز</h4>
+                    <p>برای کسی که در شیفت به مرور سریع، چک‌لیست عملی و ساختار مستندسازی نیاز دارد.</p>
+                </div>
+            </div>
+
+            <h3>چطور از پلتفرم استفاده کنم؟</h3>
+            <ol class="steps">
+                <li><strong>از صفحهٔ مرتبط با مقطع خودت شروع کن:</strong> هر بخش برای یک مرحله از مسیر طراحی شده، نه برای همه.</li>
+                <li><strong>از جستجو استفاده کن:</strong> با <kbd>Ctrl</kbd> + <kbd>K</kbd> می‌توانی عنوان‌ها و متن کامل همهٔ صفحه‌ها را بگردی و مستقیم به همان بخش بروی.</li>
+                <li><strong>روی آکاردئون‌ها کار کن:</strong> هر موضوع یک آدرس یکتا دارد؛ لینکش را برای خودت یا هم‌گروهی‌هایت ذخیره کن.</li>
+                <li><strong>برای مطالعهٔ چاپی:</strong> با <kbd>Ctrl</kbd> + <kbd>P</kbd> همهٔ بخش‌ها باز و آمادهٔ چاپ می‌شوند.</li>
+            </ol>
+
+            <h3>اصولی که به آن پایبندیم</h3>
+            <ul class="features-list">
+                <li>🧭 <strong>ساختار بر حفظ:</strong> هر بخش یک نقشهٔ راه دارد، نه انبوه مطلب.</li>
+                <li>📚 <strong>ارجاع به منبع:</strong> هرجا ممکن بوده، نام رفرنس اصلی ذکر شده تا خودت بررسی کنی.</li>
+                <li>🔄 <strong>به‌روزرسانی:</strong> محتوای یادداشت‌ها بر اساس بازخورد کاربران بازبینی و دسته‌بندی می‌شود.</li>
+                <li>⚖️ <strong>صداقت آموزشی:</strong> همه‌چیز با هدف یادگیری نوشته شده و جایگزین تصمیم بالینی نیست.</li>
+                <li>🚫 <strong>بدون تبلیغ:</strong> هیچ محتوای تبلیغاتی یا وابستگی تجاری در سایت وجود ندارد.</li>
+            </ul>
+
+            <div class="tip-box">
+                <strong>پیشنهاد یا ایراد پیدا کردی؟</strong> این پروژه با بازخورد دانشجویان بهتر می‌شود؛ از طریق ایمیل یا مخزن پروژه در گیت‌هاب اطلاع بده تا در نسخهٔ بعدی اعمال شود.
+            </div>
         </div>
     </main>
 
@@ -79,7 +171,7 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <div class="footer-brand">
-                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <img src="img/logo-96.png" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
                     <strong>شارکوت | Charcot</strong>
                 </div>
                 <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
@@ -111,12 +203,18 @@
                 <h4>ورود با موبایل</h4>
                 <div class="footer-qr">
                     <div class="qr-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                        <img src="img/qr.svg" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
                     </div>
                     <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
                 </div>
             </div>
         </div>
+
+            <div class="site-disclaimer" role="note">
+                <span class="sd-icon" aria-hidden="true">ℹ️</span>
+                <p><strong>یادآوری آموزشی:</strong> همهٔ مطالب این سایت با هدف <em>یادگیری و مرور</em> گردآوری شده است و جایگزین قضاوت بالینی، معاینهٔ بیمار یا دستور پزشک نیست. تصمیم درمانی تنها بر عهدهٔ کادر درمان و بر پایهٔ شرایط هر بیمار است.</p>
+            </div>
+
 
         <div class="footer-bottom">
             <span class="fb-tag">Educate • Research • Inspire</span>

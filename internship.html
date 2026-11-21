@@ -6,27 +6,78 @@
     <title>اینترنی | شارکوت</title>
     <meta name="description" content="راهنمای کامل سال اینترنی؛ انتخاب‌های بالینی، برنامه روزانه شیفت‌ها، وظایف اینترن و نکات عملی طبابت در بیمارستان.">
     <meta name="theme-color" content="#07161B">
-    <link rel="icon" href="10990.jpg">
+    <link rel="canonical" href="https://arshiaeliasy.github.io/charcot/internship.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="شارکوت | Charcot">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:url" content="https://arshiaeliasy.github.io/charcot/internship.html">
+    <meta property="og:title" content="اینترنی | شارکوت">
+    <meta property="og:description" content="راهنمای کامل سال اینترنی؛ انتخاب‌های بالینی، برنامه روزانه شیفت‌ها، وظایف اینترن و نکات عملی طبابت در بیمارستان.">
+    <meta property="og:image" content="https://arshiaeliasy.github.io/charcot/img/og/internship.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="🩺 اینترنی (نخستین سال طبابت)">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="🩺 اینترنی (نخستین سال طبابت)">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:title" content="اینترنی | شارکوت">
+    <meta name="twitter:description" content="راهنمای کامل سال اینترنی؛ انتخاب‌های بالینی، برنامه روزانه شیفت‌ها، وظایف اینترن و نکات عملی طبابت در بیمارستان.">
+    <meta name="twitter:image" content="https://arshiaeliasy.github.io/charcot/img/og/internship.jpg">
+    <link rel="icon" href="img/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="img/favicon-180.png">
     <link rel="preload" href="fonts/vazirmatn-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/vazirmatn-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
+        <!-- جلوگیری از پرش تم هنگام بارگذاری + هم‌خوان کردن رنگ نوار مرورگر -->
     <script>
         try {
-            var savedTheme = localStorage.getItem('charcot-theme');
-            if (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-                savedTheme = 'light';
+            var theme = localStorage.getItem('charcot-theme');
+            if (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                theme = 'light';
             }
-            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+            theme = theme || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            var bar = getComputedStyle(document.documentElement).getPropertyValue('--theme-color');
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) meta.setAttribute('content', (bar && bar.trim()) ? bar.trim() : (theme === 'light' ? '#F1F7F9' : '#07161B'));
         } catch (e) { /* ignore */ }
+    </script>
+    <script type="application/ld+json">
+{
+            "@context": "https://schema.org",
+            "@type": "MedicalWebPage",
+            "name": "🩺 اینترنی (نخستین سال طبابت)",
+            "headline": "🩺 اینترنی (نخستین سال طبابت)",
+            "url": "https://arshiaeliasy.github.io/charcot/internship.html",
+            "inLanguage": "fa-IR",
+            "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "شارکوت | Charcot",
+                    "url": "https://arshiaeliasy.github.io/charcot/"
+            },
+            "publisher": {
+                    "@type": "Organization",
+                    "name": "شارکوت | Charcot",
+                    "url": "https://arshiaeliasy.github.io/charcot/"
+            },
+            "audience": {
+                    "@type": "EducationalAudience",
+                    "educationalRole": "student"
+            },
+            "about": "آموزش پزشکی",
+            "image": "https://arshiaeliasy.github.io/charcot/img/og/internship.jpg",
+            "description": "راهنمای کامل سال اینترنی؛ انتخاب‌های بالینی، برنامه روزانه شیفت‌ها، وظایف اینترن و نکات عملی طبابت در بیمارستان."
+    }
     </script>
 </head>
 <body>
 
     <header class="site-header">
         <a href="index.html" class="logo-area">
-            <img src="10990.jpg" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
+            <img src="img/logo-96.png" alt="لوگوی شارکوت" class="logo-img" width="46" height="46">
             <div class="logo-text">
-                <h1>شارکوت | Charcot</h1>
+                <div class="brand-name">شارکوت | Charcot</div>
                 <span>اینترنی</span>
             </div>
         </a>
@@ -56,7 +107,7 @@
     </nav>
 
     <main class="content-container">
-        <h2 class="page-title">🩺 اینترنی (نخستین سال طبابت)</h2>
+        <h1 class="page-title">🩺 اینترنی (نخستین سال طبابت)</h1>
         <p class="page-desc">اینترنی سخت‌ترین و پربارترین سال پزشکی است؛ جایی که برای اولین بار مسئولیت واقعی بیمار را به عهده می‌گیری. در این بخش با انتخاب‌های بالینی، برنامهٔ روزانه شیفت‌ها و نکات عملی کار در بیمارستان آشنا می‌شوی.</p>
 
         <div class="tip-box">
@@ -112,8 +163,57 @@
             </ul>
         </div>
 
+        <h3 class="section-title" id="practice-tools">🧰 ابزارهای عملی اینترنی</h3>
+        <p class="lead">این‌ها قالب‌های کاری‌اند، نه توصیهٔ درمانی؛ فقط کار روزانه‌ات را منظم می‌کنند. می‌توانی چاپشان کنی یا در دفترچهٔ جیبی بنویسی.</p>
+
+        <div class="grid-2">
+            <div class="info-box">
+                <h4>📝 قالب یادداشت روزانه (SOAP)</h4>
+                <ul>
+                    <li><strong>S — ذهنی (Subjective):</strong> شکایت امروز بیمار، تغییر حال از دیروز، پاسخ به درمان.</li>
+                    <li><strong>O — عینی (Objective):</strong> علائم حیاتی، یافتهٔ معاینه، نتایج آزمایش و تصویربرداری امروز.</li>
+                    <li><strong>A — ارزیابی (Assessment):</strong> تشخیص یا تشخیص‌های احتمالی و دلیل تغییر یا عدم تغییر آن‌ها.</li>
+                    <li><strong>P — برنامه (Plan):</strong> اقدام امروز، مشاوره‌ها، کارهای باقی‌مانده برای شیفت بعد.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>🔄 روتین بازبینی هفتگی (۱۵ دقیقه)</h4>
+                <ul>
+                    <li>سه بیمار آموزندهٔ هفته را در دفترچه‌ات مرور کن و برای هر کدام یک نکتهٔ ماندگار بنویس.</li>
+                    <li>فهرست کارهای عقب‌افتاده (مدارک، امضا، جواب آزمایش) را پاک‌سازی کن.</li>
+                    <li>یک «باید یاد بگیرم» انتخاب کن و برای هفتهٔ بعد یک منبع مشخص برایش تعیین کن.</li>
+                    <li>یک مهارت عملی (بخیه، رگ‌گیری، تفسیر نوار قلب) را برای تمرین هفتهٔ آینده انتخاب کن.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>🤝 چک‌لیست تحویل شیفت</h4>
+                <ul>
+                    <li>برای هر بیمار یک خط: تشخیص، وضعیت فعلی، اقدام بعدی و «چه چیزی نگرانم می‌کند».</li>
+                    <li>موارد در انتظار (جواب آزمایش، تصویربرداری، مشاوره) را با ساعت مشخص بنویس.</li>
+                    <li>بیماران پرخطر و داروهای حساس را شفاهی هم تأکید کن، نه فقط روی کاغذ.</li>
+                    <li>قبل از ترک بخش، مطمئن شو نفر بعد می‌داند در صورت بدتر شدن حال بیمار چه کند.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>📋 روز اول هر بخش: چهار کار</h4>
+                <ul>
+                    <li>نام و نقش تیم را بپرس و یادداشت کن (اینترن، رزیدنت، پرستار شیفت، مسئول بخش).</li>
+                    <li>مسیرهای فیزیکی را پیدا کن: محل پرونده‌ها، اتاق پانسمان، داروخانهٔ بخش، اتاق استراحت.</li>
+                    <li>سیستم نسخه‌نویسی و ثبت در پروندهٔ الکترونیک را از یک نفر تحویل بگیر و خودت عملاً انجام بده.</li>
+                    <li>یک هدف یادگیری مشخص برای این بخش تعیین کن و در پایان دوره خودت ارزیابی کن.</li>
+                </ul>
+            </div>
+        </div>
+
         <div class="tip-box">
-            <strong>منابع همراه:</strong> در طول اینترنی، <a href="externship.html" style="color: var(--accent-teal);">راهنمای کورس‌های استاجری</a> برای مرور سریع گایدلاین‌ها و <a href="clinical-cases.html" style="color: var(--accent-teal);">کیس‌های بالینی</a> برای تمرین تفکر تشخیصی به‌کارت می‌آید.
+            <strong>نکتهٔ سازمانی:</strong> اگر این چهار قالب را از روز اول به‌کار بگیری، بار ذهنی اینترنی به‌جای «به‌خاطر سپردن همه‌چیز» می‌شود «ثبت و بازبینی». همین دو عادت، تفاوت یک اینترن منظم با یک اینترن خسته است.
+        </div>
+
+        <div class="tip-box">
+            <strong>منابع همراه:</strong> در طول اینترنی، <a href="externship.html" class="link-accent">راهنمای کورس‌های استاجری</a> برای مرور سریع گایدلاین‌ها و <a href="clinical-cases.html" class="link-accent">کیس‌های بالینی</a> برای تمرین تفکر تشخیصی به‌کارت می‌آید.
         </div>
     </main>
 
@@ -121,7 +221,7 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <div class="footer-brand">
-                    <img src="10990.jpg" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
+                    <img src="img/logo-96.png" alt="لوگوی شارکوت" loading="lazy" width="38" height="38">
                     <strong>شارکوت | Charcot</strong>
                 </div>
                 <p>پلتفرم هوشمند یادگیری و پژوهش ویژه دانشجویان پزشکی؛ از علوم پایه تا کارورزی بالینی.</p>
@@ -153,12 +253,18 @@
                 <h4>ورود با موبایل</h4>
                 <div class="footer-qr">
                     <div class="qr-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://arshiaeliasy.github.io/charcot/index.html" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
+                        <img src="img/qr.svg" alt="کد QR شارکوت" loading="lazy" width="100" height="100">
                     </div>
                     <p>کد QR را اسکن کن تا مستقیم وارد سایت شوی.</p>
                 </div>
             </div>
         </div>
+
+            <div class="site-disclaimer" role="note">
+                <span class="sd-icon" aria-hidden="true">ℹ️</span>
+                <p><strong>یادآوری آموزشی:</strong> همهٔ مطالب این سایت با هدف <em>یادگیری و مرور</em> گردآوری شده است و جایگزین قضاوت بالینی، معاینهٔ بیمار یا دستور پزشک نیست. تصمیم درمانی تنها بر عهدهٔ کادر درمان و بر پایهٔ شرایط هر بیمار است.</p>
+            </div>
+
 
         <div class="footer-bottom">
             <span class="fb-tag">Educate • Research • Inspire</span>
